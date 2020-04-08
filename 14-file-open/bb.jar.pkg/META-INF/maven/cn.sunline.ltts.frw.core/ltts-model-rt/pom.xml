@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd"
+	xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<modelVersion>4.0.0</modelVersion>
+
+
+	<parent>
+		<groupId>cn.sunline.ltts.frw.core</groupId>
+		<artifactId>lttscore-parent</artifactId>
+		<version>2.6.16-RELEASE</version>
+		<relativePath>../..</relativePath>
+	</parent>
+
+	<artifactId>ltts-model-rt</artifactId>
+	<packaging>jar</packaging>
+	<name>Ltts Model-Runtime Project</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>cn.sunline.ltts.frw.core</groupId>
+			<artifactId>ltts-model-all</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>cn.sunline.ltts.frw.core</groupId>
+			<artifactId>ltts-base</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+			<scope>compile</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.freemarker</groupId>
+			<artifactId>freemarker</artifactId>
+		</dependency>
+		<!-- 目前annotation注解解析有用到，TODO:后面再去除 -->
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-core</artifactId>
+		</dependency>
+	</dependencies>
+	<properties>
+		<access-rule>/</access-rule>
+	</properties>
+</project>

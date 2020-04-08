@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<constantConf id="ModelRtConst" longname="常量定义" package="cn.sunline.edsp.international.constant" xsi:noNamespaceSchemaLocation="ltts-model.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <constants id="MRConst" longname="ltts-model-rt日志国际化">
+        <description><![CDATA[ltts-model-rt日志国际化]]></description>
+        <constant id="SchemaAnnotationConfigLoader01" message="解析注解出错,cause by :%s"/>
+        <constant id="SchemaAnnotationConfigLoader02" message="获取RestrictionType的baseType出错,cause by:%s"/>
+        <constant id="SchemaAnnotationConfigLoader03" message="空的枚举类型：%s"/>
+        <constant id="BaseProfileValidator01" message="输入要素[%s]不允许为空"/>
+        <constant id="BaseProfileValidator02" message="输入要素[%s]不合法,日期%s格式错误 , 预期格式为[%s]"/>
+        <constant id="BaseProfileValidator03" message="输入要素[%s]不合法 ,要素[%s-%s]值[%s]未在字典[%s]中定义"/>
+        <constant id="BaseProfileValidator04" message="输入要素不合法,[%s-%s]值[%s]未在可选值[%s-%s]中"/>
+        <constant id="BaseProfileValidator05" message="输入要素[%s]不合法,要素[%s-%s]值[%s]未在可选值[%s]中"/>
+        <constant id="BaseProfileValidator06" message="输入要素[%s]不合法,要素[%s-%s]值[%s]不是金额类型"/>
+        <constant id="BaseProfileValidator07" message="输入要素[%s]不合法,要素[%s-%s]值[%s]过短，不能小于最小长度[%s]"/>
+        <constant id="BaseProfileValidator08" message="输入要素[%s]不合法,要素[%s-%s]值[%s]超长，不能大于最大长度[%s]"/>
+        <constant id="BaseProfileValidator09" message="输入要素[%s]不合法,要素[%s-%s]整数部分[%s]值非法，必须是数字"/>
+        <constant id="BaseProfileValidator10" message="输入要素[%s]不合法,要素[%s-%s]值[%s]整数部分位数不能大于定义的最大位数[%s]"/>
+        <constant id="BaseProfileValidator11" message="输入要素[%s]不合法,要素[%s-%s]小数部分[%s]值非法，必须是数字"/>
+        <constant id="BaseProfileValidator12" message="输入要素[%s]不合法,要素[%s-%s]值[%s]小数位数不能大于定义的最大位数[%s]"/>
+        <constant id="ExcelConfigManager01" message="加载excel文件[%s]成功！"/>
+        <constant id="ExcelConfigManager02" message="该sheet[%s]已加载，不能重复加载！"/>
+        <constant id="AnnotationConfigManager01" message="获取schemaid错误,类不能为空"/>
+        <constant id="AnnotationConfigManager02" message="获取schemaid错误,CauseBy:类[%s]上未定义@%s注解"/>
+        <constant id="AnnotationConfigManager03" message="解析注解出错,cause by :%s"/>
+        <constant id="AnnotationConfigManager04" message="枚举[%s]获取枚举的基本类型失败"/>
+        <constant id="AnnotationConfigManager05" message="空的枚举类型：%s"/>
+        <constant id="AnnotationConfigManager06" message="类[%s]上的注解@ConfigType中的值不能为空"/>
+        <constant id="AnnotationConfigManager07" message="类[%s]不是complexType对应的类"/>
+        <constant id="AnnotationConfigManager08" message="解析类的FullId出错：%s对应的ownwer类 [%s]不是schema对应的类"/>
+        <constant id="AnnotationConfigManager09" message="解析出错:元素重名:%s"/>
+        <constant id="AnnotationConfigManager10" message="创建元素对象失败"/>
+        <constant id="AnnotationConfigManager11" message="解析注解出错,cause by :%s"/>
+        <constant id="AnnotationConfigManager12" message="不支持多维数组：%s"/>
+        <constant id="AnnotationConfigManager13" message="元素[%s]的类型找不到对应的集合类型：%s"/>
+        <constant id="AnnotationConfigManager14" message="解析元素[%s]的类型错误,cause by:%s"/>
+        <constant id="AnnotationConfigManager15" message="获取SimpleType类型失败：%s"/>
+        <constant id="AnnotationConfigManager16" message="枚举类型[%s]必须标记Enumeration注解"/>
+        <constant id="AnnotationEntityLoader01" message="暂不支持注解配置:%s"/>
+        <constant id="AnnotationEntityOdbEntityDao01" message="加载类出错:%s,%s"/>
+        <constant id="DefaultModelRelationResolver201" message="模型[%s.%s]解析失败： 从模型工厂中获取类型[%s] ,ID[%s] 的模型为空"/>
+        <constant id="DefaultModelRelationResolver202" message="模型[%s.%s]解析失败： 未定义ModelRelation对应的字段[%s]!"/>
+        <constant id="LoadAllAnnotationModelFactory01" message="配置文件加载耗时：%s s，解析关系耗时：%s s，共%s个模型对象。"/>
+        <constant id="LoadAllAnnotationModelFactory02" message="加载类出错:%s,%s"/>
+        <constant id="LoadAllAnnotationModelFactory03" message="Schema重复定义：'%s-%s' - '%s-%s'"/>
+        <constant id="LoadAllModelFactory01" message="配置文件加载耗时：%s s，解析关系耗时：%s s，共%s个模型对象。"/>
+        <constant id="LoadAllWebPageModelFactory01" message="配置文件加载耗时：%s s，共%s个模型对象。"/>
+        <constant id="LoadAllWebPageModelFactory02" message="  解析出错 (ModelFactoryUtil.parse):  "/>
+        <constant id="LoadAllWebPageModelFactory03" message="必须实现ModelObjectEx接口：%s"/>
+        <constant id="LoadAllWebPageModelFactory04" message="文件关闭出错：%s"/>
+        <constant id="ModelConfig01" message="类型在之前的加载器中已创建，请检查并使用excludes属性排除不必要的配置：%s"/>
+        <constant id="ModelConfig02" message="类型[%s]的模型加载器先前已经被初始化，此处的配置将被忽略：%s"/>
+        <constant id="ModelConfig03" message="创建[%s][%s][%s]对应的loader错误,cause by:%s"/>
+        <constant id="ModelConfig04" message="创建[%s][%s][%s]对应的loader错误 ,cause by: %s"/>
+        <constant id="ModelConfigUtil01" message="[%s][%s]加载数据失败%s"/>
+        <constant id="ModelConfigUtil02" message="[%s][%s]解析数据失败：%s"/>
+        <constant id="ModelConfigUtil03" message="将对象[%s]插入type[%s]对应的odbManager失败，原因：%s"/>
+        <constant id="ModelConfigUtil04" message="解析对象[%s]失败%s"/>
+        <constant id="ModelConfigUtil05" message="[%s][%s]加载数据失败：%s"/>
+        <constant id="ModelConfigUtil06" message="[%s][%s]解析数据失败：%s"/>
+        <constant id="ModelConfigUtil07" message="将对象[%s]插入type[%s]对应的odbManager失败,原因：%s"/>
+        <constant id="ModelConfigUtil08" message="解析对象[%s]失败"/>
+        <constant id="ModelConfigUtil09" message="类上没有标识@Index，不允许创建索引管理器：%s"/>
+        <constant id="ModelFactoryUtil01" message="  解析出错 (ModelFactoryUtil.parse):  "/>
+        <constant id="ModelFactoryUtil02" message="  解析出错 (ModelFactoryUtil.parse):  "/>
+        <constant id="ModelFactoryUtil03" message="模型[%s.%s]解析失败： 从模型工厂中获取类型[%s] ,ID[%s] 的模型为空"/>
+        <constant id="ModelFactoryUtil04" message="未在当前线程上下文设置模型工厂！"/>
+        <constant id="ModelFactoryUtil05" message="文件关闭出错：%s"/>
+        <constant id="ModelFactoryUtil06" message="必须实现ModelObject接口：%s"/>
+        <constant id="ModelIntroductUtil01" message="配置引入属性的ComplexType[%s]只能配置在schema节点下"/>
+        <constant id="ModelIntroductUtil02" message="定义了引入[introduct]属性的complexType未定义extension属性"/>
+        <constant id="ModelIntroductUtil03" message="complexType[%s]的父类为空"/>
+        <constant id="ModelManager01" message="开始加载模型组：%s"/>
+        <constant id="ModelManager02" message="完成加载模型组[%ss][%s]：%s"/>
+        <constant id="ModelManager03" message="模型组启用惰性解析：%s"/>
+        <constant id="ModelManager04" message="开始解析模型组：%s"/>
+        <constant id="ModelManager05" message="完成解析模型组[%ss][%s]：%s"/>
+        <constant id="ModelManager06" message="开始%s模型：%s[%s]"/>
+        <constant id="ModelManager07" message="完成%s模型[%ss][%s]：%s[%s]"/>
+        <constant id="ModelManager08" message="正在执行%s[%s/%s]"/>
+        <constant id="ModelManager09" message="加载"/>
+        <constant id="ModelManager10" message="解析"/>
+        <constant id="ModelManager11" message="初始化模型加载器[%s] - [%s]失败"/>
+        <constant id="OdbModelFactory01" message="配置文件加载耗时：%ss，解析关系耗时：%ss ,共%s个模型对象。"/>
+        <constant id="OdbModelFactory02" message="类型没有配置索引：%s"/>
+        <constant id="ProxyModelObjectCreator01" message="对象默认值或固定值配置错误：%s[%s][%s]"/>
+        <constant id="ProxyModelObjectCreator02" message="对象不能为空!"/>
+        <constant id="ProxyModelObjectCreator03" message="类[%s]不支持设置只读标志!"/>
+        <constant id="ProxyModelObjectCreator04" message="调用类[%s]的方法[%s]失败!"/>
+        <constant id="ProxyModelObjectCreator05" message="不支持的操作!"/>
+        <constant id="XmlEntityOdbEntityDao01" message="加载配置文件[%s]错误%s"/>
+        <constant id="XmlEntityOdbEntityDao02" message="准备写入文件: '%s'."/>
+        <constant id="XmlEntityOdbEntityDao03" message="执行插入操作错误,主键重复!"/>
+        <constant id="XmlEntityOdbEntityDao04" message="获取对象对应的ModelFile失败：%s"/>
+        <constant id="XmlEntityOdbEntityDao05" message="文件不可写：%s"/>
+        <constant id="XmlEntityOdbEntityDao06" message="对象末实现ModelFileAware接口：%s"/>
+    </constants>
+</constantConf>

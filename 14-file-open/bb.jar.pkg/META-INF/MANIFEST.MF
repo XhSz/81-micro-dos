@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Archiver-Version: Plexus Archiver
+Created-By: Apache Maven
+Built-By: gitlab-runner
+Build-Jdk: 1.7.0_181
+Implementation-Title: Ltts Model-Runtime Project
+Implementation-Version: 2.6.16-RELEASE
+Implementation-Vendor-Id: cn.sunline.ltts.frw.core
+Implementation-Branch: UNKNOWN_BRANCH
+Implementation-Build: 
+access-rule: 
+artifactId: ltts-model-rt
+groupId: cn.sunline.ltts.frw.core
+ltts-module: 
+version: 2.6.16-RELEASE
+

@@ -1,0 +1,1 @@
+dir /s/b "C:\win-cmd">out.txt

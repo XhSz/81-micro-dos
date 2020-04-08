@@ -1,0 +1,4 @@
+C:\win-cmd\11-file-ergodic
+C:\win-cmd\11-file-ergodic\out.txt
+C:\win-cmd\11-file-ergodic\win-cmd-file-ergodic-e01.bat
+C:\win-cmd\11-file-ergodic\win-cmd-file-ergodic-out-file.bat
