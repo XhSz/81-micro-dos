@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<componentSchema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="AppcCompImpl" package="cn.sunline.adp.cedar.busi.sdk.component" longname="通讯组件实现定义" desc="定义安全、指纹、通讯、组包、文件传输等系统基础组件" xsi:noNamespaceSchemaLocation="ltts-model.xsd">
+    <componentImplementation id="AppcTcp" longname="基于Tcp短连接的通讯组件" type="BaseComp.Appc">
+        <implementation.java class="cn.sunline.adp.cedar.busi.sdk.service.appc.AppcTcpImpl"/>
+        <properties>
+            <property name="ip" type="string" longname="地址"/>
+            <property name="port" type="int" longname="端口"/>
+            <property name="connectTimeoutInMs" type="int" default="5000" longname="连接超时时间"/>
+            <property name="sendTimeoutInMs" type="int" default="5000" longname="发送超时时间"/>
+            <property name="recvTimeoutInMs" type="int" default="30000" longname="接收超时时间"/>
+            <property name="lengthPrefixLength" type="int" default="8" longname="长度域字段长度"/>
+            <property name="encoding" type="string" default="GB18030" longname="字符集"/>
+            <property name="paddingChar" type="string" default="0" longname="填充字符"/>
+            <property name="leftPadding" type="boolean" default="true" longname="是否左填充"/>
+        </properties>
+    </componentImplementation>
+    <componentImplementation id="AppcInterfaceMain" longname="调用v5交易入口的通讯组件" type="BaseComp.Appc">
+        <implementation.java class="cn.sunline.adp.cedar.busi.sdk.service.appc.AppcInterfaceMainImpl"/>
+        <properties>
+            <property name="url" type="string" longname="数据库地址"/>
+            <property name="driverClass" type="string" default="org.hsqldb.jdbcDriver" longname="驱动类路径"/>
+            <property name="datasourceId" type="string" longname="数据源id"/>
+            <property name="username" type="string" longname="用户名"/>
+            <property name="passwd" type="string" longname="密码"/>
+        </properties>
+    </componentImplementation>
+    <componentImplementation id="AppcAdminServer" longname="管理服务器客户端通讯组件" type="BaseComp.Appc">
+        <implementation.java class="cn.sunline.adp.cedar.busi.sdk.service.appc.AppcAdminServerImpl"/>
+        <properties>
+            <property name="ip" type="string" longname="地址"/>
+            <property name="port" type="int" longname="端口"/>
+            <property name="encoding" type="string" default="GB18030" longname="字符集"/>
+            <property name="scid" type="string" default="SC1" longname="通道ID"/>
+            <property name="scname" type="string" longname="通道名称"/>
+            <property name="connectTimeoutInMs" type="int" default="5000" longname="连接超时时间"/>
+            <property name="sendTimeoutInMs" type="int" default="5000" longname="发送超时时间"/>
+            <property name="recvTimeoutInMs" type="int" default="30000" longname="接收超时时间"/>
+            <property name="lengthPrefixLength" type="int" default="6" longname="长度域字段长度"/>
+            <property name="paddingChar" type="string" default="0" longname="填充字符"/>
+            <property name="leftPadding" type="boolean" default="true" longname="是否左填充"/>
+        </properties>
+    </componentImplementation>
+    <componentImplementation id="AppcUdp" longname="基于udp不可靠连接的通讯组件" type="BaseComp.Appc">
+        <implementation.java class="cn.sunline.adp.cedar.busi.sdk.service.appc.AppcUdpImpl"/>
+        <properties>
+            <property name="ip" type="string" longname="地址"/>
+            <property name="port" type="int" longname="端口"/>
+            <property name="needReturn" type="boolean" default="false" longname="是否需要返回"/>
+            <property name="encoding" type="string" default="GB18030" longname="字符集"/>
+        </properties>
+    </componentImplementation>
+    <componentImplementation id="AppcTuxedo" longname="Tuxedo通讯" type="BaseComp.Appc">
+        <implementation.java class="cn.sunline.adp.cedar.busi.sdk.service.appc.AppcTuxedoImpl"/>
+        <properties>
+            <property name="address" type="string" longname="tuxedo服务地址，格式 192.168.186.6:7008,LTTS"/>
+            <property name="encoding" type="string" default="UTF-8" longname="字符集"/>
+            <property name="pkgLength" type="int" default="0" longname="报文头长度" desc="不含前8位固定长度"/>
+        </properties>
+    </componentImplementation>
+    <componentImplementation id="AppcTuxedoLTTS" longname="LTTS管道符Tuxedo通讯" type="BaseComp.Appc">
+        <implementation.java class="cn.sunline.adp.cedar.busi.sdk.service.appc.AppcTuxedoImplLTTS"/>
+        <properties>
+            <property name="address" type="string" longname="tuxedo服务地址，格式 192.168.186.6:7008,LTTS"/>
+            <property name="encoding" type="string" default="GB18030" longname="字符集"/>
+        </properties>
+    </componentImplementation>
+    <componentImplementation id="AppcActiveMQ" longname="ActiveMQ通讯" type="BaseComp.Appc">
+        <implementation.java class="cn.sunline.adp.cedar.busi.sdk.service.appc.AppcActiveMQImpl"/>
+        <properties>
+            <property name="subject" type="string" longname="话题"/>
+            <property name="url" type="string" default="tcp://localhost:61616" longname="MQ服务器地址"/>
+            <property name="timeout" type="int" default="2000" longname="超时时间(ms)"/>
+            <property name="topic" type="boolean" default="false" longname="队列模式，还是TPPIC模式"/>
+        </properties>
+    </componentImplementation>
+</componentSchema>

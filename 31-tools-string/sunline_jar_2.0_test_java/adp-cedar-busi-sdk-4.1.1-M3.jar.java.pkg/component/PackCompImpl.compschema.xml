@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<componentSchema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="PackCompImpl" package="cn.sunline.adp.cedar.busi.sdk.component" longname="报文组件实现定义" desc="定义安全、指纹、通讯、组包、文件传输等系统基础组件" xsi:noNamespaceSchemaLocation="ltts-model.xsd">
+    <componentImplementation id="PackLtts" longname="管道符分隔报文组件 " type="BaseComp.Pack">
+        <implementation.java class="cn.sunline.adp.cedar.busi.sdk.service.pack.PackLttsImpl"/>
+        <properties>
+            <property name="encoding" type="string" default="GB18030" longname="字符集"/>
+        </properties>
+    </componentImplementation>
+    <componentImplementation id="PackJson" longname="json报文组件 " type="BaseComp.Pack">
+        <implementation.java class="cn.sunline.adp.cedar.busi.sdk.service.pack.PackJsonImpl"/>
+        <properties/>
+    </componentImplementation>
+    <componentImplementation id="PackXml" longname="xml报文组件 " type="BaseComp.Pack">
+        <implementation.java class="cn.sunline.adp.cedar.busi.sdk.service.pack.PackXmlImpl"/>
+        <properties/>
+    </componentImplementation>
+</componentSchema>

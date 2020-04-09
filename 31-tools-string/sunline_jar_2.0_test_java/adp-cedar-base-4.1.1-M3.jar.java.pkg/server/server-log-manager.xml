@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- [Template id=LogService longname=日志服务 ] -->
+<logManagerConfig logLevelMode="${logLevelMode|USER_DEFINE}">
+	
+	<!-- [Template id=BusiLog longname=业务日志配置 ] -->
+	<busiLogConfig longname="业务日志配置">
+		<levelDefine longname="业务日志级别定义">
+		
+			<!-- parm(参数日志)、method（方法调用信息）、debug（调试日志）、info（info级别日志）、sql（打印sql语句）、profile（性能统计日志） -->
+            <!-- 日志级别：此处的级别（1，2...）为自定义级别，一个自定义级别对应log4j中一个或者多个log4j日志级别，比如设置为 "7"时，即允许日志
+                                               打印"info,method,profile"三个级别的日志信息
+                                              优先级： 交易级日志级别 > setting文件中配置的日志级别 > log4j配置文件中的日志级别 
+                                                 注意 ：此处自定义日志级别只针对业务日志，系统日志以log4j配置的日志级别为准。                                                      
+            -->
+            
+			<!-- 性能环境 -->
+			
+			<!-- [Template id=LevelDefine longname=日志级别定义 multi=true] -->
+			<level id="${id|1}" longname="">${type|parm,method,debug,warn,info,error,profile,sql,sqlInfo}</level>
+			<!-- [End] -->
+			
+			<!-- 
+			<level id="1" longname="">error</level>
+			<level id="2" longname="">profile</level>
+			 -->
+			<!-- 向下兼容 -->
+			<!-- 
+			<level id="3" longname="">parm,method,debug,warn,info,error,profile,sql</level>
+			 -->
+			<!-- 批量线上环境默认5 -->
+			<!-- 
+			<level id="4" longname="">info</level>
+			<level id="5" longname="">info,profile</level>
+			 -->
+			<!-- 联机线上环境默认6，若需要查看性能则调整为7 -->
+			<!-- 
+			<level id="6" longname="">info,method</level>
+			<level id="7" longname="">info,method,profile</level>
+			 -->
+			<!-- DEV环境  默认9，若无需性能日志则调整为8 -->
+			<!-- 
+			<level id="8" longname="">parm,method,debug,info,sql</level>
+			<level id="9" longname="">parm,method,debug,info,profile,sql</level>
+			 -->
+			
+		</levelDefine>
+		
+		<!-- [Template id=LevelConfig longname=日志级别配置 ] -->
+		<levelConfigs>
+			<levelConfig type="biz.onl" longname="联机交易平台业务日志级别配置" level="${onl|1}">
+			</levelConfig>
+			<levelConfig type="biz.job" longname="批量交易平台业务日志级别配置" level="${bat|1}">
+			</levelConfig>
+		</levelConfigs>
+		<!-- [End] -->
+		
+	</busiLogConfig>
+	<!-- [End] -->
+	
+</logManagerConfig>
+<!-- [End] -->

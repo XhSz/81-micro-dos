@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<componentSchema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="DBSecurityCompImpl" package="cn.sunline.adp.cedar.busi.sdk.component" longname="数据库密码安全组件实现定义" desc="定义安全、指纹、通讯、组包、文件传输等系统基础组件" xsi:noNamespaceSchemaLocation="ltts-model.xsd">
+    <description><![CDATA[数据库密码安全组件实现定义]]></description>
+</componentSchema>

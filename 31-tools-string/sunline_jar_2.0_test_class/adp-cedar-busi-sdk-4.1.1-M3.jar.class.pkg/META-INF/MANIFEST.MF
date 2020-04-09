@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Implementation-Title: SunADP Cedar Busi SDK Project
+ltts-module: 
+Implementation-Version: 4.1.1-M3
+Built-By: jenkins
+groupId: cn.sunline.adp
+Implementation-Vendor-Id: cn.sunline.adp
+edsp-module: true
+version: 4.1.1-M3
+access-rule: */**
+Implementation-Build: 1584941116760
+adp-module: 
+artifactId: adp-cedar-busi-sdk
+Created-By: Apache Maven 3.5.2
+Build-Jdk: 1.8.0_151
+

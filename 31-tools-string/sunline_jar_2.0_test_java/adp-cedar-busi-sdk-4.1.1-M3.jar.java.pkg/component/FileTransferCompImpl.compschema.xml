@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<componentSchema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="FileTransferCompImpl" package="cn.sunline.adp.cedar.busi.sdk.component" longname="FTP组件实现定义" desc="定义安全、指纹、通讯、组包、文件传输等系统基础组件" xsi:noNamespaceSchemaLocation="ltts-model.xsd">
+    <componentImplementation id="ApacheFtpFileTransfer" longname="apache版本" type="BaseComp.FileTransfer">
+        <implementation.java class="cn.sunline.adp.cedar.busi.sdk.service.transfer.ApacheFtpFileTransferImpl"/>
+        <properties>
+            <property name="ip" type="string" longname="ftp地址"/>
+            <property name="port" type="int" default="21" longname="ftp端口"/>
+            <property name="user" type="string" longname="用户"/>
+            <property name="password" type="string" longname="密码"/>
+            <property name="connectTimeoutInMs" type="int" default="30000" longname="连接超时时间"/>
+            <property name="binaryMode" type="boolean" default="true" longname="是否二进制传输"/>
+            <property name="localWorkDir" type="string" longname="本地工作目录,必须以'/'结束"/>
+            <property name="remoteWorkDir" type="string" longname="远程工作目录, 必须以'/'结束"/>
+            <property name="retryInterval" type="int" longname="连接失败重连次数"/>
+            <property name="retryTime" type="int" longname="连接失败重连间隔"/>
+        </properties>
+    </componentImplementation>
+</componentSchema>

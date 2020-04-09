@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- [Template id=DiscoveryService longname=Discovery服务] -->
+<discoveryServiceConfig heartBeatInterval="${heartBeatInterval|120}">
+	<!-- 2016.5.24新增，部署多个批量任务调度服务时需要所有的服务实例信息  -->
+	<!-- [Template id=BatchTaskSchedulerServerDiscovery longname=BatchTaskSchedulerServerDiscovery] -->
+	<discovery name="BatchTaskSchedulerServerDiscovery" observer="${observer|false}" callback="${callback|cn.sunline.adp.cedar.custom.comm.biz.impl.discovery.DBBatchTaskSchedulerServerDiscovery}"/>
+	<!-- [End] -->
+	
+	<!-- [Template id=BatchTaskHealthCheckServerDiscovery longname=BatchTaskHealthCheckServerDiscovery] -->
+	<discovery name="BatchTaskHealthCheckServerDiscovery" observer="${observer|false}" callback="${callback|cn.sunline.adp.cedar.custom.comm.biz.impl.discovery.DBBatchTaskHealthCheckServerDiscovery}"/>
+	<!-- [End] -->
+	
+	<!-- 2016.5.19新增，部署多个批量任务执行服务时需要所有的服务实例信息  -->
+	<!-- [Template id=BatchTaskDomainServerDiscovery longname=BatchTaskDomainServerDiscovery] -->
+	<discovery name="BatchTaskDomainServerDiscovery" observer="${observer|false}" callback="${callback|cn.sunline.adp.cedar.custom.comm.biz.impl.discovery.DBBatchTaskDomainServerDiscovery}"/>
+	<!-- [End] -->
+
+	<!-- [Template id=BatchJobServerDiscovery longname=BatchJobServerDiscovery] -->
+	<discovery name="BatchJobServerDiscovery" observer="${observer|false}" callback="${callback|cn.sunline.adp.cedar.custom.comm.biz.impl.discovery.DBBatchJobServerDiscovery}"/>
+	<!-- [End] -->
+	
+	<!-- 2014.12.30新增，部署多个定时调度器时需要所有的服务实例信息，用于选举出作为master的定时调度器  -->
+	<!-- [Template id=BatchTimerSchedulerServerDiscovery longname=BatchTimerSchedulerServerDiscovery] -->
+	<discovery name="BatchTimerSchedulerServerDiscovery" observer="${observer|false}" callback="${callback|cn.sunline.adp.cedar.custom.comm.biz.impl.discovery.DBBatchTimerSchedulerServerDiscovery}"/>
+	<!-- [End] -->
+	
+	<!-- [Template id=DaoManagerServiceDiscovery longname=DaoManagerServiceDiscovery] -->
+	<discovery name="DaoManagerServiceDiscovery" observer="${observer|false}" callback="${callback|cn.sunline.adp.cedar.custom.comm.biz.impl.discovery.DBDaoManagerServiceDiscovery}"/>
+	<!-- [End] -->
+	
+</discoveryServiceConfig>
+<!-- [End] -->

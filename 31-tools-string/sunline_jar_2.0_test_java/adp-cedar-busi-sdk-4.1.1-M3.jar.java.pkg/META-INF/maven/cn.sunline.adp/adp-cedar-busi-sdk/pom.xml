@@ -1,0 +1,70 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>cn.sunline.adp</groupId>
+		<artifactId>adp-parent</artifactId>
+		<version>4.1.1-M3</version>
+	</parent>
+
+	<artifactId>adp-cedar-busi-sdk</artifactId>
+	<packaging>jar</packaging>
+
+	<name>SunADP Cedar Busi SDK Project</name>
+
+	<dependencies>
+		<dependency>
+			<groupId>cn.sunline.adp</groupId>
+			<artifactId>adp-cedar-server-batch</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>cn.sunline.adp</groupId>
+			<artifactId>adp-cedar-base</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.activemq</groupId>
+			<artifactId>activemq-client</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>net.sf.jasperreports</groupId>
+			<artifactId>jasperreports</artifactId>
+		</dependency>
+		
+        <!-- 解决jasperreports本身依赖和间接依赖该组件的版本冲突问题 -->
+		<dependency>
+			<groupId>commons-beanutils</groupId>
+ 		 	<artifactId>commons-beanutils</artifactId>
+		</dependency>
+		 <!-- 解决jasperreports本身依赖与其他项目依赖的版本冲突问题 -->
+		<dependency>
+			<groupId>xml-apis</groupId>
+			<artifactId>xml-apis</artifactId>
+		</dependency>
+
+		<!-- 升级到3.2.2  之前老的版本有 反序列化Bug http://blog.csdn.net/hengyunabc/article/details/49804577 -->
+		<dependency>
+			<artifactId>commons-collections</artifactId>
+			<groupId>commons-collections</groupId>
+		</dependency>
+		<dependency>
+			<groupId>cn.sunline.adp</groupId>
+			<artifactId>adp-cedar-server-online</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.codehaus.groovy</groupId>
+			<artifactId>groovy-all</artifactId>
+		</dependency>
+	</dependencies>
+
+	<properties>
+		<access-rule>*/**</access-rule>
+		<edsp-module>true</edsp-module>
+	</properties>
+	<description>对业务开发人员提供的开发工具包。
+规划：以后业务开发人员仅需依赖该包即可完成开发。但是目前还未达到该程度。</description>
+  
+</project>

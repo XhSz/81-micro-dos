@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<constantConf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="CommonNetConstantDef" longname="CommonNet常量定义" package="cn.sunline.adp.cedar.base.constant" xsi:noNamespaceSchemaLocation="ltts-model.xsd">
+    <constants id="CommNetConst" longname="CommonNet常量定义">
+        <description><![CDATA[CommonNet常量定义]]></description>
+        <constant id="C001" message="响应结果为null"/>
+        <constant id="C002" message="请求%s耗时=%s"/>
+        <constant id="C003" message="连接已中断，取消等待结果"/>
+        <constant id="C004" message="发送超时-服务端未响应结果%s"/>
+        <constant id="C005" message="请先调用initNettyPool"/>
+        <constant id="C006" message="启动服务 Port:{}"/>
+        <constant id="C007" message="停止服务 Port:{}"/>
+        <constant id="C008" message="Net服务端关闭异常"/>
+        <constant id="C009" message="连接成功！ ={}:{} "/>
+        <constant id="C010" message="连接失败"/>
+        <constant id="C011" message="Rpc连接{}:{} 耗时{}"/>
+        <constant id="C012" message="调用连接完成！"/>
+        <constant id="C013" message="doSendSync发送失败"/>
+        <constant id="C014" message="请求处理异常"/>
+        <constant id="C015" message="还未与服务[%s:%s]建立连接！"/>
+        <constant id="C016" message="服务器[%s:%s]繁忙"/>
+        <constant id="C017" message="状态[%s]错误:[%s]"/>
+        <constant id="C018" message="重连接失败"/>
+        <constant id="C019" message="sendAsync发送失败"/>
+        <constant id="C020" message="关闭连接！ ={}:{} "/>
+        <constant id="C021" message="关闭连接{}:{}失败！"/>
+        <constant id="C022" message="响应请求ID为null"/>
+        <constant id="C023" message="发送成功"/>
+        <constant id="C024" message="发送失败："/>
+        <constant id="C025" message="Net客户端异常"/>
+        <constant id="C026" message="服务器处理繁忙，请稍后再试！"/>
+        <constant id="C027" message="服务端NetHandler没有返回NetResponse,请检查服务端处理逻辑"/>
+        <constant id="C028" message="服务器未知异常"/>
+        <constant id="C029" message="服务端/客户端Net版本号不一致"/>
+        <constant id="C030" message="NetHandler处理异常"/>
+        <constant id="C031" message="Net Handler处理异常 %s"/>
+        <constant id="C032" message="处理异常"/>
+        <constant id="C033" message="Net服务端异常,将关闭通道[{}]"/>
+        <constant id="C034" message="RpcHandler不能为空"/>
+        <constant id="C035" message="获取IP异常"/>
+        <constant id="C036" message="获取PID异常"/>
+    </constants>
+</constantConf>

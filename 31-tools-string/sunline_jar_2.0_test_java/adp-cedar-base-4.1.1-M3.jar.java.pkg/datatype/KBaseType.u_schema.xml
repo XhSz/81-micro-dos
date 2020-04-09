@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="KBaseType" package="cn.sunline.adp.cedar.base.type" longname="公共基础数据类型" classgen="normal" xsi:noNamespaceSchemaLocation="ltts-model.xsd">
+    <description><![CDATA[公用列表数据类型。]]></description>
+    <restrictionType id="U_PILJYLSH" longname="批量交易批次号" base="string" maxLength="100" minLength="10"/>
+    <restrictionType id="U_PLJIOYMA" longname="批量交易码" base="string" maxLength="10"/>
+    <restrictionType id="U_PLJYLCBS" longname="批量交易流程ID" base="string" maxLength="30"/>
+    <restrictionType id="U_PILJYZBS" longname="批量交易组ID" base="string" maxLength="10"/>
+    <restrictionType id="U_PLZYBHAO" longname="批量作业编号" base="string" maxLength="100"/>
+    <restrictionType id="U_JIAOYIMA" longname="联机交易码" base="string" maxLength="10"/>
+    <restrictionType id="U_TONGYOLB" longname="通用列表" base="string" maxLength="500"/>
+    <restrictionType id="U_TONGYOLS" longname="通用流水" base="string" maxLength="30"/>
+    <restrictionType id="U_IPDIZHII" longname="IP地址" base="string" maxLength="20"/>
+    <restrictionType id="U_SHUJUQUU" longname="数据区" base="string" maxLength="2000" minLength="200"/>
+    <restrictionType id="U_SHUJCFZJ" longname="数据拆分主键" base="string" maxLength="1000"/>
+    <restrictionType id="U_CUOWXINX" longname="错误信息" base="string" maxLength="1000"/>
+    <restrictionType id="U_CUOWDUIZ" longname="错误堆栈" base="string" maxLength="3000"/>
+    <restrictionType id="U_RIQILEIX" longname="日期类型(date)" base="dateString8" pattern="yyyyMMdd"/>
+    <restrictionType id="U_BZRIQILX" longname="标准日期类型(string)" base="dateString" pattern="yyyyMMdd" maxLength="8"/>
+    <restrictionType id="U_JYSIJNZX" longname="交易时间整型" base="long" maxLength="19"/>
+    <restrictionType id="U_BZSJLEIX" longname="标准时间类型" base="dateString" pattern="yyyy-MM-dd HH:mm:ss:SSS" maxLength="23"/>
+    <restrictionType id="U_BZNFLEIX" longname="标准年份类型" base="dateString" pattern="yyyyMMdd" maxLength="8"/>
+    <restrictionType id="U_WENJLJIN" longname="文件路径" base="string" maxLength="500"/>
+    <restrictionType id="U_WENJMINC" longname="文件名称" base="string" maxLength="80"/>
+    <restrictionType id="U_LEIXIN01" longname="一位字符类型" base="string" maxLength="1"/>
+    <restrictionType id="U_LEIXIN02" longname="二位字符类型" base="string" maxLength="2"/>
+    <restrictionType id="U_LEIXIN03" longname="三位字符类型" base="string" maxLength="3"/>
+    <restrictionType id="U_LEIXIN04" longname="四位字符类型" base="string" maxLength="4"/>
+    <restrictionType id="U_LEIXIN06" longname="6位字符类型" base="string" maxLength="6"/>
+    <restrictionType id="U_LEIXIN08" longname="8位字符类型" base="string" maxLength="8"/>
+    <restrictionType id="U_LEIXIN10" longname="10位类型" base="string" maxLength="10"/>
+    <restrictionType id="U_LEIXIN15" longname="15位类型" base="string" maxLength="15"/>
+    <restrictionType id="U_LEIXIN20" longname="20位类型" base="string" maxLength="20"/>
+    <restrictionType id="U_LEIXIN32" longname="32位类型" base="string" maxLength="32"/>
+    <restrictionType id="U_LEIXIN40" longname="40位类型" base="string" maxLength="40"/>
+    <restrictionType id="U_LEIXIN50" longname="50位类型" base="string" maxLength="50"/>
+    <restrictionType id="U_LEIXIN80" longname="80位类型" base="string" maxLength="80"/>
+    <restrictionType id="U_LEIXIN100" longname="100位类型" base="string" maxLength="100"/>
+    <restrictionType id="U_ZHONGWMC" longname="中文名称" base="string" maxLength="200"/>
+    <restrictionType id="U_CHMIAOSH" longname="长描述" base="string" maxLength="1000"/>
+    <restrictionType id="U_CCHMIAOSH" longname="超长描述" base="string" maxLength="4000"/>
+    <restrictionType id="U_ZHMIAOSH" longname="中描述" base="string" maxLength="400"/>
+    <restrictionType id="U_DNMIAOSH" longname="短描述" base="string" maxLength="200"/>
+    <restrictionType id="U_BZLONGLX" longname="标准long类型" base="long" maxLength="19"/>
+    <restrictionType id="U_TYSZLEIX" longname="通用数字类型" base="int" maxLength="8"/>
+    <restrictionType id="U_LIUSBM" longname="流水编码" base="string" maxLength="30"/>
+    <restrictionType id="U_LIUSFWLX" longname="流水复位类型" base="string" maxLength="10"/>
+    <restrictionType id="U_BIAOMING" longname="表名" base="string" maxLength="30"/>
+    <restrictionType id="U_LEIMINGG" longname="类名" base="string" maxLength="80"/>
+    <restrictionType id="U_FANGFMIN" longname="方法名" base="string" maxLength="80"/>
+    <restrictionType id="U_CANSHULB" longname="参数列表" base="string" maxLength="1000"/>
+    <restrictionType id="U_FUWULEIX" longname="服务类型标识" base="string" maxLength="30"/>
+    <restrictionType id="U_FUWUBSHI" longname="服务标识" base="string" maxLength="60"/>
+    <restrictionType id="U_FUWUSHIX" longname="服务实现标识" base="string" maxLength="40"/>
+    <restrictionType id="U_PLKZHIBZ" longname="批量控制标识" base="string" maxLength="100"/>
+    <restrictionType id="U_PLKZHZHI" longname="批量控制值" base="string" maxLength="1"/>
+    <restrictionType id="U_FARENDMA" longname="法人代码" base="string" maxLength="4"/>
+    <restrictionType id="U_GUIYDAIH" longname="柜员号" base="string" maxLength="8"/>
+    <restrictionType id="U_MIMAMMMM" longname="密码" base="string" maxLength="16"/>
+    <restrictionType id="U_JIGOUHAO" longname="机构号" base="string" maxLength="10"/>
+    <restrictionType id="U_SHIJCHUO" longname="时间戳" base="timestamp"/>
+    <restrictionType id="U_RESETMODE" longname="流水复用类型" base="string" maxLength="30"/>
+    <restrictionType id="U_CLOB" longname="超长字符" base="clob"/>
+</schema>

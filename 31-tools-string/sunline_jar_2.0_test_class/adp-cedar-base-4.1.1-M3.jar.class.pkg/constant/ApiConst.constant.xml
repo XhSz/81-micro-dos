@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<constantConf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="ApiConst" longname="常量定义" package="cn.sunline.adp.cedar.base.constant" xsi:noNamespaceSchemaLocation="ltts-model.xsd">
+    <constants id="AConst" longname="ltts-api日志国际化">
+        <description><![CDATA[ltts-api日志国际化]]></description>
+        <constant id="ApplicationBeanResources01" message="接口类型[%s]与实现类[%s]类型不一致"/>
+        <constant id="ApplicationBeanResources02" message="构建实现类[%s]实例出错"/>
+        <constant id="ComparableUtil01" message="比较[%s]的类型[%s]必须是Comparable,否则无法进行比较"/>
+        <constant id="LttsCoreBeanUtil01" message="未找到接口[%s]对应的实现类[%s]，故不能对接口进行[%s]操作"/>
+        <constant id="LttsLanguagePropertyUtil01" message="找不到常量类中的前缀！"/>
+        <constant id="ProfileUtil01" message="ProfileUtil.start_record调用与end_record调用没有配对:'%s', 当前的为 '%s'"/>
+        <constant id="EncryptUtils01" message="长度不是偶数"/>
+        <constant id="CoreUtil01" message="不支持服务的实例化！平台内部可使用ServiceInstanceUtils.getLocalInstance获取服务的实例"/>
+        <constant id="ExcelUtil01" message="处理码"/>
+        <constant id="ExcelUtil02" message="子交易"/>
+        <constant id="ExcelUtil03" message="模板"/>
+        <constant id="ExcelUtil04" message="规则"/>
+        <constant id="ExcelUtil05" message="外部错误码"/>
+        <constant id="ExcelUtil06" message="外部错误信息"/>
+        <constant id="ExcelUtil07" message="内部错误码"/>
+        <constant id="ExcelUtil08" message="内部错误信息"/>
+    </constants>
+</constantConf>

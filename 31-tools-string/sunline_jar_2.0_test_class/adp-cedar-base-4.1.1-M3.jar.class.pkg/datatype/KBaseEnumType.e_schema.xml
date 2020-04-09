@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="KBaseEnumType" package="cn.sunline.adp.cedar.base.type" longname="基础限制类型" classgen="normal" xsi:noNamespaceSchemaLocation="ltts-model.xsd">
+    <description><![CDATA[系统用基础数据类型]]></description>
+    <restrictionType id="E_XITONGLB" longname="系统类别" base="KBaseType.U_LEIXIN01" tags="none">
+        <enumeration id="GL" value="9" longname="会计系统"/>
+        <enumeration id="ONLINE" value="0" longname="核心系统"/>
+    </restrictionType>
+    <restrictionType id="E_PILZXM0S" longname="批量执行模式" base="KBaseType.U_LEIXIN01">
+        <enumeration id="FLOW" value="1" longname="按批量交易流程执行"/>
+        <enumeration id="FLOW_STEP" value="2" longname="按批量交易流程步骤执行"/>
+        <enumeration id="TRAN_GROUP" value="3" longname="按批量交易组执行"/>
+        <enumeration id="TRAN" value="4" longname="按批量交易执行"/>
+    </restrictionType>
+    <restrictionType id="E_JILUZTAI" longname="记录状态" base="KBaseType.U_LEIXIN01" tags="none">
+        <enumeration id="Normal" value="0" longname="正常"/>
+        <enumeration id="Delete" value="1" longname="删除"/>
+    </restrictionType>
+    <restrictionType id="E_SPLITMOD" longname="拆分模式" base="KBaseType.U_LEIXIN01">
+        <enumeration id="split_by_key" value="0" longname="按key拆分"/>
+        <enumeration id="split_by_hash_mod" value="1" longname="按HASH求模拆分"/>
+        <enumeration id="no_split" value="9" longname="不拆分"/>
+    </restrictionType>
+    <restrictionType id="E_YESORNO" longname="是否标志" base="KBaseType.U_LEIXIN01">
+        <enumeration id="NO" value="0" longname="否"/>
+        <enumeration id="YES" value="1" longname="是"/>
+    </restrictionType>
+    <restrictionType id="E_RUNMOD" longname="作业执行模式" base="KBaseType.U_LEIXIN01">
+        <enumeration id="single_thread" value="0" longname="单JVM所有作业在主线程运行"/>
+        <enumeration id="one_for_one" value="1" longname="单JVM每个作业创建一个线程运行"/>
+        <enumeration id="thread_pool_one_jvm" value="2" longname="单JVM共享作业线程池运行"/>
+        <enumeration id="thread_pool_multi_jvm" value="3" longname="多JVM共享线程池方式运行"/>
+        <enumeration id="thread_pool_multi_jvm_by_discovery" value="4" longname="自动发现多JVM共享线程池方式运行"/>
+        <enumeration id="netty_access_multi_jvm" value="5" longname="NIO方式接入多JVM方式运行"/>
+    </restrictionType>
+    <restrictionType id="E_PLJYYXMS" longname="批量交易运行模式" base="KBaseType.U_LEIXIN01">
+        <enumeration id="default_" value="0" longname="缺省模式"/>
+        <enumeration id="two_process" value="1" longname="二次处理模式"/>
+    </restrictionType>
+    <restrictionType id="E_DIAODZTA" longname="调度状态" base="KBaseType.U_LEIXIN20">
+        <enumeration id="START" value="START" longname="待调度"/>
+        <enumeration id="SCHEDULING" value="SCHEDULING" longname="正在调度"/>
+        <enumeration id="STOPPING" value="STOPPING" longname="待停止"/>
+        <enumeration id="STOPPED" value="STOPPED" longname="已停止"/>
+        <enumeration id="DELETE" value="DELETE" longname="待删除"/>
+        <description><![CDATA[执行域状态]]></description>
+    </restrictionType>
+    <restrictionType id="E_PILJYZHT" longname="批量交易状态" base="KBaseType.U_LEIXIN15">
+        <enumeration id="onprocess" value="onprocess" longname="待处理"/>
+        <enumeration id="reonprocess" value="reonprocess" longname="暂停并重新就绪"/>
+        <enumeration id="distributing" value="distributing" longname="正分派"/>
+        <enumeration id="processing" value="processing" longname="处理中"/>
+        <enumeration id="one_commit" value="one_commit" longname="一次处理结束，等待异步事件触发二次处理"/>
+        <enumeration id="success" value="success" longname="处理成功"/>
+        <enumeration id="failure" value="failure" longname="处理失败"/>
+        <enumeration id="interrupted" value="interrupted" longname="已中断"/>
+        <enumeration id="stopped" value="stopped" longname="已停止"/>
+        <enumeration id="unknown" value="unknown" longname="未知"/>
+        <description><![CDATA[批量交易状态]]></description>
+    </restrictionType>
+    <restrictionType id="E_ZHIXYZHT" longname="执行域状态" base="KBaseType.U_LEIXIN10">
+        <enumeration id="START" value="START" longname="待执行"/>
+        <enumeration id="RUNNING" value="RUNNING" longname="正在运行"/>
+        <enumeration id="STOPPING" value="STOPPING" longname="待停止"/>
+        <enumeration id="STOPPED" value="STOPPED" longname="已停止"/>
+        <description><![CDATA[执行域状态]]></description>
+    </restrictionType>
+    <restrictionType id="E_ZUOYZXZT" longname="作业执行状态" base="KBaseType.U_LEIXIN15">
+        <enumeration id="onprocess" value="onprocess" longname="待处理"/>
+        <enumeration id="reonprocess" value="reonprocess" longname="暂停并重新就绪"/>
+        <enumeration id="processing" value="processing" longname="处理中"/>
+        <enumeration id="one_commit" value="one_commit" longname="一次处理结束，等待异步事件触发二次处理"/>
+        <enumeration id="success" value="success" longname="处理成功"/>
+        <enumeration id="failure" value="failure" longname="处理失败"/>
+        <enumeration id="interrupted" value="interrupted" longname="已中断"/>
+        <enumeration id="stopped" value="stopped" longname="已停止"/>
+        <description><![CDATA[批量交易状态]]></description>
+    </restrictionType>
+    <restrictionType id="E_HUANCULX" longname="缓存类型" base="KBaseType.U_LEIXIN06">
+        <enumeration id="none" value="none" longname="无缓存"/>
+        <enumeration id="trans" value="trans" longname="交易级缓存"/>
+        <enumeration id="global" value="global" longname="全局缓存"/>
+    </restrictionType>
+    <restrictionType id="E_QDAOLEIX" longname="渠道号" base="KBaseType.U_LEIXIN03" tags="none">
+        <enumeration id="GM" value="000" longname="柜面"/>
+        <enumeration id="DE" value="001" longname="大额"/>
+        <enumeration id="XE" value="002" longname="小额"/>
+        <enumeration id="LC" value="003" longname="理财"/>
+        <enumeration id="GZ" value="004" longname="电子国债"/>
+        <enumeration id="CW" value="005" longname="财务系统"/>
+        <enumeration id="TP" value="006" longname="tips"/>
+        <enumeration id="YL" value="007" longname="银联总中心"/>
+        <enumeration id="ATM" value="008" longname="本行ATM"/>
+        <enumeration id="WB" value="009" longname="境内外币支付"/>
+        <enumeration id="SW" value="010" longname="swift"/>
+        <enumeration id="HB" value="011" longname="河北银联"/>
+        <enumeration id="KJ" value="012" longname="会计系统"/>
+        <enumeration id="XD" value="013" longname="信贷系统"/>
+        <enumeration id="DH" value="015" longname="电话银行"/>
+        <enumeration id="DX" value="016" longname="短信平台"/>
+        <enumeration id="WY" value="017" longname="网上银行"/>
+        <enumeration id="MM" value="018" longname="支付密码核验系统"/>
+        <enumeration id="JJ" value="019" longname="基金"/>
+        <enumeration id="XY" value="020" longname="校园卡"/>
+        <enumeration id="POS" value="022" longname="本行POS"/>
+        <enumeration id="QZ" value="023" longname="大前置"/>
+        <enumeration id="GJ" value="024" longname="国际结算"/>
+        <enumeration id="YY" value="025" longname="验印系统"/>
+        <enumeration id="JYPL" value="990" longname="交易批量"/>
+        <enumeration id="KJPL" value="992" longname="会计批量"/>
+        <enumeration id="FGM" value="998" longname="非柜面渠道"/>
+        <enumeration id="QB" value="999" longname="全部"/>
+    </restrictionType>
+    <restrictionType id="E_JIGKJBZH" longname="机构开机标志" base="KBaseType.U_LEIXIN01" tags="none">
+        <enumeration id="ZB" value="0" longname="日初准备"/>
+        <enumeration id="YK" value="1" longname="已开机"/>
+        <enumeration id="GJ" value="2" longname="已关机"/>
+        <enumeration id="SQKJ" value="B" longname="总行授权开机"/>
+    </restrictionType>
+    <restrictionType id="E_JGRJIEBZ" longname="机构日结标志" base="KBaseType.U_LEIXIN01" tags="CM">
+        <enumeration id="RJ" value="0" longname="日结"/>
+        <enumeration id="YY" value="1" longname="未日结"/>
+        <enumeration id="QZ" value="2" longname="强制日结"/>
+    </restrictionType>
+    <restrictionType id="E_SYSTEM" longname="系统类型" base="KBaseType.U_LEIXIN32">
+        <enumeration id="hx_dayend" value="hx_dayend" longname="核心系统"/>
+        <enumeration id="gl_dayend" value="gl_dayend" longname="会计系统"/>
+        <enumeration id="hx_trans_chk" value="hx_trans_chk" longname="数据移植检查流程"/>
+        <enumeration id="hx_trans_pro" value="hx_trans_pro" longname="数据移植处理流程"/>
+    </restrictionType>
+    <restrictionType id="E_XITONGBS" longname="系统标识号" base="KBaseType.U_LEIXIN03" tags="none">
+        <enumeration id="GM" value="000" longname="柜面"/>
+        <enumeration id="DE" value="001" longname="二代支付"/>
+        <enumeration id="XE" value="002" longname="农信银"/>
+        <enumeration id="LC" value="003" longname="理财"/>
+        <enumeration id="GZ" value="004" longname="电子国债"/>
+        <enumeration id="CAIWU" value="005" longname="财务系统"/>
+        <enumeration id="TP" value="006" longname="tips"/>
+        <enumeration id="YL" value="007" longname="银联总中心"/>
+        <enumeration id="ATM" value="008" longname="本行ATM"/>
+        <enumeration id="WB" value="009" longname="境内外币支付"/>
+        <enumeration id="SW" value="010" longname="swift"/>
+        <enumeration id="HB" value="011" longname="河北银联"/>
+        <enumeration id="KJ" value="012" longname="会计系统"/>
+        <enumeration id="XGUAN" value="013" longname="信贷系统"/>
+        <enumeration id="DH" value="015" longname="电话银行"/>
+        <enumeration id="DX" value="016" longname="短信平台"/>
+        <enumeration id="WY" value="017" longname="网上银行"/>
+        <enumeration id="MM" value="018" longname="支付密码核验系统"/>
+        <enumeration id="JJ" value="019" longname="基金"/>
+        <enumeration id="XY" value="020" longname="校园卡"/>
+        <enumeration id="POS" value="022" longname="本行POS"/>
+        <enumeration id="QZ" value="023" longname="大前置"/>
+        <enumeration id="GJ" value="024" longname="国际结算"/>
+        <enumeration id="YY" value="025" longname="验印系统"/>
+        <enumeration id="YLQZ" value="026" longname="银联前置"/>
+        <enumeration id="ZJYW" value="027" longname="中间业务"/>
+        <enumeration id="PJXT" value="028" longname="票据系统"/>
+        <enumeration id="SFHC" value="029" longname="身份核查"/>
+        <enumeration id="SJYH" value="030" longname="手机银行"/>
+        <enumeration id="WXYH" value="031" longname="微信银行"/>
+        <enumeration id="JZSQ" value="032" longname="集中授权"/>
+        <enumeration id="HEXIN" value="800" longname="核心系统"/>
+        <enumeration id="JYPL" value="990" longname="交易批量"/>
+        <enumeration id="KJPL" value="992" longname="会计批量"/>
+        <enumeration id="ZONGZH" value="997" longname="总账"/>
+        <enumeration id="FGM" value="998" longname="非柜面渠道"/>
+        <enumeration id="QB" value="999" longname="全部"/>
+    </restrictionType>
+    <restrictionType id="E_GUIYSHUX" longname="柜员属性" base="KBaseType.U_LEIXIN01" tags="none">
+        <enumeration id="GM" value="0" longname="柜面柜员"/>
+        <enumeration id="ATM" value="1" longname="ATM虚拟柜员"/>
+        <enumeration id="JKATM" value="2" longname="金卡ATM虚拟柜员"/>
+        <enumeration id="POS" value="3" longname="POS虚拟柜员"/>
+        <enumeration id="JKPOA" value="4" longname="金卡POS虚拟柜员"/>
+        <enumeration id="DH" value="5" longname="电话银行虚拟柜员"/>
+        <enumeration id="WY" value="6" longname="网银虚拟柜员"/>
+        <enumeration id="ZJYW" value="7" longname="中间业务虚拟柜员"/>
+        <enumeration id="QT" value="9" longname="其它虚拟柜员"/>
+        <enumeration id="PCL" value="a" longname="批处理柜员"/>
+        <enumeration id="XE" value="b" longname="小额虚拟柜员"/>
+        <enumeration id="DE" value="c" longname="大额来账记账柜员"/>
+        <enumeration id="LJ" value="d" longname="联机批量柜员"/>
+    </restrictionType>
+    <restrictionType id="E_JIAOYILX" longname="交易类型" base="KBaseType.U_LEIXIN01" tags="AP">
+        <enumeration id="CXJY" value="0" longname="查询类交易"/>
+        <enumeration id="JRJY" value="1" longname="金融类交易"/>
+        <enumeration id="WHJY" value="2" longname="维护类交易"/>
+    </restrictionType>
+    <restrictionType id="E_WENJPLZT" longname="文件批量状态" base="KBaseType.U_LEIXIN01" tags="none">
+        <enumeration id="onprocess" value="0" longname="排队中"/>
+        <enumeration id="processing" value="0" longname="正在执行"/>
+        <enumeration id="failure" value="0" longname="失败"/>
+        <enumeration id="success" value="0" longname="成功"/>
+    </restrictionType>
+    <restrictionType id="E_LIUSZCZT" longname="流水注册状态" base="KBaseType.U_LEIXIN10">
+        <enumeration id="using" value="using" longname="在使用"/>
+        <enumeration id="hang" value="hang" longname="挂起"/>
+        <description><![CDATA[流水注册状态]]></description>
+    </restrictionType>
+    <restrictionType id="E_BATCHTRANRUNMODE" longname="批量交易运行模式" base="string" maxLength="16">
+        <enumeration id="two_process" value="1" longname="二次处理方式"/>
+        <enumeration id="default_" value="0" longname="缺省模式"/>
+    </restrictionType>
+    <restrictionType id="E_RESET_MODE" longname="流水复位类型" base="fixString">
+        <enumeration id="None" value="N" longname="不复位"/>
+        <enumeration id="Daily" value="D" longname="按日复位"/>
+        <enumeration id="Monthly" value="M" longname="按月复位"/>
+        <enumeration id="Yearly" value="Y" longname="按年复位"/>
+    </restrictionType>
+</schema>

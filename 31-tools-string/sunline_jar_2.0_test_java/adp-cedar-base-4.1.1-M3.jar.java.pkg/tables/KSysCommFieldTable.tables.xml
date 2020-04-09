@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="KSysCommFieldTable" package="cn.sunline.adp.cedar.base.tables" longname="系统公共字段定义表" classgen="normal" xsi:noNamespaceSchemaLocation="ltts-model.xsd">
+    <table id="tsp_comm_filed" name="tsp_comm_filed" longname="系统公共字段" tableType="ORDINARY" category="sys" virtual="false" changelog="false" abstract="true">
+        <fields>
+            <field id="system_code" longname="系统标识号" type="KBaseType.U_LEIXIN10" ref="KsDict.CommDict.system_code" primarykey="true" final="true" default="''" nullable="false" identity="false" allowSubType="true"/>
+            <field id="corporate_code" longname="法人代码" type="KBaseType.U_FARENDMA" ref="KsDict.CommDict.corporate_code" primarykey="true" final="true" default="''" nullable="false" desc="法人代码" identity="false" allowSubType="true"/>
+        </fields>
+        <ddls/>
+        <odbindexes/>
+        <indexes/>
+    </table>
+    <table id="tsp_comm_filed_system" name="tsp_comm_filed_system" longname="系统公共字段无法人表" tableType="ORDINARY" category="sys" virtual="false" changelog="false" abstract="true">
+        <fields>
+            <field id="system_code" longname="系统标识号" type="KBaseType.U_LEIXIN10" ref="KsDict.CommDict.system_code" primarykey="true" final="true" default="''" nullable="false" identity="false" allowSubType="true"/>
+        </fields>
+        <ddls/>
+        <odbindexes/>
+        <indexes/>
+    </table>
+</schema>

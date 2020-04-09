@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<errorConf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="BusiSDKErrorDef" longname="业务sdk错误码定义" package="cn.sunline.adp.cedar.busi.sdk.errors" xsi:noNamespaceSchemaLocation="ltts-model.xsd">
+    <errors id="SP_BS" longname="业务sdk">
+        <error id="E001" type="error" message="表[${tableName}]未定义">
+            <parameter id="tableName" type="string" longname="表名称"/>
+        </error>
+        <error id="E002" type="error" message="读取文件：${fileName} 出错!">
+            <parameter id="fileName" type="string" longname="文件名称"/>
+        </error>
+        <error id="E003" type="error" message="获取报表处理器[${repProcessor}]失败">
+            <parameter id="repProcessor" type="string" longname="报表处理器"/>
+        </error>
+        <error id="E004" type="error" message="填充报表[${reportId}]数据失败！${errMsg}">
+            <parameter id="reportId" type="string" longname="报表id"/>
+            <parameter id="errMsg" type="string" longname="错误信息"/>
+        </error>
+        <error id="E005" type="error" message="报表[${reportId}]渲染[${filePath}]失败!">
+            <parameter id="reportId" type="string" longname="报表"/>
+            <parameter id="filePath" type="string" longname="文件路径"/>
+        </error>
+        <error id="E006" type="error" message="报表[${reportId}]内容写入文件[${filePath}]失败!">
+            <parameter id="reportId" type="string" longname="报表id"/>
+            <parameter id="filePath" type="string" longname="文件路径"/>
+        </error>
+        <error id="E007" type="error" message="占不支持远程方式调用"/>
+        <error id="E008" type="error" message="调用交易服务失败，交易码不能为空"/>
+        <error id="E009" type="error" message="调用交易服务[${prcscd}]失败，交易输入数据不能为空">
+            <parameter id="prcscd" type="string" longname="交易码"/>
+        </error>
+        <error id="E010" type="error" message="系统错误：交易扩展点服务未启动，无法获取扩展点配置信息！"/>
+        <error id="E011" type="error" message="参数表[${tableName}]未找到对应的配置信息!">
+            <parameter id="tableName" type="string" longname="表名称"/>
+        </error>
+        <error id="E012" type="error" message="获取参数处理器类路径失败"/>
+        <error id="E013" type="error" message="'${className}' must implement interface: '${impName}'">
+            <parameter id="className" type="string" longname="类名称"/>
+            <parameter id="impName" type="string" longname="接口名称"/>
+        </error>
+        <error id="E014" type="error" message="MQ消息发送失败"/>
+        <error id="E015" type="error" message="连接失败"/>
+        <error id="E016" type="error" message="报文头长度未配置"/>
+        <error id="E017" type="error" message="返回报文长度不正确"/>
+        <error id="E018" type="error" message="Tuxedo服务调用失败"/>
+        <error id="E019" type="error" message="Exceed to max message size:${expMsgLen} -&gt; ${curMsgLen}">
+            <parameter id="expMsgLen" type="int" longname="预期长度"/>
+            <parameter id="curMsgLen" type="int" longname="当前长度"/>
+        </error>
+        <error id="E020" type="error" message="udp发送超时"/>
+        <error id="E021" type="error" message="udp发送失败"/>
+        <error id="E022" type="error" message="udp接收超时"/>
+        <error id="E023" type="error" message="udp接收失败"/>
+        <error id="E024" type="error" message="发送失败"/>
+        <error id="E025" type="error" message="发送成功但接收失败, 请检查交易是否成功？"/>
+        <error id="E026" type="error" message="发送成功但接收失败, 对方已关闭连接, 请检查交易是否成功？"/>
+        <error id="E027" type="error" message="Received message is null."/>
+        <error id="E028" type="error" message="获取抽象组件ID为[${pkgAbstId}]对应的组件实例失败!">
+            <parameter id="pkgAbstId" type="string"/>
+        </error>
+        <error id="E029" type="error" message="组包失败"/>
+        <error id="E030" type="error" message="文件下载失败"/>
+        <error id="E031" type="error" message="文件上传失败"/>
+        <error id="E032" type="error" message="未找到报表[${reportid}][${longname}]对应的报表数据处理器[${className}]">
+            <parameter id="reportid" type="string" longname="报文id"/>
+            <parameter id="longname" type="string" longname="报文名"/>
+            <parameter id="className" type="string" longname="处理器类名"/>
+        </error>
+        <error id="E033" type="error" message="报表ID为空，请检查报文中sys区域中reportId字段不为空！"/>
+        <error id="E034" type="error" message="获取报表[${reportId}]定义文件失败">
+            <parameter id="reportId" type="string" longname="报表id"/>
+        </error>
+        <error id="E035" type="error" message="加载报表模板失败！报表[${reportId}]对应的模板[${Jaspertemplate}]未找到！">
+            <parameter id="reportId" type="string" longname="报表id"/>
+            <parameter id="Jaspertemplate" type="string" longname="解析模板"/>
+        </error>
+        <error id="E036" type="error" message="编译报表模板[${reportId}.jrxml]失败！请检查模板中控件值是否正确！">
+            <parameter id="reportId" type="string" longname="报表id"/>
+        </error>
+        <error id="E037" type="error" message="数据源[${sourceId}]不存在,请检查数据源配置文件">
+            <parameter id="sourceId" type="string" longname="数据源id"/>
+        </error>
+    </errors>
+</errorConf>

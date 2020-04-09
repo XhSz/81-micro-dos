@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<sqls xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="tran" longname="调用v5交易" package="cn.sunline.adp.cedar.busi.sdk.namedsql" xsi:noNamespaceSchemaLocation="ltts-model.xsd">
+    <procedure method="normal" id="callV5Trans" implType="jdbc" longname="调用v5交易">
+        <sql><![CDATA[ call interface_main(#inData#,#outData#,#result#,#debug#) ]]></sql>
+        <parameterMap class="java.util.Map">
+            <parameter property="inData" jdbcType="VARCHAR" javaType="string" mode="in" longname="请求报文" parameterType="condition"/>
+            <parameter property="outData" jdbcType="VARCHAR" javaType="string" mode="out" longname="响应报文" parameterType="condition"/>
+            <parameter property="result" jdbcType="CURSOR" javaType="map" mode="out" longname="输出结果集游标" parameterType="condition"/>
+            <parameter property="debug" jdbcType="INTEGER" javaType="int" mode="in" longname="调试标志" parameterType="condition"/>
+        </parameterMap>
+    </procedure>
+</sqls>

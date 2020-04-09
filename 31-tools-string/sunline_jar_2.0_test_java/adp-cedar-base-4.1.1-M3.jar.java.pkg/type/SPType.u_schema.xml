@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="SPType" package="cn.sunline.adp.cedar.base.type" longname="基础服务类型" classgen="normal" xsi:noNamespaceSchemaLocation="ltts-model.xsd">
+    <restrictionType id="U_LEIXIN01" longname="一位字符类型" base="string" maxLength="1"/>
+    <restrictionType id="U_LEIXIN02" longname="二位字符类型" base="string" maxLength="2"/>
+    <restrictionType id="U_LEIXIN03" longname="三位字符类型" base="string" maxLength="3"/>
+    <restrictionType id="U_LEIXIN04" longname="四位字符类型" base="string" maxLength="4"/>
+    <restrictionType id="U_LEIXIN06" longname="6位字符类型" base="string" maxLength="6"/>
+    <restrictionType id="U_LEIXIN08" longname="8位字符类型" base="string" maxLength="8"/>
+    <restrictionType id="U_LEIXIN10" longname="10位类型" base="string" maxLength="10"/>
+    <restrictionType id="U_LEIXIN15" longname="15位类型" base="string" maxLength="15"/>
+    <restrictionType id="U_LEIXIN20" longname="20位类型" base="string" maxLength="20"/>
+    <restrictionType id="U_LEIXIN25" longname="25位类型" base="string" maxLength="25"/>
+    <restrictionType id="U_LEIXIN32" longname="32位类型" base="string" maxLength="32"/>
+    <restrictionType id="U_LEIXIN50" longname="50位类型" base="string" maxLength="50"/>
+    <restrictionType id="U_LEIXIN64" longname="64位类型" base="string" maxLength="64"/>
+    <restrictionType id="U_LEIXIN80" longname="80位类型" base="string" maxLength="80"/>
+    <restrictionType id="U_LEIXIN100" longname="100位类型" base="string" maxLength="100"/>
+    <restrictionType id="U_LEIXIN200" longname="200位类型" base="string" maxLength="200"/>
+    <restrictionType id="U_LEIXIN400" longname="400位类型" base="string" maxLength="400"/>
+    <restrictionType id="U_LEIXIN1000" longname="1000位类型" base="string" maxLength="1000"/>
+    <restrictionType id="U_LEIXIN2000" longname="2000位类型" base="string" maxLength="2000"/>
+    <restrictionType id="U_LEIXIN4000" longname="4000位类型" base="string" maxLength="4000"/>
+    <restrictionType id="U_LEIXIN4001" longname="4001位类型" base="string" maxLength="4001"/>
+    <restrictionType id="U_TIMESINT" longname="次数" base="int" maxLength="3"/>
+    <restrictionType id="U_NORMALINT" longname="通用数字类型" base="int" maxLength="8"/>
+    <restrictionType id="U_NORMALLONG" longname="通用long类型" base="long" maxLength="19"/>
+    <restrictionType id="U_TIMESTAMP" longname="时间戳" base="timestamp"/>
+    <restrictionType id="U_NORMALTEXT" longname="text通用类型" base="string" maxLength="50000"/>
+</schema>

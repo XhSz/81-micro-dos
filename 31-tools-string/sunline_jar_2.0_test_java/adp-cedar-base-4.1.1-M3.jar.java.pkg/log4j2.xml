@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+<!-- 单元测试专用 -->
+<Appenders>
+	 <!-- 控制台 -->
+	<Console name="console"> 
+	  <PatternLayout>
+        		<Pattern>[%m]%n</Pattern>
+      </PatternLayout>
+	</Console>
+</Appenders>	
+	<Loggers>
+		<Root level="debug" additivity="false">
+			<AppenderRef ref="console"/>
+		</Root>
+	</Loggers>
+</Configuration>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="CompTypes" package="cn.sunline.adp.cedar.busi.sdk.type" longname="组件使用到的复杂类型" classgen="normal" xsi:noNamespaceSchemaLocation="ltts-model.xsd">
+    <complexType id="FileTransferResult" longname="文件传输结果类型" dict="false" abstract="false" introduct="false" tags="0">
+        <element id="code" longname="返回码" type="int" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="message" longname="返回信息" type="string" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="localFullPath" longname="本地全路径" type="string" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="properties" longname="属性" type="map" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <description><![CDATA[文件传输结果类型]]></description>
+    </complexType>
+</schema>

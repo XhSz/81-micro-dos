@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<componentSchema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="IcCompImpl" package="cn.sunline.adp.cedar.busi.sdk.component" longname="IC卡安全校验实现组件" xsi:noNamespaceSchemaLocation="ltts-model.xsd">
+    <componentImplementation id="DefaultIcSecurity" longname="公司卡部IC安全组件缺省实现" type="BaseComp.IcSecurity">
+        <implementation.java class="cn.sunline.adp.cedar.busi.sdk.service.ic.DefaultIcSecurityImpl"/>
+        <properties>
+            <property name="ip" type="string" longname="密钥服务器地址"/>
+            <property name="port" type="int" longname="密钥服务器端口"/>
+        </properties>
+    </componentImplementation>
+</componentSchema>

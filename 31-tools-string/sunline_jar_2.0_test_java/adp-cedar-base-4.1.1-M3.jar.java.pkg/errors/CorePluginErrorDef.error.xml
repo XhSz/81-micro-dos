@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<errorConf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="CorePluginErrorDef" longname="核心插件错误码定义" package="cn.sunline.adp.cedar.base.errors" xsi:noNamespaceSchemaLocation="ltts-model.xsd">
+    <errors id="SP_CP" longname="核心插件错误码定义">
+        <description><![CDATA[核心插件错误码定义]]></description>
+        <error id="E001" type="error" message="参数错误,count必须大于0, pageSize=${count}">
+            <parameter id="count" type="int" longname="页大小"/>
+        </error>
+        <error id="E022" type="error" message="创建默认的流水定义失败"/>
+        <error id="E023" type="error" message="更新流水[${sequenceId}]当前值失败。 更新到的记录数为0">
+            <parameter id="sequenceId" type="string" longname="sequenceId参数"/>
+        </error>
+        <error id="E024" type="error" message="末找到配置，日志配置管理器将不会启动"/>
+        <error id="E025" type="error" message="初始化日志配置管理器失败!"/>
+        <error id="E026" type="error" message="满足查询条件的记录不止一条:${name}">
+            <parameter id="name" type="string"/>
+        </error>
+        <error id="E027" type="error" message="解析错误消息[${errorMessage}]参数错误, cause by: ${errmessage}">
+            <parameter id="errorMessage" type="string"/>
+            <parameter id="errmessage" type="string"/>
+        </error>
+        <error id="E028" type="error" message="ksys_fwbdxx[${bindid}]配置的服务类型[${Fwlxid}]不存在！">
+            <parameter id="bindid" type="string" longname="绑定id"/>
+            <parameter id="Fwlxid" type="string" longname="服务类型id"/>
+        </error>
+        <error id="E029" type="error" message="ksys_fwbdxx[${bindid}]配置的服务类型实现[${Fwlxsxid}]不存在！">
+            <parameter id="bindid" type="string" longname="绑定id"/>
+            <parameter id="Fwlxsxid" type="string" longname="服务类型实现id"/>
+        </error>
+        <error id="E030" type="error" message="ksys_fwbdxx[${bindid}]配置的执行器[${Fwlxsxid}]不存在！">
+            <parameter id="bindid" type="string" longname="绑定id"/>
+            <parameter id="Fwlxsxid" type="string" longname="服务类型实现id"/>
+        </error>
+        <error id="E031" type="error" message="创建MBean连接失败！"/>
+        <error id="E032" type="error" message="启动JMX消息接收器[${serverIp}:${port}]失败">
+            <parameter id="serverIp" type="string" longname="服务ip"/>
+            <parameter id="port" type="int" longname="端口"/>
+        </error>
+        <error id="E033" type="error" message="服务[${svcFullId}]数据接口JavaBean类${svcClazz}未实现">
+            <parameter id="svcFullId" type="string" longname="服务FullId"/>
+            <parameter id="svcClazz" type="string" longname="服务class类名"/>
+        </error>
+        <error id="E034" type="error" message="服务[${svcFullId}]所属服务类型[${svcOwnerId}]不存在">
+            <parameter id="svcFullId" type="string" longname="服务FullId"/>
+            <parameter id="svcOwnerId" type="string" longname="服务OwnerId"/>
+        </error>
+        <error id="E035" type="error" message="服务[${svcFullId}]对应实现类未定义">
+            <parameter id="svcFullId" type="string" longname="服务FullId"/>
+        </error>
+        <error id="E036" type="error" message="服务类型执行器[${simpleName}]初始化服务参数不能为空">
+            <parameter id="simpleName" type="string" longname="服务类型执行器"/>
+        </error>
+        <error id="E037" type="error" message="服务类型执行器[${simpleName}]初始化绑定参数不能为空">
+            <parameter id="simpleName" type="string" longname="服务类型执行器"/>
+        </error>
+        <error id="E038" type="error" message="服务类型执行器与服务绑定必须是一对一关系"/>
+        <error id="E039" type="error" message="服务[${svcFullId}]没有对应的实现">
+            <parameter id="svcFullId" type="string" longname="服务FullId"/>
+        </error>
+        <error id="E040" type="error" message="服务[${svcFullId}]对应的实现有多个">
+            <parameter id="svcFullId" type="string" longname="服务FullId"/>
+        </error>
+        <error id="E041" type="error" message="绑定[${bindid}]中的服务类型[${servicetypeid}]与服务[${svcid}]所属的服务类型[${svcOwnerId}]不一致">
+            <parameter id="bindid" type="string" longname="绑定id"/>
+            <parameter id="servicetypeid" type="string" longname="服务类型id"/>
+            <parameter id="svcid" type="string" longname="服务id"/>
+            <parameter id="svcOwnerId" type="string" longname="服务Ownerid"/>
+        </error>
+        <error id="E042" type="error" message="服务类型执行器[${simpleName}]的服务控制器[${BizServiceController}]不能为空">
+            <parameter id="simpleName" type="string" longname="simpleName"/>
+            <parameter id="BizServiceController" type="string" longname="业务服务控制器"/>
+        </error>
+        <error id="E043" type="error" message="服务类型实现对象类型不一致[${CanonicalName}]">
+            <parameter id="CanonicalName" type="string" longname="规范名称"/>
+        </error>
+        <error id="E044" type="error" message="服务类型实现类[${svcImplClassStr}]不存在">
+            <parameter id="svcImplClassStr" type="string" longname="服务类型实现类"/>
+        </error>
+        <error id="E045" type="error" message="执行器扩展[${executorId}]不存在！">
+            <parameter id="executorId" type="string" longname="执行器id"/>
+        </error>
+        <error id="E046" type="error" message="本地执行器扩展[${LocalServiceTypeExecutor}]不存在！">
+            <parameter id="LocalServiceTypeExecutor" type="string" longname="本地执行器拓展"/>
+        </error>
+        <error id="E047" type="error" message="服务类型实现[${implId}]，对应服务类型[${ServiceTypeimpl}]不存在">
+            <parameter id="implId" type="string" longname="服务实现id"/>
+            <parameter id="ServiceTypeimpl" type="string" longname="服务类型实现"/>
+        </error>
+        <error id="E048" type="error" message="服务对象不能为空"/>
+        <error id="E049" type="error" message="接口[${svcTypeClass}]无对应的服务类型定义">
+            <parameter id="svcTypeClass" type="string" longname="服务类型接口类"/>
+        </error>
+        <error id="E050" type="error" message="服务[${svcFullId}]输入参数个数与接口定义不一致">
+            <parameter id="svcFullId" type="string" longname="服务fullid"/>
+        </error>
+        <error id="E051" type="error" message="获取服务返回类型失败"/>
+        <error id="E052" type="error" message="输出接口作为参数且配置不生成类时，元素必须为复合类型!"/>
+        <error id="E053" type="error" message="未在settings文件中配置系统参数,无法获取获取对应的系统参数!"/>
+        <error id="E054" type="error" message="NamedServiceDiscovery实现类[${callback}]无法加载，请检查类路径或访问权限是否配置正确。">
+            <parameter id="callback" type="string" longname="回调类"/>
+        </error>
+        <error id="E055" type="error" message="类[${tableName}]不是表模型对应的JavaBean">
+            <parameter id="tableName" type="string" longname="类名"/>
+        </error>
+        <error id="E056" type="error" message="获取类[${tableName}]的BeanInfo失败，不支持的类型">
+            <parameter id="tableName" type="string" longname="类名"/>
+        </error>
+        <error id="E057" type="error" message="插件[{}]的activator必须是[{}]的子类"/>
+    </errors>
+</errorConf>

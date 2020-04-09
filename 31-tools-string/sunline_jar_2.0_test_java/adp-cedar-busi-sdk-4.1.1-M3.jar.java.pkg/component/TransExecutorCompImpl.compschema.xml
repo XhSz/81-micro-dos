@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<componentSchema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="TransExecutorCompImpl" package="cn.sunline.adp.cedar.busi.sdk.component" longname="交易调用组件实现定义" desc="定义安全、指纹、通讯、组包、文件传输等系统基础组件" xsi:noNamespaceSchemaLocation="ltts-model.xsd">
+    <componentImplementation id="TransExecutorLocal" longname="本地方法调用版本" type="BaseComp.TransExecutor">
+        <implementation.java class="cn.sunline.ltts.service.executor.TransExecutorLocalImpl"/>
+        <properties/>
+    </componentImplementation>
+    <componentImplementation id="TransExecutorRemote" longname="远程调用版本" type="BaseComp.TransExecutor">
+        <implementation.java class="cn.sunline.adp.cedar.busi.sdk.service.executor.TransExecutorRemoteImpl"/>
+        <properties>
+            <property name="appcAbstId" type="string" longname="通讯抽象组件ID" desc="通讯抽象组件ID,当该属性为空时，表示调用本地交易"/>
+            <property name="pkgAbstId" type="string" default="BaseComp.PackLtts" longname="打包抽象组件的组件ID"/>
+        </properties>
+    </componentImplementation>
+</componentSchema>

@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<plugin id="cache" displayName="缓存插件" activator="cn.sunline.adp.cedar.base.plugin.CachePlugin" order="9" enable="true" failOnInitError="true" xsi:noNamespaceSchemaLocation="ltts-model.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <extension-points/>
+    <extensions/>
+    <components/>
+</plugin>

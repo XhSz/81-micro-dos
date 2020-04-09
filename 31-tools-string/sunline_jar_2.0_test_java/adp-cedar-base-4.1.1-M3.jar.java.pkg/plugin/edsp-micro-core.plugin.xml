@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<plugin id="edsp-micro-core" displayName="SunEDSP Micro Core Plugin" activator="cn.sunline.adp.cedar.base.boot.plugin.util.EdspCorePlugin" order="0" enable="true" failOnInitError="true" xsi:noNamespaceSchemaLocation="ltts-model.xsd" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <extension-points>
+        <point id="process.boot" name="启动前后处理" pointType="additional">
+            <clazz>cn.sunline.adp.cedar.base.boot.spi.BootProcessPointExtension</clazz>
+        </point>
+    </extension-points>
+    <extensions/>
+    <components/>
+</plugin>

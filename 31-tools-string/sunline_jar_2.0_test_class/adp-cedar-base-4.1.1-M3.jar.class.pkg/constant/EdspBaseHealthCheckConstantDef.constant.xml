@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<constantConf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="EdspBaseHealthCheckConstantDef" longname="集成组件常量定义文件" package="cn.sunline.adp.cedar.base.constant" xsi:noNamespaceSchemaLocation="ltts-model.xsd">
+    <constants id="HealthCheckConstant" longname="健康检查器常量">
+        <description><![CDATA[健康检查器常量]]></description>
+        <constant id="C001" message="检测到失效通道 [Thread:%s]-[Name:%s]"/>
+        <constant id="C002" message="线程处理超时：%s\r\n%s"/>
+        <constant id="C003" message="准备取消超时线程正在执行的数据库操作."/>
+        <constant id="C004" message="取消超时线程正在执行数据库操作失败"/>
+        <constant id="C005" message="超时线程有[%s]个关键资源需要关闭. "/>
+        <constant id="C006" message="关闭超时线程关键资源[%s]：%s"/>
+        <constant id="C007" message="处理线程超时，但关闭关键资源时出错：%s"/>
+        <constant id="C008" message="准备关闭超时线程的Socket连接：%s "/>
+        <constant id="C009" message="处理线程超时，但关闭对应连接时出错：%s"/>
+        <constant id="C010" message="健康检查，服务超时关闭资源失败"/>
+        <constant id="C011" message="健康检查执行错误"/>
+    </constants>
+</constantConf>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<constantConf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="InternationalConstantDef" longname="异常信息常量定义" package="cn.sunline.adp.cedar.base.constant" xsi:noNamespaceSchemaLocation="ltts-model.xsd">
+    <constants id="SPC_IN" longname="国际化常量定义">
+        <description><![CDATA[国际化常量定义]]></description>
+        <constant id="C001" message="登记[${tableName}]失败！其他错误！"/>
+        <constant id="C002" message="删除[${tableName}]失败！其他错误！"/>
+        <constant id="C003" message="更新[${tableName}]失败！其他错误！"/>
+        <constant id="C004" message="查询[${tableName}]失败！其他错误！"/>
+        <constant id="C005" message="登记[${tableName}]失败，锁等待超时"/>
+        <constant id="C006" message="删除[${tableName}]失败，锁等待超时"/>
+        <constant id="C007" message="更新[${tableName}]失败，锁等待超时"/>
+        <constant id="C008" message="查询[${tableName}]失败，锁等待超时"/>
+        <constant id="C009" message="更新[${tableName}]失败，无对应记录"/>
+        <constant id="C010" message="查询[${tableName}]失败，无对应记录"/>
+        <constant id="C011" message="登记[${tableName}]失败，记录重复"/>
+        <constant id="C012" message="[${tableName}]失败，记录重复"/>
+        <constant id="C013" message="[${tableName}]失败，记录多于一条"/>
+        <constant id="C014" message="[${tableName}]失败，无对应记录"/>
+        <constant id="C015" message="[${tableName}]失败，锁等待超时"/>
+        <constant id="C016" message="[${tableName}]失败，其他错误"/>
+        <constant id="C017" message="删除[${tableName}]失败，无对应记录"/>
+        <constant id="C018" message="查询[${tableName}]失败，记录多于一条"/>
+        <constant id="C019" message="更新[${tableName}]失败，记录多于一条"/>
+        <constant id="C020" message="删除[${tableName}]失败，记录多于一条"/>
+    </constants>
+</constantConf>

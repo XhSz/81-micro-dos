@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<constantConf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="ConfigConst" longname="常量定义" package="cn.sunline.adp.cedar.base.constant" xsi:noNamespaceSchemaLocation="ltts-model.xsd">
+    <constants id="BConst" longname="ltts-config日志国际化">
+        <description><![CDATA[ltts-config日志国际化]]></description>
+        <constant id="DefaultConfigManagerFactory01" message="加载系统配置文件失败:%s"/>
+        <constant id="DefaultConfigManagerFactory02" message="找到多个系统启动配置文件[%s]"/>
+        <constant id="DefaultDBPassSecurityImpl01" message="加密失败"/>
+        <constant id="DefaultDBPassSecurityImpl02" message="解密失败"/>
+        <constant id="DefaultDBPassSecurityManager01" message="数据库用户密码安全组件实现类%s加载失败, 使用默认实现。"/>
+        <constant id="DefaultConfigManager01" message="加载配置元数据定义文件:%s"/>
+        <constant id="DefaultConfigManager02" message="在配置类[%s]末定义主键，无法唯一确定主配置：%s"/>
+        <constant id="DefaultConfigManager03" message="配置文件加载完成[%s]"/>
+        <constant id="DefaultConfigManager04" message="加载文件%s:%s"/>
+        <constant id="DefaultConfigManager05" message="文件:'%s'不存在."/>
+        <constant id="DefaultConfigManager06" message="加载辅配置文件[%s]出错："/>
+        <constant id="DefaultConfigManager07" message="server配置文件对应的模型配置重复[%s]"/>
+        <constant id="DefaultConfigManager08" message="末定义索引：%s"/>
+        <constant id="DefaultConfigManager09" message="从DB中加载辅配置出错:%s"/>
+        <constant id="DefaultConfigManager10" message="无法取到唯一对象[%s]:%s"/>
+        <constant id="DefaultConfigManager11" message="类%s上末定义索引@Index"/>
+        <constant id="DefaultConfigManager12" message="找不到对应的配置项:'%s'.请确认类%s上定义索引的interruptReference是否为InterruptType.None"/>
+        <constant id="DefaultConfigManager13" message="找不到对应的配置项:'%s'."/>
+        <constant id="OdbConfigManager01" message="无法取到唯一对象[%s]:%s"/>
+        <constant id="OdbConfigManager02" message="类%s上末定义索引@Index"/>
+        <constant id="OdbConfigManager03" message="找不到对应的配置项:'%s'."/>
+        <constant id="DataUtil01" message="没有找到对应的settingFile[%s]文件"/>
+        <constant id="DataUtil02" message="加载通用setting配置文件[%s]出错."/>
+        <constant id="DataUtil03" message="没有配置setttingFile"/>
+        <constant id="DataUtil04" message="settingFile文件有多个:[%s]"/>
+        <constant id="DataUtil05" message="无法将加密信息写入文件"/>
+        <constant id="Include01" message="[%s]未找到导入的xml文件"/>
+        <constant id="Include02" message="[%s]未找到导入的xml文件"/>
+        <constant id="Include03" message="找到多个导入文件[%s]"/>
+        <constant id="Var01" message="vars类型必须为Map类型[%s]"/>
+        <constant id="Var02" message="未指定模板变量,必须在setting文件中指定变量:"/>
+    </constants>
+</constantConf>

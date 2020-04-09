@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<constantConf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="BaseConst" longname="常量定义" package="cn.sunline.adp.cedar.base.constant" xsi:noNamespaceSchemaLocation="ltts-model.xsd">
+    <constants id="BConst" longname="ltts-base日志国际化">
+        <description><![CDATA[ltts-base日志国际化]]></description>
+        <constant id="ConfigReloader01" message="当前正在执行配置更新，无法获取到最新的配置"/>
+        <constant id="ConfigReloaderFactory01" message="注册新的在线配置更新器:type=%s"/>
+        <constant id="ConfigReloaderFactory02" message="当前正在执行配置的更新，当前总版本[%s] 上一版本[%s],内存中未找到总版本号[%s]对应的配置！"/>
+        <constant id="OdbEntityDao01" message="该方法每次只能维护一条记录"/>
+        <constant id="EntityDaoProcessCallBackSupport01" message="beforeDaoProcess 调用默认空实现"/>
+        <constant id="EntityDaoProcessCallBackSupport02" message="checkParm 调用默认空实现"/>
+        <constant id="EntityDaoProcessCallBackSupport03" message="parameterProcess 调用默认空实现"/>
+        <constant id="EntityDaoProcessCallBackSupport04" message="resultProcess 调用默认空实现"/>
+        <constant id="EntityDaoProcessCallBackSupport05" message="registerChangeLog 调用默认空实现"/>
+        <constant id="EntityDaoProcessCallBackSupport06" message="registerChangeLogs 调用默认空实现"/>
+        <constant id="MVELNullPropertyHandler01" message="子表达式求值失败，无法决定是否应该创建List:%s, 完整表达式：%s"/>
+        <constant id="NamedServiceDiscoveryManager01" message="名称为[%s]的Discovery实例未注册，请先注册再使用！"/>
+        <constant id="CustomExpressionAccessor01" message="不可能处理到其它的类：%s"/>
+        <constant id="ASTChainNodeVisitor01" message="定制表达式中不支持该语法：%s"/>
+        <constant id="ASTMethodNodeVisitor01" message="在类型%s中找不到方法:%s"/>
+        <constant id="ASTPropertyNodeVisitor01" message="暂时不支持动态取值：%s"/>
+        <constant id="ASTVarRefNodeVisitor01" message="在上下文中类型%s中找不到属性:%s"/>
+        <constant id="CompilerUtil01" message="在类型%s中找不到属性:%s"/>
+        <constant id="CompilerUtil02" message="暂末实现：%s message=%s"/>
+        <constant id="SimpleFTPClient01" message="FTP关闭失败"/>
+        <constant id="SimpleFTPClient02" message="FTP服务器[%s], 用户[%s], 远程文件[%s], 本地文件[%s] 下载成功,耗时 %s ms。"/>
+        <constant id="SimpleFTPClient03" message="文件输出流关闭失败"/>
+        <constant id="SimpleFTPClient04" message="FTP服务器[%s], 用户[%s], 远程文件[%s], 本地文件[%s] 上传成功, 耗时 %s ms。"/>
+        <constant id="SimpleFTPClient05" message="文件输入流关闭失败"/>
+        <constant id="SimpleFTPClient06" message="转换[%s]失败"/>
+        <constant id="SimpleFTPClient07" message="登录FTP服务器失败：user=%s, cipher=%s"/>
+        <constant id="SimpleFTPClient08" message="改变FTP服务器工作目录失败：%s"/>
+        <constant id="SimpleFTPClient09" message="设置FTP文件传输类型失败：%s"/>
+        <constant id="SimpleFTPClient10" message="FTP连接错误"/>
+        <constant id="SimpleFTPClient11" message="文件[%s]下载失败,%s"/>
+        <constant id="SimpleFTPClient12" message="文件下载失败,本地文件[%s]不存在或无法操作.%s"/>
+        <constant id="SimpleFTPClient13" message="文件下载失败"/>
+        <constant id="SimpleFTPClient14" message="上传文件到FTP服务器失败:%s"/>
+        <constant id="SimpleFTPClient15" message="文件上传失败, 本地文件[%s]不存在或无法操作.%s"/>
+        <constant id="SimpleFTPClient16" message="上传文件到FTP服务器失败,%s"/>
+        <constant id="SimpleFTPClient17" message="删除远程文件%s失败"/>
+        <constant id="SimpleFTPClient18" message="远程目录%s创建失败"/>
+        <constant id="DefaultLogManager01" message="加载LogFactory失败"/>
+        <constant id="DefaultLogManager02" message="格式化日志内容失败，日志内容[%s],参数为[%s]"/>
+        <constant id="LogConfigManager01" message="未定义日志管理器，采用默认日志配置"/>
+        <constant id="LogConfigManager02" message="业务日志级别未定义，采用默认日志配置"/>
+        <constant id="LogConfigManager03" message="初始化业务日志自定义级别失败，采用默认日志级别。 cause by: 日志级别[%s]未定义"/>
+        <constant id="LogConfigManager04" message="日志级别[%s]没有定义"/>
+        <constant id="LogConfigManager05" message="%s中定义的属性[%s]来源[%s]不合法,来源只为path或context"/>
+        <constant id="Jdk14Factory01" message="加载Jdk14Factory配置失败"/>
+        <constant id="UDPClient01" message="udp连接失败"/>
+        <constant id="UDPClient02" message="UDP接收数据失败"/>
+        <constant id="UDPClient03" message="udp接收失败"/>
+        <constant id="UDPClient04" message="udp发送失败，发送内容字符集不合法"/>
+        <constant id="UDPClient05" message="udp发送失败"/>
+        <constant id="OdbFactory01" message="取不到ODB:%s"/>
+        <constant id="OdbFactory02" message="无法取到唯一对象[%s]:%s"/>
+        <constant id="OdbFactory03" message="重复创建OdbManager对象"/>
+        <constant id="OdbFactory04" message="类[%s]不是表模型对应的JavaBean"/>
+        <constant id="ArrayIndexKeyResolver01" message="主键索引不能为数组：%s"/>
+        <constant id="ComplexTypeIndexParser01" message="type不能为Map:%s"/>
+        <constant id="ComplexTypeIndexParser02" message="字段[%s]在类[%s]中未定义:%s"/>
+        <constant id="DefaultIndexParser01" message="类%s上声明的相同名称[%s]的Index有冲突"/>
+        <constant id="IndexDataUtil01" message="缓存索引[%s]重复 ,%s with %s, type=%s\r\n%s"/>
+        <constant id="IndexParserSupport01" message="末定义的索引[%s]：%s"/>
+        <constant id="IndexParserSupport02" message="字段[%s"/>
+        <constant id="IndexParserSupport03" message="方法[%s"/>
+        <constant id="IndexParserSupport04" message="]注解Index的顺序必须大于等于0:%s"/>
+        <constant id="IndexParserSupport05" message="类型应该是OrderedList：%s"/>
+        <constant id="IndexParserSupport06" message="只能调用add(order, e)方法！"/>
+        <constant id="LazyloadOdbManager01" message="根据索引类型 [%s]查找实体[%s]记录数超过1条"/>
+        <constant id="TxnOdbManager01" message="未知交易级缓存操作类型[%s]"/>
+        <constant id="TxnOdbManager02" message="odb索引[%s]对应的缓存类型不正确"/>
+        <constant id="JSONParser01" message="报文编码错误"/>
+        <constant id="JSONWrapper01" message="报文组包编码错误"/>
+        <constant id="XMLPkgParser01" message="报文编码错误"/>
+        <constant id="XMLPkgWrapper01" message="报文组包编码错误"/>
+        <constant id="TLXMLPkgParser01" message="报文编码错误"/>
+        <constant id="TLXMLPkgWrapper01" message="报文组包编码错误"/>
+        <constant id="GlobalServiceContext01" message="系统状态(SystemStatus):系统异常"/>
+        <constant id="GlobalServiceContext02" message="系统状态(SystemStatus):正在停止"/>
+        <constant id="GlobalServiceContext03" message="系统状态(SystemStatus):已经停止"/>
+        <constant id="GlobalServiceContext04" message="系统状态(SystemStatus):正在启动"/>
+        <constant id="GlobalServiceContext05" message="系统状态(SystemStatus):已在启动"/>
+        <constant id="GlobalServiceContext06" message="IDE运行模式"/>
+        <constant id="GlobalServiceContext07" message="IDE-Debug调试模式，事物自动回滚"/>
+        <constant id="CustomThreadFactory01" message="回滚出错！%s"/>
+        <constant id="CustomThreadFactory02" message="关闭数据库连接出错！%s"/>
+        <constant id="SCPFileTransport01" message="与主机%s:%s建立连接失败"/>
+        <constant id="LocalTmpTableCaches01" message="缓存Cacher[%s]没有初始化！"/>
+        <constant id="BeanUtil01" message="属性拷贝失败，目标属性的类型为list，则源[%s]的类型也不为List"/>
+        <constant id="BeanUtil02" message="属性拷贝失败，目标属性的类型不为list，则源[%s]的类型也必须不为List"/>
+        <constant id="ClassUtils01" message="获取类[%s]中的方法[%s]的参数错误：%s"/>
+        <constant id="CommUtil_01" message="类型[%s]不是Map类型不能转换"/>
+        <constant id="CommUtil_02" message="进行lpad的添加字符串不能为null且长度不能为0!"/>
+        <constant id="CommUtil_03" message="进行lpad的长度无效!"/>
+        <constant id="CommUtil_04" message="无效的编码值[%s]"/>
+        <constant id="CommUtil_05" message="进行Rpad的添加字符串不能为null且长度不能为0!"/>
+        <constant id="CommUtil_06" message="进行Rpad的长度无效!"/>
+        <constant id="CommUtil_07" message="like函数参数值无效!"/>
+        <constant id="CommUtil_08" message="like函数不支持中间匹配!"/>
+        <constant id="CommUtil_09" message="In函数参数值无效!"/>
+        <constant id="CommUtil_10" message="In函数参数类型必须相同!"/>
+        <constant id="CommUtil_11" message="Between函数参数值无效!"/>
+        <constant id="CommUtil_12" message="Between函数参数类型必须相同!"/>
+        <constant id="CommUtil_13" message="round精度不能为负数!"/>
+        <constant id="CommUtil_14" message="Floor参数不能为null!"/>
+        <constant id="CommUtil_15" message="Ceil参数不能为null!"/>
+        <constant id="ConvertUtil01" message="类型转换失败,value[%s]为枚举，且类型[%s]与目标类型[%s]不一致"/>
+        <constant id="ConvertUtil02" message="不合法的范围值：%s"/>
+        <constant id="ConvertUtil03" message="无法获取范型类型：%s"/>
+        <constant id="DBUtil01" message="格式非法:'%s'"/>
+        <constant id="DBUtil02" message="存储过程in或inout参数不支持游标类型"/>
+        <constant id="EnumUtils01" message="空的枚举类型：%s"/>
+        <constant id="EnumUtils02" message="无法转换：%s, value=%s"/>
+        <constant id="EnumUtils03" message="无法转换,'%s的类型%s'不是枚举类型"/>
+        <constant id="EnumUtils04" message="无法转换枚举'%s'为Map对象"/>
+        <constant id="ExcelUtil01" message="生成工作薄[%s]错误"/>
+        <constant id="ExcelUtil02" message="bean集合数与xls的工作薄数不相等！"/>
+        <constant id="ExcelUtil03" message="类型转换失败,value[%s]为枚举，且类型[%s]与目标类型[%s]不一致"/>
+        <constant id="ExcelUtil04" message="不合法的范围值：%s"/>
+        <constant id="ExcelUtil05" message="无法获取范型类型：%s"/>
+        <constant id="FileProcessor01" message="文件[%s]不存在!"/>
+        <constant id="FileProcessor02" message="%s不允许并发读写处理"/>
+        <constant id="FileUtil_01" message="写文件出错, cause by:%s"/>
+        <constant id="FileUtil_02" message="文件[%s]关闭失败！"/>
+        <constant id="FileUtil_03" message="文件操作出错"/>
+        <constant id="FileUtil_04" message="文件名不能为空"/>
+        <constant id="FileUtil_05" message="文件路径[%s]不合法"/>
+        <constant id="FileUtil_06" message="文件的目录为[%s], 文件名为[%s]"/>
+        <constant id="FileUtil_07" message="创建文件[%s]失败"/>
+        <constant id="FileUtil_08" message="源文件[%s]不存在"/>
+        <constant id="FileUtil_09" message="文件拷贝失败"/>
+        <constant id="FileUtil_10" message="关闭文件通道失败"/>
+        <constant id="JaxbUtil01" message="无法获取JAXB解析时的位置信息：%s"/>
+        <constant id="JsonUtil01" message="反序列化对象[%s]失败"/>
+        <constant id="JsonUtil02" message="序列化对象[%s]失败"/>
+        <constant id="JsonUtil03" message="序列化数组对象[%s]失败"/>
+        <constant id="JsonUtil04" message="序列化map[%s]失败"/>
+        <constant id="JsonUtil05" message="反序列化数组对象[%s]失败"/>
+        <constant id="MethodUtil01" message="找不到目标方法名[%s]所在的实现类:%s"/>
+        <constant id="MethodUtil02" message="在目标类[%s]中找不到方法名为[%s]的方法:'%s'."/>
+        <constant id="MethodUtil03" message="输出接口不能为空"/>
+        <constant id="MethodUtil04" message="输出接口配置了asParm=false的属性时,接口中的属性个数不能大于1"/>
+        <constant id="TimerUtil01" message="%s,处理结果：%s!! -- 执行时间： %s 毫秒"/>
+        <constant id="TimerUtil02" message="成功"/>
+        <constant id="TimerUtil03" message="失败"/>
+        <constant id="XmlUtil01" message="报文解析失败，报文格式不正确。报文为[%s]"/>
+        <constant id="XmlUtil02" message="不支持的数据类型"/>
+        <constant id="XmlUtil03" message="解析[%s]为[%s]的[%s]节点失败，未配置[%s]属性"/>
+        <constant id="XmlUtil04" message="解析[%s]为[%s]的[%s]节点失败，[%s]属性配置不正确"/>
+        <constant id="XmlUtil05" message="不支持的节点[%s]!"/>
+        <constant id="XmlUtil06" message="当前节点[%s]非预期，[%s]节点下只能配置[%s]"/>
+        <constant id="SimpleXATransactionUtil01" message="事务分支准备失败，可能是因为该事务分支并没有参与事务[%s][%s]"/>
+        <constant id="TLXmlUtil01" message="报文解析失败，报文格式不正确。报文为[%s]"/>
+        <constant id="TLXmlUtil02" message="不支持的数据类型"/>
+        <constant id="PluginConfManager01" message="插件[%s]已经禁止启动"/>
+        <constant id="PluginConfManager02" message="加载插件[%s]失败"/>
+        <constant id="PluginConfManager03" message="加载插件信息失败"/>
+        <constant id="PluginConfManager04" message="插件[%s]初始化失败，不在加载对应扩展[%s]"/>
+        <constant id="PluginConfManager05" message="插件[%s]初始化失败，不在加载对应扩展[%s]"/>
+        <constant id="PluginConfManager06" message="加载插件信息&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;"/>
+        <constant id="PluginConfManager07" message="加载插件[%s][%s][%s]"/>
+        <constant id="PluginConfManager08" message="加载插件信息&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;&gt;"/>
+        <constant id="PluginConfManager09" message="插件全局配置文件："/>
+        <constant id="PluginConfManager10" message="未找到插件全局配置文件[%s],系统将不加载改配置"/>
+        <constant id="PluginSupport01" message="初始化插件[%s]下的系统组件配置"/>
+        <constant id="PluginSupport02" message="系统组件[%s]初始化耗时：%s s"/>
+        <constant id="PluginSupport03" message="初始化插件[%s]下的系统组件[%s]出错"/>
+        <constant id="PluginSupport04" message="初始化插件[%s]]下的系统组件[%s]出错,允许跳过..."/>
+        <constant id="PluginSupport05" message="初始化插件[%s]下的系统组件配置完成"/>
+        <constant id="PluginSupport06" message="系统组件[%s] ... 正在启动"/>
+        <constant id="PluginSupport07" message="系统组件[%s] ... 启动完成"/>
+        <constant id="PluginSupport08" message="插件[%s]下的系统组件[%s] ... 启动错误"/>
+        <constant id="PluginSupport09" message="正在停止系统组件[%s]"/>
+        <constant id="PluginSupport10" message="系统组件[%s]已停止"/>
+        <constant id="PluginSupport11" message="停止插件[%s]下的系统组件[%s]时出错"/>
+        <constant id="PluginServiceManager01" message="所有插件初始化开始."/>
+        <constant id="PluginServiceManager02" message="所有插件初始化开始."/>
+        <constant id="PluginServiceManager03" message="插件[%s]初始化耗时：%s s"/>
+        <constant id="PluginServiceManager04" message="插件[%s]初始化耗时：%s s"/>
+        <constant id="PluginServiceManager05" message="初始化插件[%s]出错,%s"/>
+        <constant id="PluginServiceManager06" message="初始化插件出错:id=%s"/>
+        <constant id="PluginServiceManager07" message="初始化插件出错:id=[%s]"/>
+        <constant id="PluginServiceManager08" message="初始化插件[%s]出错,%s, 允许跳过..."/>
+        <constant id="PluginServiceManager09" message="初始化插件[%s]出错,%s, 允许跳过..."/>
+        <constant id="PluginServiceManager10" message="所有插件初始化完成."/>
+        <constant id="PluginServiceManager11" message="所有插件初始化完成."/>
+        <constant id="PluginServiceManager12" message="插件[%s] ... 正在启动."/>
+        <constant id="PluginServiceManager13" message="插件[%s] ... 启动完成."/>
+        <constant id="PluginServiceManager14" message="插件[%s] ... 启动完成."/>
+        <constant id="PluginServiceManager15" message="插件[%s] ... 启动错误."/>
+        <constant id="PluginServiceManager16" message="插件[%s] ... 启动错误."/>
+        <constant id="PluginServiceManager17" message="插件[%s] ... 启动失败. %s"/>
+        <constant id="PluginServiceManager18" message="所有插件启动完成."/>
+        <constant id="PluginServiceManager19" message="所有插件启动完成."/>
+        <constant id="PluginServiceManager20" message="正在停止插件[%s]."/>
+        <constant id="PluginServiceManager21" message="插件[%s]已停止."/>
+        <constant id="PluginServiceManager22" message="停止插件[%s]出错."/>
+        <constant id="PluginServiceManager23" message="插件[%s] ... 启动错误."/>
+        <constant id="Startup01" message="引导机制设置失败"/>
+        <constant id="Startup02" message="服务已经启动,不可以再次启动！"/>
+        <constant id="Startup03" message="服务正在启动,不可以再次启动！"/>
+        <constant id="Startup04" message="Server启动失败。"/>
+        <constant id="Startup05" message="启动失败：%s"/>
+        <constant id="Startup06" message="关闭已启动的服务..."/>
+        <constant id="Startup07" message="关闭已启动的服务失败.%s"/>
+        <constant id="Startup08" message="服务已经停止,不可以再次停止！"/>
+        <constant id="Startup09" message="服务正在停止,不可以再次停止！"/>
+        <constant id="Startup10" message="停止失败："/>
+        <constant id="Startup11" message="启动失败："/>
+        <constant id="ExtensionUtil01" message="扩展%s处理异常"/>
+        <constant id="DataArea01" message="构建数据区的对象为null"/>
+        <constant id="DataArea02" message="报文的第一级只能为map对象, value=[%s]"/>
+        <constant id="DataArea03" message="%s对象的Map是空对象"/>
+        <constant id="DataArea04" message="不支持putAll"/>
+        <constant id="DataArea05" message="不支持put"/>
+        <constant id="DataAreaHolder01" message="%s%s没有对应类型"/>
+        <constant id="XID01" message="Xid字符串格式错,须为.号分隔的2段:%s"/>
+        <constant id="AbstractPollThread01" message="\n--------------------轮训线程[%s]开始调度--------------------\n"/>
+        <constant id="AbstractPollThread02" message="轮询线程出现异常"/>
+        <constant id="AbstractPollThread03" message="轮询线程出现异常"/>
+        <constant id="AbstractPollThread04" message="\n--------------------轮训线程[%s]调度结束. [%s]--------------------\n"/>
+        <constant id="AbstractPollThread05" message="轮询线程设置定时器失败, cause by :"/>
+        <constant id="AbstractPollThread06" message="关闭轮询线程中的定时器失败, cause by :"/>
+        <constant id="Parser01" message="报文[%s] [%s]解析失败"/>
+    </constants>
+</constantConf>

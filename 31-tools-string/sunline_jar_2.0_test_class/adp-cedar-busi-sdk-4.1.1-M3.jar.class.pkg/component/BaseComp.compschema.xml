@@ -1,0 +1,601 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<componentSchema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="BaseComp" package="cn.sunline.adp.cedar.busi.sdk.component" longname="基础组件定义" desc="定义安全、指纹、通讯、组包、文件传输等系统基础组件" xsi:noNamespaceSchemaLocation="ltts-model.xsd">
+    <description><![CDATA[基础组件定义]]></description>
+    <componentType id="Security" longname="安全组件" desc="定义密码加解密、CVV、CVN计算等服务">
+        <service id="macCheck" longname="mac校验服务" name="macCheck">
+            <interface>
+                <input packMode="false">
+                    <field id="pin" type="string" required="false" multi="false" array="false" longname="报文体"/>
+                    <field id="mac" type="string" required="false" multi="false" array="false" longname="mac校验码"/>
+                    <field id="lastsysid" type="string" required="false" multi="false" array="false" longname="上一节点系统标识"/>
+                </input>
+                <output asParm="true" packMode="false">
+                    <field id="result" type="boolean" required="false" multi="false" array="false" longname="校验结果"/>
+                </output>
+                <property packMode="false"/>
+                <printer packMode="false"/>
+            </interface>
+            <exceptions/>
+        </service>
+        <service id="encryptPin" longname="加密服务" name="encryptPin">
+            <interface>
+                <input packMode="false">
+                    <field id="acctno" type="string" required="false" multi="false" array="false" longname="账号"/>
+                    <field id="pin" type="string" required="false" multi="false" array="false" longname="明文"/>
+                </input>
+                <output asParm="true" packMode="false">
+                    <field id="pinBlock" type="string" required="false" multi="false" array="false" longname="密文"/>
+                </output>
+                <property packMode="false"/>
+                <printer packMode="false"/>
+            </interface>
+            <exceptions>
+                <exception code="10" message="加密失败"/>
+            </exceptions>
+        </service>
+        <service id="decryptPin" longname="解密服务" name="decryptPin">
+            <interface>
+                <input packMode="false">
+                    <field id="acctno" type="string" required="false" multi="false" array="false" longname="账号"/>
+                    <field id="pinBlock" type="string" required="false" multi="false" array="false" longname="密文"/>
+                </input>
+                <output asParm="true" packMode="false">
+                    <field id="pin" type="string" required="false" multi="false" array="false" longname="明文"/>
+                </output>
+                <property packMode="false"/>
+                <printer packMode="false"/>
+            </interface>
+            <exceptions>
+                <exception code="10" message="解密失败"/>
+            </exceptions>
+        </service>
+        <service id="translatePin" longname="转加密服务" name="translatePin">
+            <interface>
+                <input packMode="false">
+                    <field id="fromAcctno" type="string" required="false" multi="false" array="false" longname="源账号或卡号"/>
+                    <field id="toAcctno" type="string" required="false" multi="false" array="false" longname="目的账号或卡号"/>
+                    <field id="fromPinBlock" type="string" required="false" multi="false" array="false" longname="源PIK密钥加密的PIN密文"/>
+                </input>
+                <output asParm="true" packMode="false">
+                    <field id="toPinBlock" type="string" required="false" multi="false" array="false" longname="目的PIK密钥加密的PIN密文"/>
+                </output>
+                <property packMode="false"/>
+                <printer packMode="false"/>
+            </interface>
+            <exceptions>
+                <exception code="10" message="转加密失败"/>
+            </exceptions>
+        </service>
+        <service id="translatePinWithKey" longname="转加密服务" name="translatePin">
+            <interface>
+                <input packMode="false">
+                    <field id="fromKeyName" type="string" required="false" multi="false" array="false" longname="源PIK密钥名称"/>
+                    <field id="toKeyName" type="string" required="false" multi="false" array="false" longname="目的PIK密钥名称"/>
+                    <field id="fromAcctno" type="string" required="false" multi="false" array="false" longname="源账号或卡号"/>
+                    <field id="toAcctno" type="string" required="false" multi="false" array="false" longname="目的账号或卡号"/>
+                    <field id="fromPinBlock" type="string" required="false" multi="false" array="false" longname="源PIK密钥加密的PIN密文"/>
+                </input>
+                <output asParm="true" packMode="false">
+                    <field id="toPinBlock" type="string" required="false" multi="false" array="false" longname="目的PIK密钥加密的PIN密文"/>
+                </output>
+                <property packMode="false"/>
+                <printer packMode="false"/>
+            </interface>
+            <exceptions>
+                <exception code="10" message="转加密失败"/>
+            </exceptions>
+        </service>
+        <service id="cvvBuild" longname="cvv计算" name="cvvBuild">
+            <interface>
+                <input packMode="false">
+                    <field id="cardNo" type="string" required="false" multi="false" array="false" longname="卡号"/>
+                    <field id="expireDate" type="string" required="false" multi="false" array="false" longname="失效日期"/>
+                    <field id="svcCode" type="string" required="false" multi="false" array="false" longname="服务代码"/>
+                </input>
+                <output asParm="true" packMode="false">
+                    <field id="cvv" type="string" required="false" multi="false" array="false" longname="计算结果"/>
+                </output>
+                <property packMode="false"/>
+                <printer packMode="false"/>
+            </interface>
+            <exceptions>
+                <exception code="10" message="cvv计算失败"/>
+            </exceptions>
+        </service>
+        <service id="cvvCheck" longname="cvv检查" name="cvvCheck">
+            <interface>
+                <input packMode="false">
+                    <field id="cvv" type="string" required="false" multi="false" array="false" longname="待验证的CVV"/>
+                    <field id="cardno" type="string" required="false" multi="false" array="false" longname="卡号"/>
+                    <field id="serviceCode" type="string" required="false" multi="false" array="false" longname="服务代码"/>
+                    <field id="matdata" type="string" required="false" multi="false" array="false" longname="有效期"/>
+                </input>
+                <output asParm="true" packMode="false">
+                    <field id="result" type="boolean" required="false" multi="false" array="false" longname="计算结果"/>
+                </output>
+                <property packMode="false"/>
+                <printer packMode="false"/>
+            </interface>
+            <exceptions>
+                <exception code="10" message="cvv校验失败"/>
+            </exceptions>
+        </service>
+    </componentType>
+    <componentType id="FileTransfer" longname="文件传输组件" desc="定义文件的上传和下载传输服务">
+        <service id="downloadWithRemoteFile" longname="下载服务" name="download">
+            <interface>
+                <input packMode="false">
+                    <field id="localFileName" type="string" required="false" multi="false" array="false" longname="本地文件名"/>
+                    <field id="remoteFileName" type="string" required="false" multi="false" array="false" longname="远程文件名"/>
+                </input>
+                <output asParm="true" packMode="false">
+                    <field id="result" type="int" required="false" multi="false" array="false" longname="结果"/>
+                </output>
+                <property packMode="false"/>
+                <printer packMode="false"/>
+            </interface>
+            <exceptions>
+                <exception code="10" message="连接失败"/>
+                <exception code="11" message="下载失败"/>
+            </exceptions>
+        </service>
+        <service id="downloadWithSysId" longname="下载服务" name="download">
+            <interface>
+                <input packMode="false">
+                    <field id="sysId" type="string" required="false" multi="false" array="false" longname="文件来源系统标识"/>
+                    <field id="trandate" type="string" required="false" multi="false" array="false" longname="交易日期"/>
+                    <field id="localFileName" type="string" required="false" multi="false" array="false" longname="本地文件名"/>
+                    <field id="remoteFileName" type="string" required="false" multi="false" array="false" longname="远程文件名"/>
+                </input>
+                <output asParm="true" packMode="false">
+                    <field id="result" type="int" required="false" multi="false" array="false" longname="结果"/>
+                </output>
+                <property packMode="false"/>
+                <printer packMode="false"/>
+            </interface>
+            <exceptions>
+                <exception code="10" message="连接失败"/>
+                <exception code="11" message="下载失败"/>
+            </exceptions>
+        </service>
+        <service id="uploadWithDate" longname="上传服务" name="upload">
+            <interface>
+                <input packMode="false">
+                    <field id="trandate" type="string" required="false" multi="false" array="false" longname="交易日期"/>
+                    <field id="localFileName" type="string" required="false" multi="false" array="false" longname="本地文件名"/>
+                    <field id="remoteFileName" type="string" required="false" multi="false" array="false" longname="远程文件名"/>
+                </input>
+                <output asParm="true" packMode="false">
+                    <field id="result" type="int" required="false" multi="false" array="false" longname="结果"/>
+                </output>
+                <property packMode="false"/>
+                <printer packMode="false"/>
+            </interface>
+            <exceptions>
+                <exception code="10" message="上传失败"/>
+            </exceptions>
+        </service>
+        <service id="uploadWithRemoteFile" longname="上传服务" name="upload">
+            <interface>
+                <input packMode="false">
+                    <field id="localFileName" type="string" required="false" multi="false" array="false" longname="本地文件名"/>
+                    <field id="remoteFileName" type="string" required="false" multi="false" array="false" longname="远程文件名"/>
+                </input>
+                <output asParm="true" packMode="false">
+                    <field id="result" type="int" required="false" multi="false" array="false" longname="结果"/>
+                </output>
+                <property packMode="false"/>
+                <printer packMode="false"/>
+            </interface>
+            <exceptions>
+                <exception code="10" message="上传失败"/>
+            </exceptions>
+        </service>
+        <service id="remoteDirectory" longname="远程工作目录" name="remoteDirectory">
+            <interface>
+                <input packMode="false">
+                    <field id="result" type="string" required="false" multi="false" array="false" longname="设置远程工作目录"/>
+                </input>
+                <output asParm="true" packMode="false">
+                    <field id="result" type="string" required="false" multi="false" array="false" longname="返回远程工作目录"/>
+                </output>
+                <property packMode="false"/>
+                <printer packMode="false"/>
+            </interface>
+            <exceptions/>
+        </service>
+        <service id="download" longname="下载服务" name="download">
+            <interface>
+                <input packMode="false">
+                    <field id="localFileName" type="string" required="false" multi="false" array="false" longname="本地文件名"/>
+                    <field id="properties" type="map" required="false" multi="false" array="false" longname="属性"/>
+                </input>
+                <output asParm="true" packMode="false">
+                    <field id="result" type="CompTypes.FileTransferResult" required="false" multi="false" array="false" longname="结果"/>
+                </output>
+                <property packMode="false"/>
+                <printer packMode="false"/>
+            </interface>
+            <exceptions>
+                <exception code="10" message="连接失败"/>
+                <exception code="11" message="下载失败"/>
+            </exceptions>
+        </service>
+        <service id="upload" longname="上传服务" name="upload">
+            <interface>
+                <input packMode="false">
+                    <field id="localFileName" type="string" required="false" multi="false" array="false" longname="本地文件名"/>
+                    <field id="properties" type="map" required="false" multi="false" array="false" longname="属性"/>
+                </input>
+                <output asParm="true" packMode="false">
+                    <field id="result" type="CompTypes.FileTransferResult" required="false" multi="false" array="false" longname="结果"/>
+                </output>
+                <property packMode="false"/>
+                <printer packMode="false"/>
+            </interface>
+            <exceptions>
+                <exception code="10" message="上传失败"/>
+            </exceptions>
+        </service>
+        <service id="workDirectory" longname="获取本地工作目录" name="workDirectory">
+            <interface>
+                <input packMode="false"/>
+                <output asParm="true" packMode="false">
+                    <field id="result" type="string" required="false" multi="false" array="false" longname="本地工作目录"/>
+                </output>
+                <property packMode="false"/>
+                <printer packMode="false"/>
+            </interface>
+            <exceptions/>
+        </service>
+    </componentType>
+    <componentType id="Appc" longname="通讯组件" desc="定义第三方通讯服务">
+        <service id="call" longname="无属性服务调用" name="call">
+            <interface>
+                <input packMode="false">
+                    <field id="sendBuffer" type="string" required="false" multi="false" array="false" longname="发送缓冲区"/>
+                </input>
+                <output asParm="true" packMode="false">
+                    <field id="returnBuffer" type="string" required="false" multi="false" array="false" longname="接收缓冲区"/>
+                </output>
+                <property packMode="false"/>
+                <printer packMode="false"/>
+            </interface>
+            <exceptions>
+                <exception code="10" message="连接失败"/>
+                <exception code="11" message="发送失败"/>
+                <exception code="12" message="接收失败"/>
+            </exceptions>
+        </service>
+        <service id="callWithProperty" longname="有属性服务调用" name="call">
+            <interface>
+                <input packMode="false">
+                    <field id="sendBuffer" type="string" required="false" multi="false" array="false" longname="发送缓冲区"/>
+                    <field id="properties" type="map" required="false" multi="false" array="false" longname="属性"/>
+                </input>
+                <output asParm="true" packMode="false">
+                    <field id="returnBuffer" type="string" required="false" multi="false" array="false" longname="接收缓冲区"/>
+                </output>
+                <property packMode="false"/>
+                <printer packMode="false"/>
+            </interface>
+            <exceptions>
+                <exception code="10" message="连接失败"/>
+                <exception code="11" message="发送失败"/>
+                <exception code="12" message="接收失败"/>
+            </exceptions>
+        </service>
+    </componentType>
+    <componentType id="Pack" longname="报文组件" desc="组包解包组件">
+        <service id="format" longname="组包服务" name="format">
+            <interface>
+                <input packMode="false">
+                    <field id="buffer" type="map" required="false" multi="false" array="false" longname="待组包的map"/>
+                </input>
+                <output asParm="true" packMode="false">
+                    <field id="returnBuffer" type="string" required="false" multi="false" array="false" longname="组包结果"/>
+                </output>
+                <property packMode="false"/>
+                <printer packMode="false"/>
+            </interface>
+            <exceptions>
+                <exception code="10" message="组包失败"/>
+            </exceptions>
+        </service>
+        <service id="parse" longname="解包服务" name="parse">
+            <interface>
+                <input packMode="false">
+                    <field id="buffer" type="string" required="false" multi="false" array="false" longname="待解析的报文内容"/>
+                </input>
+                <output asParm="true" packMode="false">
+                    <field id="returnBuffer" type="map" required="false" multi="false" array="false" longname="解析后的map"/>
+                </output>
+                <property packMode="false"/>
+                <printer packMode="false"/>
+            </interface>
+            <exceptions>
+                <exception code="10" message="解包失败"/>
+            </exceptions>
+        </service>
+    </componentType>
+    <componentType id="PkgHeader" longname="报文头处理组件" desc="报文头处理组件">
+        <service id="processRequest" longname="请求报文头处理" name="processRequest">
+            <interface>
+                <input packMode="false">
+                    <field id="request" type="map" required="false" multi="false" array="false" longname="报文体信息"/>
+                </input>
+                <output asParm="true" packMode="false">
+                    <field id="header" type="string" required="false" multi="false" array="false" longname="报文头对象"/>
+                </output>
+                <property packMode="false"/>
+                <printer packMode="false"/>
+            </interface>
+            <exceptions>
+                <exception code="10" message="组包失败"/>
+            </exceptions>
+        </service>
+        <service id="processResponse" longname="响应报文头处理" name="processResponse">
+            <interface>
+                <input packMode="false">
+                    <field id="response" type="string" required="false" multi="false" array="false" longname="响应报文"/>
+                </input>
+                <output asParm="true" packMode="false">
+                    <field id="returnHeader" type="string" required="false" multi="false" array="false" longname="响应报文体信息"/>
+                </output>
+                <property packMode="false"/>
+                <printer packMode="false"/>
+            </interface>
+            <exceptions>
+                <exception code="10" message="解包失败"/>
+            </exceptions>
+        </service>
+    </componentType>
+    <componentType id="FileSecurity" longname="文件加密" desc="文件加密">
+        <service id="encrypt" longname="加密服务" name="encrypt">
+            <interface>
+                <input packMode="false">
+                    <field id="srcFileName" type="string" required="false" multi="false" array="false" longname="待加密文件的文件名"/>
+                    <field id="destFileName" type="string" required="false" multi="false" array="false" longname="加密后的文件的文件名"/>
+                </input>
+                <output asParm="true" packMode="false">
+                    <field id="success" type="boolean" required="false" multi="false" array="false" longname="加密成功标志"/>
+                </output>
+                <property packMode="false"/>
+                <printer packMode="false"/>
+            </interface>
+            <exceptions>
+                <exception code="11" message="加密失败"/>
+            </exceptions>
+        </service>
+        <service id="decrypt" longname="解密服务" name="decrypt">
+            <interface>
+                <input packMode="false">
+                    <field id="srcFileName" type="string" required="false" multi="false" array="false" longname="待解密文件的文件名"/>
+                    <field id="destFileName" type="string" required="false" multi="false" array="false" longname="解密后的文件的文件名"/>
+                </input>
+                <output asParm="true" packMode="false">
+                    <field id="success" type="boolean" required="false" multi="false" array="false" longname="解密成功标志"/>
+                </output>
+                <property packMode="false"/>
+                <printer packMode="false"/>
+            </interface>
+            <exceptions>
+                <exception code="10" message="解密失败"/>
+            </exceptions>
+        </service>
+    </componentType>
+    <componentType id="TransExecutor" longname="交易调用组件">
+        <service id="call" longname="调用交易服务" name="call">
+            <interface>
+                <input packMode="false">
+                    <field id="inputData" type="map" required="false" multi="false" array="false" longname="输入参数"/>
+                </input>
+                <output asParm="true" packMode="false">
+                    <field id="outputData" type="map" required="false" multi="false" array="false" longname="结果"/>
+                </output>
+                <property packMode="false"/>
+                <printer packMode="false"/>
+            </interface>
+            <exceptions/>
+        </service>
+    </componentType>
+    <componentType id="IcSecurity" longname="IC安全组件" desc="IC卡系统安全服务">
+        <service id="arqc" longname="ARQC验证" name="arqc">
+            <interface>
+                <input packMode="false">
+                    <field id="cardno" type="string" required="false" multi="false" array="false" longname="卡号"/>
+                    <field id="tag_5f34" type="string" required="false" multi="false" array="false" longname="卡序号"/>
+                    <field id="tag_9f26" type="string" required="false" multi="false" array="false" longname="应用密文ARQC"/>
+                    <field id="tag_9f02" type="string" required="false" multi="false" array="false" longname="授权金额"/>
+                    <field id="tag_9f03" type="string" required="false" multi="false" array="false" longname="其他金额"/>
+                    <field id="tag_9f1a" type="string" required="false" multi="false" array="false" longname="终端国家代码"/>
+                    <field id="tag_95" type="string" required="false" multi="false" array="false" longname="终端验证结果"/>
+                    <field id="tag_5f2a" type="string" required="false" multi="false" array="false" longname="交易货币代码"/>
+                    <field id="tag_9a" type="string" required="false" multi="false" array="false" longname="交易日期"/>
+                    <field id="tag_9c" type="string" required="false" multi="false" array="false" longname="交易类型"/>
+                    <field id="tag_9f37" type="string" required="false" multi="false" array="false" longname="不可预知数"/>
+                    <field id="tag_82" type="string" required="false" multi="false" array="false" longname="应用交互特征（AIP）"/>
+                    <field id="tag_9f36" type="string" required="false" multi="false" array="false" longname="应用交易计数器（ATC）"/>
+                    <field id="tag_9f10" type="string" required="false" multi="false" array="false" longname="发卡行应用数据"/>
+                </input>
+                <output asParm="true" packMode="false">
+                    <field id="result" type="string" required="false" multi="false" array="false" longname="错误代码(2)+错误信息(100)"/>
+                </output>
+                <property packMode="false"/>
+                <printer packMode="false"/>
+            </interface>
+            <exceptions/>
+        </service>
+        <service id="arpc" longname="ARPC产生" name="arpc">
+            <interface>
+                <input packMode="false">
+                    <field id="cardno" type="string" required="false" multi="false" array="false" longname="卡号"/>
+                    <field id="tag_5f34" type="string" required="false" multi="false" array="false" longname="卡序号"/>
+                    <field id="tag_9f26" type="string" required="false" multi="false" array="false" longname="应用密文ARQC"/>
+                    <field id="tag_9f36" type="string" required="false" multi="false" array="false" longname="应用交易计数器（ATC）"/>
+                    <field id="arcnum" type="string" required="false" multi="false" array="false" longname="响应码"/>
+                </input>
+                <output asParm="true" packMode="false">
+                    <field id="result" type="string" required="false" multi="false" array="false" longname="错误代码(2)+ARPC(16)+错误信息(100)"/>
+                </output>
+                <property packMode="false"/>
+                <printer packMode="false"/>
+            </interface>
+            <exceptions/>
+        </service>
+        <service id="isscmac" longname="发卡行脚本MAC" name="isscmac">
+            <interface>
+                <input packMode="false">
+                    <field id="cardno" type="string" required="false" multi="false" array="false" longname="卡号"/>
+                    <field id="tag_5f34" type="string" required="false" multi="false" array="false" longname="卡序号"/>
+                    <field id="tag_9f26" type="string" required="false" multi="false" array="false" longname="应用密文ARQC"/>
+                    <field id="tag_9f36" type="string" required="false" multi="false" array="false" longname="应用交易计数器（ATC）"/>
+                    <field id="apdu_head" type="string" required="false" multi="false" array="false" longname="apdu指令头"/>
+                    <field id="apdu_data" type="string" required="false" multi="false" array="false" longname="APDU指令数据域"/>
+                </input>
+                <output asParm="true" packMode="false">
+                    <field id="result" type="string" required="false" multi="false" array="false" longname="错误代码(2)+MAC(8)+错误信息(100)"/>
+                </output>
+                <property packMode="false"/>
+                <printer packMode="false"/>
+            </interface>
+            <exceptions/>
+        </service>
+        <service id="isscenc" longname="发卡行脚本加密" name="isscenc">
+            <interface>
+                <input packMode="false">
+                    <field id="cardno" type="string" required="false" multi="false" array="false" longname="卡号"/>
+                    <field id="tag_5f34" type="string" required="false" multi="false" array="false" longname="卡序号"/>
+                    <field id="tag_9f36" type="string" required="false" multi="false" array="false" longname="应用交易计数器"/>
+                    <field id="opertp" type="string" required="false" multi="false" array="false" longname="pin处理类型"/>
+                    <field id="newpin" type="string" required="false" multi="false" array="false" longname="新密码"/>
+                    <field id="oldpin" type="string" required="false" multi="false" array="false" longname="旧密码"/>
+                </input>
+                <output asParm="true" packMode="false">
+                    <field id="result" type="string" required="false" multi="false" array="false" longname="错误代码(2)+加密结果(32)+错误信息(100)"/>
+                </output>
+                <property packMode="false"/>
+                <printer packMode="false"/>
+            </interface>
+            <exceptions/>
+        </service>
+        <service id="cvvauth" longname="CVV验证" name="cvvauth">
+            <interface>
+                <input packMode="false">
+                    <field id="cvvkey" type="string" required="false" multi="false" array="false" longname="CVV密钥类型"/>
+                    <field id="cardno" type="string" required="false" multi="false" array="false" longname="卡号"/>
+                    <field id="cardsq" type="string" required="false" multi="false" array="false" longname="卡序号"/>
+                    <field id="inefdt" type="string" required="false" multi="false" array="false" longname="有效期"/>
+                    <field id="servcd" type="string" required="false" multi="false" array="false" longname="服务码"/>
+                    <field id="cvvnum" type="string" required="false" multi="false" array="false" longname="CVV值"/>
+                </input>
+                <output asParm="true" packMode="false">
+                    <field id="result" type="string" required="false" multi="false" array="false" longname="错误代码(2)+错误信息(100)"/>
+                </output>
+                <property packMode="false"/>
+                <printer packMode="false"/>
+            </interface>
+            <exceptions/>
+        </service>
+    </componentType>
+    <componentType id="FPI" longname="指纹识别">
+        <service id="FPIGetFeatureByImg" longname="通过一幅指纹图像数据，产生特征数据" name="getFeatureByImg">
+            <interface>
+                <input packMode="false">
+                    <field id="psImage" type="string" required="false" multi="false" array="false" longname="指纹图像"/>
+                </input>
+                <output asParm="true" packMode="false">
+                    <field id="result" type="int" required="false" multi="false" array="false" longname="返回值"/>
+                </output>
+                <property packMode="false"/>
+                <printer packMode="false"/>
+            </interface>
+            <exceptions/>
+        </service>
+        <service id="FPIGetTemplateByImg" longname="通过前期采集的三枚指纹图象数据，产生特征模板数据" name="getTemplate">
+            <interface>
+                <input packMode="false">
+                    <field id="psImage1" type="string" required="false" multi="false" array="false" longname="指纹图象1"/>
+                    <field id="psImage2" type="string" required="false" multi="false" array="false" longname="指纹图象2"/>
+                    <field id="psImage3" type="string" required="false" multi="false" array="false" longname="指纹图象3"/>
+                </input>
+                <output asParm="true" packMode="false">
+                    <field id="result" alias="结果信息" type="int" required="false" multi="false" array="false" longname="结果信息"/>
+                </output>
+                <property packMode="false"/>
+                <printer packMode="false"/>
+            </interface>
+            <exceptions/>
+        </service>
+        <service id="FPIMatch" longname="指纹比对" name="match">
+            <interface>
+                <input packMode="false">
+                    <field id="pModalData" type="string" required="false" multi="false" array="false" longname="指纹模板数据"/>
+                    <field id="pFeatureData" type="string" required="false" multi="false" array="false" longname="指纹特征数据"/>
+                    <field id="level" type="int" required="false" multi="false" array="false" longname="比对安全级别"/>
+                </input>
+                <output asParm="true" packMode="false">
+                    <field id="result" type="int" required="false" multi="false" array="false" longname="结果"/>
+                </output>
+                <property packMode="false"/>
+                <printer packMode="false"/>
+            </interface>
+            <exceptions/>
+        </service>
+        <service id="getPsErrMsg" longname="获取错误信息" name="getPsErrMsg">
+            <interface>
+                <input packMode="false"/>
+                <output asParm="true" packMode="false">
+                    <field id="result" type="string" required="false" multi="false" array="false" longname="错误信息"/>
+                </output>
+                <property packMode="false"/>
+                <printer packMode="false"/>
+            </interface>
+            <exceptions/>
+        </service>
+        <service id="getPnVerLen" longname="获取验证指纹特征数据长度" name="getPnVerLen">
+            <interface>
+                <input packMode="false"/>
+                <output asParm="true" packMode="false">
+                    <field id="result" type="int" required="false" multi="false" array="false" longname="指纹特征数据长度"/>
+                </output>
+                <property packMode="false"/>
+                <printer packMode="false"/>
+            </interface>
+            <exceptions/>
+        </service>
+        <service id="getPsRegBuf" longname="获取注册指纹模板" name="getPsRegBuf">
+            <interface>
+                <input packMode="false"/>
+                <output asParm="true" packMode="false">
+                    <field id="result" type="string" required="false" multi="false" array="false" longname="注册指纹模板"/>
+                </output>
+                <property packMode="false"/>
+                <printer packMode="false"/>
+            </interface>
+            <exceptions/>
+        </service>
+        <service id="getPnRegLen" longname="获取注册指纹长度" name="getPnRegLen">
+            <interface>
+                <input packMode="false"/>
+                <output asParm="true" packMode="false">
+                    <field id="result" type="int" required="false" multi="false" array="false" longname="注册指纹长度"/>
+                </output>
+                <property packMode="false"/>
+                <printer packMode="false"/>
+            </interface>
+            <exceptions/>
+        </service>
+        <service id="getPsVerBuf" longname="获取验证指纹特征数据" name="getPsVerBuf">
+            <interface>
+                <input packMode="false"/>
+                <output asParm="true" packMode="false">
+                    <field id="result" type="string" required="false" multi="false" array="false" longname="验证指纹特征数据"/>
+                </output>
+                <property packMode="false"/>
+                <printer packMode="false"/>
+            </interface>
+            <exceptions/>
+        </service>
+    </componentType>
+</componentSchema>

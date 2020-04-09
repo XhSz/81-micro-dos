@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<constantConf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="BusiSDKConstantDef" longname="业务SDK常量定义文件" package="cn.sunline.adp.cedar.busi.sdk.constant" xsi:noNamespaceSchemaLocation="ltts-model.xsd">
+    <constants id="SPC_BS" longname="业务SDK常量定义">
+        <description><![CDATA[业务SDK常量定义]]></description>
+        <constant id="C001" message="ReportUtil.getReportById%s，参数:%s "/>
+        <constant id="C002" message="ReportUtil.getReportById%s，参数:%s "/>
+        <constant id="C003" message="报表[%s]数据填充耗时：[%ss] "/>
+        <constant id="C004" message="创建参数表[%s]对应的参数处理器[%s]实例失败! "/>
+        <constant id="C005" message="activemq 属性[%s] 消息 [%s] 发送成功! "/>
+        <constant id="C006" message="activemq 属性[%s] 消息 [%s] 发送失败! "/>
+        <constant id="C007" message="连接管理服务器失败 "/>
+        <constant id="C008" message="关闭连接失败"/>
+        <constant id="C009" message="获取应用服务器地址：%s"/>
+        <constant id="C010" message="已连接应用服务器. "/>
+        <constant id="C011" message="关闭连接失败"/>
+        <constant id="C012" message="关闭连接失败"/>
+        <constant id="C013" message="关闭连接失败"/>
+        <constant id="C014" message="Tuxedo服务地址：[%s], 发送内容:[%s] "/>
+        <constant id="C015" message="Tuxedo服务返回内容:[%s] "/>
+        <constant id="C016" message="Tuxedo服务地址：[%s], 发送内容:[%s]"/>
+        <constant id="C017" message="Tuxedo服务返回内容:[%s]"/>
+        <constant id="C018" message="udp发送内容:[%s] encoding=[%s]"/>
+        <constant id="C019" message="udp接收内容:[%s]"/>
+        <constant id="C020" message="解析报文错误！原始报文：%s"/>
+        <constant id="C021" message="FTP服务器[%s], 用户[%s], 远程文件[%s], 本地文件[%s] 下载成功。"/>
+        <constant id="C022" message="FTP服务器[%s], 用户[%s], 远程文件[%s], 本地文件[%s] 下载失败。"/>
+    </constants>
+</constantConf>

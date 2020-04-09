@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<constantConf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="TspConfigConstantDef" longname="TspConfig常量定义" package="cn.sunline.adp.cedar.base.constant" xsi:noNamespaceSchemaLocation="ltts-model.xsd">
+    <constants id="ConfigConstant" longname="TspConfig常量定义">
+        <description><![CDATA[TspConfig常量定义]]></description>
+        <constant id="C001" message="未设置setting.file"/>
+    </constants>
+</constantConf>

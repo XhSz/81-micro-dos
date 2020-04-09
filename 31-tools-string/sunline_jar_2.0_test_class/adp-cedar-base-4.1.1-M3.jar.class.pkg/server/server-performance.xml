@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- [Template id=PerformanceService longname=性能优化服务 ] -->
+<performanceConfig enabled="${writeLog|true}" />
+<!-- [End] -->

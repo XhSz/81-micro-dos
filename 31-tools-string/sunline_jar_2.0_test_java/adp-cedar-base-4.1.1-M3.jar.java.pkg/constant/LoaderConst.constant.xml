@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<constantConf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="LoaderConst" longname="常量定义" package="cn.sunline.adp.cedar.base.constant" xsi:noNamespaceSchemaLocation="ltts-model.xsd">
+    <constants id="LConst" longname="ltts-loader日志国际化">
+        <description><![CDATA[ltts-loader日志国际化]]></description>
+        <constant id="CommonExpressionUtil01" message="条件表达式[%s]求值为null"/>
+        <constant id="CustomExpressionHandlerImpl01" message="不支持的字典子集表达式：%s%s"/>
+        <constant id="CustomExpressionHandlerImpl02" message="表达式配置出错, 语句前缀 '#%s'配置不正确"/>
+        <constant id="CustomExpressionHandlerImpl03" message="表达式配置出错'#%s.%s'找不到对应的配置"/>
+        <constant id="CustomExpressionHandlerImpl04" message="表达式配置出错'#%s.%s'找不到对应的字典配置"/>
+        <constant id="DataMappingUtil01" message="数据映射编译生成类[%s]加载失败:%s"/>
+        <constant id="DataMappingUtil02" message="数据映射编译生成类[%s]执行错误。"/>
+        <constant id="DataMappingUtil03" message="字段映射"/>
+        <constant id="DataMappingUtil04" message="目标字段%s类型非法！"/>
+        <constant id="DataMappingUtil05" message="目标字段%s不能是复杂类型！"/>
+        <constant id="DataMappingUtil06" message="目标字段%s类型转换失败！要素[%s]不合法"/>
+        <constant id="DataMappingUtil07" message="目标字段%s类型不合法，必须配置multi=true！"/>
+        <constant id="DataMappingUtil08" message="目标字段%s赋值失败！"/>
+        <constant id="DataMappingUtil09" message="目标字段%s配置multi=true，但源值[%s]不是list或数组类型！"/>
+        <constant id="DataMappingUtil10" message="目标字段%s对象构建失败！"/>
+        <constant id="DataMappingUtil201" message="数据映射失败"/>
+        <constant id="DataMappingUtil202" message="字段映射"/>
+        <constant id="DataMappingUtil203" message="目标类型[%s]元素为空！"/>
+        <constant id="DataMappingUtil204" message="不允许将单值复杂类型映射到多值复杂类型：%s-&gt;%s"/>
+        <constant id="DataMappingUtil205" message="不允许将多值复杂类型映射到单值复杂类型：%s-&gt;%s"/>
+        <constant id="EngineContext01" message="未初始化上下文对象！"/>
+        <constant id="DebugProcessEventListener01" message="服务：%s[%s]"/>
+        <constant id="InvokeProcUtil01" message="调用过程: %s(%s)"/>
+        <constant id="InvokeProcUtil02" message="调用过程成功:%s"/>
+        <constant id="InvokeProcUtil03" message="调用过程失败:%s ', Cause%s'"/>
+        <constant id="InvokeProcUtil04" message="调用过程成功:%s"/>
+        <constant id="InvokeProcUtil05" message="调用过程失败:%s.%s ',Cause:%s'"/>
+        <constant id="InvokeProcUtil06" message="接口不能为空"/>
+        <constant id="InvokeProcUtil07" message="过程方法的参数个数必须为%s"/>
+        <constant id="InvokeProcUtil08" message="找不到目标方法名[%s]所在的实现类:%s"/>
+        <constant id="MappingFactory01" message="由src[%s]映射到dest[%s]失败，cause by :%s"/>
+        <constant id="MappingFactory02" message="目标字段%s类型转换失败！要素[%s]不合法"/>
+        <constant id="MappingFactory03" message="简单类型映射：%s -&gt; %s"/>
+        <constant id="MappingFactory04" message="简单多值类型映射：%s -&gt; %s"/>
+        <constant id="MappingFactory05" message="复杂类型处理开始：%s"/>
+        <constant id="MappingFactory06" message="复杂类型处理结束：%s"/>
+        <constant id="MappingFactory07" message="第[%s]条明细映射"/>
+        <constant id="MappingFactory08" message="映射字段%s -&gt; %s失败，数据类型必须为List：%s"/>
+        <constant id="MappingFactory09" message="获取或创建目标对象"/>
+        <constant id="MappingFactory10" message="目标对象映射"/>
+        <constant id="MappingFactory11" message="明细类型[%s]获取失败"/>
+        <constant id="MappingFactory12" message="非List类型处理"/>
+        <constant id="MappingFactory13" message="(“映射字段"/>
+        <constant id="MappingFactory14" message="失败，数据类型必须为List:“ + "/>
+        <constant id="MappingFactory15" message="映射值必须为List：%s"/>
+        <constant id="MappingHelper01" message="映射表达式'%s'在源接口中不存在!"/>
+        <constant id="MappingHelper02" message="目标字段%s类型非法！"/>
+        <constant id="MappingHelper03" message="复杂类型映射不支持表达式：%s"/>
+        <constant id="MappingHelper04" message="不允许将简单类型映射到复杂类型：%s-&gt;%s"/>
+        <constant id="DataAreaUtil01" message="字段%s类型转换失败"/>
+        <constant id="DataAreaUtil02" message="(%s) 找不到对应的记录"/>
+        <constant id="DataAreaUtil03" message="找不到对应的记录"/>
+        <constant id="DataAreaUtil04" message="的长度不能小于所定义的最小长度[%s]"/>
+        <constant id="DataAreaUtil05" message="的长度不能大于所定义的最大长度[%s]"/>
+        <constant id="DataAreaUtil06" message="的精度不能大于所定义的最大精度[%s]"/>
+        <constant id="DataAreaUtil07" message="的值[%s]未在所定义的枚举类型%s中存在"/>
+        <constant id="TypeConvertUtil01" message="属性[%s]的值[%s]类型转换失败，目标类型为[%s]"/>
+        <constant id="TypeConvertUtil02" message="无法获取范型类型：%s"/>
+        <constant id="ComponentCacher01" message="组件实现类[%s]属性[%s]值[%s]转换为目标类型[%s]失败"/>
+        <constant id="ComponentCacher02" message="组件实现类[%s]属性[%s]赋值[%s]失败"/>
+        <constant id="ComponentCacher03" message="抽象组件[%s]缓存命中."/>
+        <constant id="ComponentCacher04" message="组件类型[%s]实例参数不合法"/>
+        <constant id="ComponentCacher05" message="组件类型[%s]抽象组件[%s]的实例未配置实现！"/>
+        <constant id="ComponentCacher06" message="组件实例对应的实现类[%s]加载失败"/>
+        <constant id="ComponentCacher07" message="组件类型[%s]与组件实现[%s]不匹配!"/>
+        <constant id="ComponentCacher08" message="组件类型[%s]与组件实现[%s]实例构造失败!"/>
+        <constant id="ComponentCacher09" message="抽象组件[%s]未配置实例！"/>
+        <constant id="ComponentCacher10" message="抽象组件[%s]未配置"/>
+        <constant id="ComponentCacher11" message="抽象组件[%s]类型[%s]与实例类型[%s]不一致"/>
+        <constant id="ComponentServiceCall01" message="服务调用：组件类型=%s, 抽象组件=%s, 服务方法=%s, 方法参数=%s, 累计执行次数=%s]"/>
+        <constant id="JDKComponentServiceProxy01" message="目前不支持组件服务的异步调用！"/>
+        <constant id="SequenceManager01" message="流水服务未初始化！"/>
+        <constant id="LocalBizServiceManager01" message="初始化服务实现[%s]对应的类[%s]失败"/>
+        <constant id="LocalBizServiceManager02" message="获取服务[%s]实现失败，请检查服务实现是否存在！"/>
+        <constant id="LocalBizServiceManager03" message="服务类型不能为空"/>
+        <constant id="LocalBizServiceManager04" message="找不到服务类型[%s]对应的服务实现"/>
+        <constant id="LocalBizServiceManager05" message="创建服务类型[%s]对应的实现失败"/>
+    </constants>
+</constantConf>

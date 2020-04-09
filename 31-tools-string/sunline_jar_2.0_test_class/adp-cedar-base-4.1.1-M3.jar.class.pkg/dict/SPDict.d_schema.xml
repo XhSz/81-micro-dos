@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="SPDict" package="cn.sunline.adp.cedar.base.dict" longname="字典类型" classgen="normal" xsi:noNamespaceSchemaLocation="ltts-model.xsd">
+    <complexType id="CommonDict" longname="通用的字典类型" dict="true" abstract="false" introduct="false">
+        <element id="system_code" longname="系统编号" type="SPType.U_LEIXIN20" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="sub_system_code" longname="子系统编号" type="SPType.U_LEIXIN20" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="description" longname="描述信息" type="SPType.U_LEIXIN200" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="is_enable" longname="是否启用" type="SPEnumType.E_YESORNO" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="log_level" longname="日志级别" type="SPType.U_LEIXIN10" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="begin_time" longname="开始时间" type="SPType.U_TIMESTAMP" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="end_time" longname="结束时间" type="SPType.U_TIMESTAMP" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="use_time" longname="耗时（毫秒）" type="SPType.U_NORMALLONG" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+    </complexType>
+    <complexType id="OnlineDict" longname="联机的字典类型" dict="true" abstract="false" introduct="false">
+        <element id="out_service_app" longname="外部服务应用标识" type="SPType.U_LEIXIN25" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="out_service_code" longname="外部服务码" type="SPType.U_LEIXIN50" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="out_service_group" longname="外部服务分组号" type="SPType.U_LEIXIN25" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="out_service_version" longname="外部服务版本号" type="SPType.U_LEIXIN25" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="out_service_dcnno" longname="外部服务节点编号" type="SPType.U_LEIXIN10" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="inner_service_code" longname="内部服务码" type="SPType.U_LEIXIN100" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="inner_service_impl_code" longname="内部服务实现标识" type="SPType.U_LEIXIN100" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="service_category" longname="服务类别" type="SPEnumType.E_SVCCATE" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="protocol_id" longname="通讯协议标识" type="SPType.U_LEIXIN25" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="transaction_mode" longname="事务模式" type="SPEnumType.E_TRANSACTION_MODE" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="service_type" longname="业务服务类型" type="SPEnumType.E_SVCTYPE" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="timeout" longname="超时时间" type="SPType.U_NORMALINT" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="alias_mapping" longname="是否别名映射" type="SPEnumType.E_YESORNO" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="regist_protocol_log" longname="是否登记通讯接入日志" type="SPEnumType.E_YESORNO" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="force_unused_odb_cache" longname="是否强制不使用ODB缓存" type="SPEnumType.E_YESORNO" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="service_invoke_id" longname="业务服务调用标识" type="SPType.U_LEIXIN50" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="timeout_redo_counts" longname="超时重试次数" type="SPType.U_NORMALINT" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="timeout_confirm" longname="超时确认标志" type="SPEnumType.E_YESORNO" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="regist_call_log" longname="是否登记通讯接出日志" type="SPEnumType.E_YESORNO" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="busi_seq_num" longname="业务流水号" type="SPType.U_LEIXIN64" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="call_seq_num" longname="系统调用流水号" type="SPType.U_LEIXIN64" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="orig_call_seq_num" longname="发起方系统调用流水" type="SPType.U_LEIXIN64" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="input_head" longname="请求Head数据" type="SPType.U_LEIXIN1000" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="input_body" longname="请求Body数据" type="SPType.U_NORMALTEXT" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="attachment" longname="附加数据" type="SPType.U_LEIXIN1000" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="input_msg" longname="请求数据" type="SPType.U_LEIXIN4001" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="output_msg" longname="响应数据" type="SPType.U_LEIXIN4001" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="resp_code" longname="响应码" type="SPType.U_LEIXIN25" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="resp_text" longname="响应信息" type="SPType.U_LEIXIN400" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="error_text" longname="异常堆栈" type="SPType.U_LEIXIN4000" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="process_status" longname="执行状态" type="SPEnumType.E_PROCSTATUS" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="client_inst_id" longname="客户端标识" type="SPType.U_LEIXIN50" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="server_inst_id" longname="服务端标识" type="SPType.U_LEIXIN50" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="service_call_seq_num" longname="服务调用流水号" type="SPType.U_LEIXIN64" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="retry_count" longname="重试次数" type="SPType.U_TIMESINT" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="service_mode" longname="服务模式" type="SPEnumType.E_SVCMODE" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="initator_id" longname="发起方标识" type="SPType.U_LEIXIN50" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="processor_id" longname="处理方标识" type="SPType.U_LEIXIN50" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="route_keys" longname="路由关键字" type="SPType.U_LEIXIN100" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="cancel_service" longname="冲正服务标识" type="SPType.U_LEIXIN50" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="confirm_service" longname="二次提交服务标识" type="SPType.U_LEIXIN50" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="service_transaction_mode" longname="服务事务模式" type="SPEnumType.E_SERVICE_TRANS_MODE" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="service_executor_type" longname="服务执行类型" type="SPEnumType.E_SVCEXETYPE" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="target_dcn" longname="目标DCN" type="SPType.U_LEIXIN25" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="register_mode" longname="登记通讯日志模式" type="SPEnumType.E_REGISTER_LOG_MODE" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+    </complexType>
+    <complexType id="BatchDict" longname="批量的字典类型" dict="true" abstract="false" introduct="false"/>
+    <complexType id="AsyncDict" longname="异步服务的字典类型" dict="true" abstract="false" introduct="false">
+        <element id="corpo_code" longname="法人代码" type="SPType.U_LEIXIN20" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="priority_level" longname="优先级别" type="SPType.U_TIMESINT" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="max_thread" longname="最大并发数" type="SPType.U_TIMESINT" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="postposition_task" longname="后置任务" type="SPType.U_LEIXIN50" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="retrigger_time" longname="再次触发时间" type="SPType.U_NORMALLONG" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="depend_task" longname="依赖列表" type="SPType.U_LEIXIN400" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="process_mode" longname="处理模式" type="SPEnumType.E_ASYNC_PROCESS_MODE" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="redo_count" longname="重做次数" type="SPType.U_TIMESINT" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="queue_length" longname="队列长度" type="SPType.U_NORMALINT" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="create_time" longname="创建时间" type="SPType.U_TIMESTAMP" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+    </complexType>
+</schema>

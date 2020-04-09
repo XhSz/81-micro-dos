@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<constantConf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="CorePluginConstantDef" longname="核心插件常量定义文件" package="cn.sunline.adp.cedar.base.constant" xsi:noNamespaceSchemaLocation="ltts-model.xsd">
+    <constants id="SPC_CO" longname="核心插件常量定义">
+        <description><![CDATA[核心插件常量定义]]></description>
+        <constant id="C001" message="[%s]更新流水注册表失败[%s]!"/>
+        <constant id="C002" message="初始化流水注册表失败，流水未注册进内存[%s]! "/>
+        <constant id="C003" message="[%s]登记流水注册表失败[%s]!"/>
+        <constant id="C004" message="启动Dao管理组件 "/>
+        <constant id="C005" message="末找到配置，Dao管理组件将不会启动"/>
+        <constant id="C006" message="准备初始化Dao管理组件"/>
+        <constant id="C007" message="DiscoveryService配置不存在, 不启动组件!"/>
+        <constant id="C008" message="DiscoveryService配置项为空, 不启动组件!"/>
+        <constant id="C009" message="准备初始化DiscoveryService!"/>
+        <constant id="C010" message="\n--------------------开始各服务心跳更新--------------------\n"/>
+        <constant id="C011" message="Discovery[%s]心跳更新失败 "/>
+        <constant id="C012" message="心跳更新错误,错误原因：%s"/>
+        <constant id="C013" message="\n--------------------结束各服务心跳更新--------------------\n"/>
+        <constant id="C014" message="Discovery[%s]停止失败"/>
+        <constant id="C015" message="扩展点%s处理异常"/>
+        <constant id="C016" message="健康检查组件配置不存在, 服务不启动!"/>
+        <constant id="C017" message="健康检查组件未配置Checker列表,服务不启动"/>
+        <constant id="C018" message="准备初始化健康检查组件"/>
+        <constant id="C019" message="健康检查执行错误"/>
+        <constant id="C020" message="准备初始化日志配置管理器"/>
+        <constant id="C021" message="准备初始化模型管理组件"/>
+        <constant id="C022" message="准备加载核心模型配置文件"/>
+        <constant id="C023" message="核心模型配置文件加载 完成"/>
+        <constant id="C024" message="末找到配置，模型管理组件将不会启动"/>
+        <constant id="C025" message="预热元数据模型:%s"/>
+        <constant id="C026" message="预热元数据模型%s-&gt;%s"/>
+        <constant id="C027" message="预热元数据模型[%s]失败 "/>
+        <constant id="C028" message="实际加载元数据对象数：%s"/>
+        <constant id="C029" message="实际加载服务对象数：%s"/>
+        <constant id="C030" message="预热总耗时：%s "/>
+        <constant id="C031" message="末找到配置，模型预热组件将不会启动"/>
+        <constant id="C032" message="enablePrehot=false,Core模型预热组件将不会启动"/>
+        <constant id="C033" message="末配置轮询间隔，参数刷新轮询线程服务将不会启动"/>
+        <constant id="C034" message="初始化参数刷新轮询线程组件"/>
+        <constant id="C035" message="末找到配置，性能优化组件将不会启动"/>
+        <constant id="C036" message="是否输出调优日志=[%s]"/>
+        <constant id="C037" message="末找到配置，Sequence扩展机制不会启用，采用默认配置"/>
+        <constant id="C038" message="末找到配置，系统参数管理组件将不会启动"/>
+        <constant id="C039" message="系统选项=[%s] "/>
+        <constant id="C040" message="检测到失效通道 [Thread:%s]-[Name:%s]"/>
+        <constant id="C041" message="线程处理超时：%s\r\n%s"/>
+        <constant id="C042" message="准备取消超时线程正在执行的数据库操作."/>
+        <constant id="C043" message="取消超时线程正在执行数据库操作失败"/>
+        <constant id="C044" message="超时线程有[%s]个关键资源需要关闭. "/>
+        <constant id="C045" message="关闭超时线程关键资源[%s]：%s"/>
+        <constant id="C046" message="处理线程超时，但关闭关键资源时出错：%s"/>
+        <constant id="C047" message="准备关闭超时线程的Socket连接：%s "/>
+        <constant id="C048" message="处理线程超时，但关闭对应连接时出错：%s"/>
+        <constant id="C049" message="健康检查，服务超时关闭资源失败"/>
+        <constant id="C050" message="告警失败 %s %s "/>
+        <constant id="C051" message="%s执行过程中锁等待超时,并超过重试次数[%s]!"/>
+        <constant id="C052" message="%s执行过程中锁等待超时,正在进行第[%s]次尝试..."/>
+        <constant id="C053" message="无可用的健康检查器，不进行初始化!"/>
+        <constant id="C054" message="初始化日志配置管理器失败!"/>
+        <constant id="C055" message="[{}]扩展点[{}]已经存在"/>
+        <constant id="C056" message="[{}]扩展[{}]关联的扩展点[{}]不存在！可能的原因是：1.未配置该扩展点；2.该扩展点所在的插件被禁止启动。请检查相关配置文件。"/>
+        <constant id="C057" message="扩展点[{}]不存在"/>
+        <constant id="C058" message="[{}]扩展[{}]关联的ClazzImpl[{}]加载失败"/>
+        <constant id="C059" message="扩展[{}]实现接口[{}]与扩展点定义接口[{}]不一致"/>
+        <constant id="C060" message="插件[{}]文件中扩展[{}]对应ID不能为空"/>
+        <constant id="C061" message="扩展ID[{}]重复，插件文件：[{}],[{}]"/>
+        <constant id="C062" message="[{}]扩展点[{}]关联的Clazz[{}]加载失败"/>
+    </constants>
+</constantConf>

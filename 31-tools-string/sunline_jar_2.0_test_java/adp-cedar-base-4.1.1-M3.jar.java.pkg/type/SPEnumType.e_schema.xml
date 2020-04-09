@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="SPEnumType" package="cn.sunline.adp.cedar.base.type" longname="枚举类型" classgen="normal" xsi:noNamespaceSchemaLocation="ltts-model.xsd">
+    <restrictionType id="E_YESORNO" longname="是 或 否" base="int" maxLength="1" minLength="1">
+        <enumeration id="YES" value="1" longname="是"/>
+        <enumeration id="NO" value="0" longname="否"/>
+    </restrictionType>
+    <restrictionType id="E_SVCCATE" longname="服务类别" base="fixString" maxLength="1">
+        <enumeration id="T" value="T" longname="流程交易"/>
+        <enumeration id="S" value="S" longname="业务服务"/>
+        <enumeration id="F" value="F" longname="流程编排"/>
+    </restrictionType>
+    <restrictionType id="E_SVCTYPE" longname="业务服务类型" base="string" maxLength="10">
+        <enumeration id="CHECK" value="check" longname="检查类业务服务"/>
+        <enumeration id="TRY" value="try" longname="一次提交业务服务"/>
+        <enumeration id="NOTIFY" value="notify" longname="通知类业务服务"/>
+        <enumeration id="CANCEL" value="cancel" longname="冲正类业务服务"/>
+        <enumeration id="CONFIRM" value="confirm" longname="二次提交类业务服务"/>
+    </restrictionType>
+    <restrictionType id="E_PROCSTATUS" longname="处理状态" base="fixString" maxLength="1" minLength="1">
+        <enumeration id="W" value="W" longname="待处理" desc="（异步服务需要用到）"/>
+        <enumeration id="P" value="P" longname="处理中"/>
+        <enumeration id="S" value="S" longname="处理成功"/>
+        <enumeration id="F" value="F" longname="处理失败"/>
+    </restrictionType>
+    <restrictionType id="E_SVCMODE" longname="服务模式" base="fixString" maxLength="1" minLength="1">
+        <enumeration id="S" value="S" longname="同步"/>
+        <enumeration id="A" value="A" longname="异步"/>
+    </restrictionType>
+    <restrictionType id="E_TRANSACTION_MODE" longname="事务模式" base="fixString" maxLength="1">
+        <enumeration id="R" value="R" longname="只读事务模式"/>
+        <enumeration id="A" value="A" longname="原子事务模式"/>
+        <enumeration id="C" value="C" longname="事务块模式"/>
+        <enumeration id="D" value="D" longname="分布式事务模式"/>
+    </restrictionType>
+    <restrictionType id="E_SERVICE_TRANS_MODE" longname="服务事务模式" base="string" maxLength="20">
+        <enumeration id="NotSupported" value="NotSupported" longname="不启事务"/>
+        <enumeration id="Supports" value="Supports" longname="支持事务"/>
+        <enumeration id="Required" value="Required" longname="支持事务，并且执行二次提交"/>
+    </restrictionType>
+    <restrictionType id="E_SVCEXETYPE" longname="服务执行器类型" base="fixString" maxLength="1" minLength="1">
+        <enumeration id="L" value="L" longname="本地执行"/>
+        <enumeration id="R" value="R" longname="远程执行"/>
+        <enumeration id="A" value="A" longname="异步执行"/>
+        <enumeration id="F" value="F" longname="流程执行"/>
+    </restrictionType>
+    <restrictionType id="E_REGISTER_LOG_MODE" longname="登记通讯日志模式" base="fixString" maxLength="1" minLength="1">
+        <enumeration id="NoRegister" value="0" longname="不登记" desc="不登记"/>
+        <enumeration id="RegisterNoCheck" value="1" longname="登记不检查" desc="登记不检查"/>
+        <enumeration id="RepetitionPrevention" value="2" longname="登记并防重处理" desc="登记并防重处理"/>
+        <enumeration id="Idempotent" value="3" longname="登记并幂等处理" desc="登记并幂等处理"/>
+    </restrictionType>
+    <restrictionType id="E_ASYNC_PROCESS_MODE" longname="异步执行模式" base="int" maxLength="1" minLength="1">
+        <enumeration id="NOW" value="1" longname="即时"/>
+        <enumeration id="CONFIRM" value="0" longname="确认"/>
+    </restrictionType>
+</schema>
