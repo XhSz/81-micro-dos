@@ -1,0 +1,32 @@
+ 驱动器 D 中的卷是 Data
+ 卷的序列号是 061D-585D
+
+ D:\81-micro-dos\11-file-ergodic 的目录
+
+2020/04/09  09:43    <DIR>          .
+2020/04/09  09:43    <DIR>          ..
+2019/10/23  05:26               183 out-bak.txt
+2020/04/09  09:43                 0 out-this-s.txt
+2020/04/09  09:39               395 out-this.txt
+2020/04/09  09:37                 0 out.txt
+2020/04/09  09:43    <DIR>          s
+2019/10/23  05:23               156 win-cmd-file-ergodic-e01.bat
+2019/10/23  05:53               118 win-cmd-file-ergodic-for.bat
+2020/04/09  09:43                62 win-cmd-file-ergodic-out-file-this-b.bat
+2020/04/09  09:43                62 win-cmd-file-ergodic-out-file-this-s.bat
+2020/04/09  09:39                62 win-cmd-file-ergodic-out-file-this.bat
+2019/10/23  05:26                29 win-cmd-file-ergodic-out-file.bat
+              10 个文件          1,067 字节
+
+ D:\81-micro-dos\11-file-ergodic\s 的目录
+
+2020/04/09  09:43    <DIR>          .
+2020/04/09  09:43    <DIR>          ..
+2019/10/23  05:26               183 out-bak.txt
+2020/04/09  09:39               395 out-this.txt
+2020/04/09  09:37                 0 out.txt
+               3 个文件            578 字节
+
+     所列文件总数:
+              13 个文件          1,645 字节
+               5 个目录 32,245,399,552 可用字节

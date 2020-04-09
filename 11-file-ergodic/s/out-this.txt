@@ -1,0 +1,7 @@
+D:\81-micro-dos\11-file-ergodic\out-bak.txt
+D:\81-micro-dos\11-file-ergodic\out-this.txt
+D:\81-micro-dos\11-file-ergodic\out.txt
+D:\81-micro-dos\11-file-ergodic\win-cmd-file-ergodic-e01.bat
+D:\81-micro-dos\11-file-ergodic\win-cmd-file-ergodic-for.bat
+D:\81-micro-dos\11-file-ergodic\win-cmd-file-ergodic-out-file-this.bat
+D:\81-micro-dos\11-file-ergodic\win-cmd-file-ergodic-out-file.bat
