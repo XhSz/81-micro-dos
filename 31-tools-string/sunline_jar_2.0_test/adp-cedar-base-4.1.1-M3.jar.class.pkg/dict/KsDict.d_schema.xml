@@ -1,0 +1,228 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="KsDict" package="cn.sunline.adp.cedar.base.dict" longname="平台对外业务字典" classgen="normal" xsi:noNamespaceSchemaLocation="ltts-model.xsd">
+    <description><![CDATA[平台对外业务字典]]></description>
+    <complexType id="CommDict" longname="通用数据字典" dict="true" abstract="false" introduct="false">
+        <element id="corporate_code" longname="法人代码" type="KBaseType.U_FARENDMA" required="false" desc="法人代码" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="system_code" longname="系统标识号" type="KBaseType.U_LEIXIN10" required="false" default="''" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="sub_system_code" longname="子系统编号" type="KBaseType.U_LEIXIN10" required="false" default="''" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="target_system_code" longname="目标系统标识" type="KBaseType.U_LEIXIN10" required="false" default="''" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="maintenance_date" longname="维护日期" type="KBaseType.U_BZRIQILX" required="false" desc="维护日期" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="maintenance_teller" longname="维护柜员" type="KBaseType.U_GUIYDAIH" required="false" desc="维护柜员" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="maintenance_mechanism" longname="维护机构" type="KBaseType.U_JIGOUHAO" required="false" desc="维护机构" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="timestamp" longname="时间戳" type="KBaseType.U_SHIJCHUO" required="false" desc="时间戳" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="record_state" longname="记录状态" type="KBaseEnumType.E_JILUZTAI" required="false" desc="记录状态" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+    </complexType>
+    <complexType id="BtDict" longname="批量系统字典类型" dict="true" abstract="false" introduct="false">
+        <element id="flow_step_name" longname="流程步骤名称" type="KBaseType.U_ZHONGWMC" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="task_exe_mode" longname="批量任务执行模式" type="KBaseEnumType.E_PILZXM0S" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="task_commit_date" longname="批量任务提交日期" type="KBaseType.U_BZSJLEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="task_exe_date" longname="批量任务执行日期" type="KBaseType.U_BZSJLEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="transaction_date" longname="当前交易日期" type="KBaseType.U_BZSJLEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="job_execution_mode" longname="批量作业执行模式" type="KBaseEnumType.E_RUNMOD" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="task_run_mode" longname="批量任务运行模式" type="KBaseEnumType.E_PLJYYXMS" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="task_num" longname="批量任务批次号" type="KBaseType.U_PILJYLSH" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="task_exe_num" longname="批量任务执行批次号" type="KBaseType.U_PILJYLSH" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="tran_exe_num" longname="批量交易执行批次号" type="KBaseType.U_PILJYLSH" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="task_priority" longname="批量任务优先级" type="KBaseType.U_TYSZLEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="task_commit_time" longname="批量任务提交时间" type="KBaseType.U_BZSJLEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="tran_group_id" longname="批量交易组ID" type="KBaseType.U_PILJYZBS" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="tran_group_exe_time" longname="批量交易组执行耗时" type="KBaseType.U_BZSJLEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="job_no" longname="批量作业编号" type="KBaseType.U_PLZYBHAO" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="tran_code" longname="批量交易码" type="KBaseType.U_PLJIOYMA" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="tran_chinese_name" longname="批量交易中文名称" type="KBaseType.U_ZHONGWMC" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="tran_flow_id" longname="批量交易流程ID" type="KBaseType.U_PLJYLCBS" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="task_interrupt_flag" longname="批量任务中断标志" type="KBaseEnumType.E_YESORNO" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="task_run_conditions" longname="批量任务运行许可条件" type="KBaseType.U_LEIXIN32" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="tran_run_conditions" longname="批量交易运行许可条件" type="KBaseType.U_LEIXIN32" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="task_run_conditions_code" longname="批量任务运行许可条件标识" type="KBaseType.U_LEIXIN32" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="task_run_condi_service_code" longname="批量任务运行许可服务实现标识" type="KBaseType.U_FUWUSHIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="task_run_conditions_param" longname="批量任务运行许可参数" type="KBaseType.U_CANSHULB" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="task_run_callback_service" longname="批量任务运行回调服务" type="KBaseType.U_FUWUBSHI" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="execution_code" longname="执行标识" type="KBaseEnumType.E_YESORNO" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="fail_interrupt_code" longname="失败中断标识" type="KBaseEnumType.E_YESORNO" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="data_split_mode" longname="数据拆分模式" type="KBaseEnumType.E_SPLITMOD" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="rely_tran_goup_id" longname="依赖批量交易组ID" type="KBaseType.U_PILJYZBS" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="rely_tran_list" longname="依赖批量交易列表" type="KBaseType.U_LEIXIN80" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="tran_run_time" longname="交易运行时间" type="KBaseType.U_BZSJLEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="tran_start_time" longname="交易开始时间" type="KBaseType.U_BZSJLEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="job_distribute_start_time" longname="作业分发开始时间" type="KBaseType.U_BZSJLEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="tran_end_time" longname="交易结束时间" type="KBaseType.U_BZSJLEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="tran_start_timestamp" longname="交易开始时间戳" type="KBaseType.U_JYSIJNZX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="tran_end_timestamp" longname="交易结束时间戳" type="KBaseType.U_JYSIJNZX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="data_area" longname="数据区" type="KBaseType.U_SHUJUQUU" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="request_data_area" longname="请求数据区" type="KBaseType.U_SHUJUQUU" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="response_data_area" longname="响应数据区" type="KBaseType.U_SHUJUQUU" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="tran_state" longname="交易状态" type="KBaseEnumType.E_PILJYZHT" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="error_message" longname="错误信息" type="KBaseType.U_CUOWXINX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="message" longname="信息" type="KBaseType.U_CUOWXINX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="error_stack" longname="错误堆栈" type="KBaseType.U_CUOWDUIZ" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="error_step" longname="错误步骤" type="KBaseType.U_TYSZLEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="tran_execution_domain_code" longname="批量交易执行域标识" type="KBaseType.U_LEIXIN20" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="concurrency_num" longname="并发数" type="KBaseType.U_TYSZLEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="mini_concurrency_num" longname="最小并发数" type="KBaseType.U_TYSZLEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="max_concurrency_num" longname="最大并发数" type="KBaseType.U_TYSZLEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="max_step_concurrency_num" longname="最大步骤并发数" type="KBaseType.U_TYSZLEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="mini_step_concurrency_num" longname="最小步骤并发数" type="KBaseType.U_TYSZLEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="mini_job_concurrency_num" longname="最小作业并发数" type="KBaseType.U_TYSZLEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="max_job_concurrency_num" longname="最大作业并发数" type="KBaseType.U_TYSZLEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="job_server_cluster" longname="分布式环境下,worker集群列表,格式ip1:port1;ip2:port2" type="KBaseType.U_TONGYOLB" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="exe_tran_flow_list" longname="可执行批量交易流程列表" type="KBaseType.U_TONGYOLB" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="exe_tran_group_list" longname="可执行批量交易组列表" type="KBaseType.U_TONGYOLB" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="exe_domain_state" longname="执行域状态" type="KBaseEnumType.E_ZHIXYZHT" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="desc_message" longname="描述信息" type="KBaseType.U_CHMIAOSH" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="package_serial" longname="包流水" type="KBaseType.U_TONGYOLS" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="schedule_name" longname="调度名称" type="KBaseType.U_ZHONGWMC" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="schedule_date" longname="调度日期" type="KBaseType.U_BZRIQILX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="schedule_time" longname="调度时间" type="KBaseType.U_BZSJLEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="exe_class_name" longname="执行类名" type="KBaseType.U_LEIMINGG" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="schedule_param" longname="调度参数" type="KBaseType.U_CANSHULB" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="schedule_start_date" longname="调度开始日期" type="KBaseType.U_BZRIQILX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="schedule_end_date" longname="调度结束日期" type="KBaseType.U_BZRIQILX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="schedule_year" longname="调度年" type="KBaseType.U_LEIXIN08" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="schedule_week" longname="调度星期几（0-6）" type="KBaseType.U_LEIXIN03" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="schedule_month" longname="月份" type="KBaseType.U_LEIXIN04" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="day_of_month" longname="每月第几天" type="KBaseType.U_LEIXIN10" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="schedule_hour" longname="小时" type="KBaseType.U_LEIXIN10" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="schedule_minutes" longname="分钟" type="KBaseType.U_LEIXIN10" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="schedule_seconds" longname="秒" type="KBaseType.U_LEIXIN10" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="automatic_delete_code" longname="自动删除标识" type="KBaseEnumType.E_YESORNO" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="is_register_log" longname="是否登记日志" type="KBaseEnumType.E_YESORNO" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="scheduling_status" longname="调度状态" type="KBaseEnumType.E_DIAODZTA" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="total_cost" longname="累计耗时" type="KBaseType.U_BZLONGLX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="success_group_count" longname="成功分组记录数" type="KBaseType.U_BZLONGLX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="failure_group_count" longname="失败分组记录数" type="KBaseType.U_BZLONGLX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="success_count" longname="成功记录数" type="KBaseType.U_BZLONGLX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="failure_count" longname="失败记录数" type="KBaseType.U_BZLONGLX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="ignore_count" longname="忽略的记录数" type="KBaseType.U_BZLONGLX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="job_excution_status" longname="作业执行状态" type="KBaseEnumType.E_ZUOYZXZT" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="tran_id" longname="批量交易ID" type="KBaseType.U_PLJIOYMA" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="step_id" longname="步骤号" type="KBaseType.U_TYSZLEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="current_step" longname="当前步骤" type="KBaseType.U_TYSZLEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="current_flow_step_num" longname="当前流程步骤号" type="KBaseType.U_TYSZLEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="current_tran_group_id" longname="当前批量交易组ID" type="KBaseType.U_PILJYZBS" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="current_execution_num" longname="当前执行序号" type="KBaseType.U_TYSZLEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="start_step_num" longname="起始步骤" type="KBaseType.U_TYSZLEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="start_flow_step_num" longname="起始流程步骤号" type="KBaseType.U_TYSZLEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="start_tran_group_id" longname="起始批量交易组ID" type="KBaseType.U_PILJYZBS" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="start_execution_no" longname="起始执行序号" type="KBaseType.U_TYSZLEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="batch_data_num" longname="批次数据数量" type="KBaseType.U_BZLONGLX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="vm_id" longname="虚拟机ID" type="KBaseType.U_LEIXIN32" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="server_host_name" longname="服务器主机名称" type="KBaseType.U_ZHONGWMC" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="ip_address" longname="IP地址" type="KBaseType.U_IPDIZHII" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="thread_name" longname="线程名称" type="KBaseType.U_LEIXIN80" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="wrong_data" longname="错误的数据" type="KBaseType.U_SHUJUQUU" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="tran_group_desc" longname="交易组别中文描述" type="KBaseType.U_ZHONGWMC" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="reconnection_num" longname="重连次数" type="KBaseType.U_TYSZLEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="transactions_submit_num" longname="事务提交间隔（单位：笔数）" type="KBaseType.U_TYSZLEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="data_split_key" longname="数据拆分主键" type="KBaseType.U_SHUJCFZJ" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="single_query_num" longname="单次查询笔数" type="KBaseType.U_TYSZLEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="job_split_condition" longname="作业拆分条件（区间）" type="KBaseType.U_ZHMIAOSH" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="log_level" longname="日志级别" type="KBaseType.U_TYSZLEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="execution_no" longname="执行序号" type="KBaseType.U_TYSZLEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="system_tran_date" longname="系统交易日期" type="KBaseType.U_BZRIQILX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="tran_date" longname="交易日期" type="KBaseType.U_RIQILEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="system_date" longname="系统日期" type="KBaseType.U_BZRIQILX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="chinese_name" longname="中文名称" type="KBaseType.U_ZHONGWMC" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="flow_step_num" longname="流程步骤号" type="KBaseType.U_TYSZLEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="is_execution" longname="是否执行" type="KBaseEnumType.E_YESORNO" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="log_num" longname="日志序号" type="KBaseType.U_TYSZLEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="run_info" longname="运行信息" type="KBaseType.U_ZHMIAOSH" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="process_node" longname="当前流程图结点ID" type="KBaseType.U_PLJYLCBS" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="query_date" longname="查询日期" type="KBaseType.U_BZRIQILX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="dayend_manage_date" longname="日终管理日期" type="KBaseType.U_BZRIQILX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="last_date" longname="上次交易日期" type="KBaseType.U_BZRIQILX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="before_last_date" longname="上上交易日期" type="KBaseType.U_BZRIQILX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="next_date" longname="下次交易日期" type="KBaseType.U_BZRIQILX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="file_info_key" longname="文件信息名称" type="KBaseType.U_PILJYZBS" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="file_info_val" longname="文件信息值" type="KBaseType.U_PILJYZBS" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="batch_file_status" longname="文件批量状态" type="KBaseEnumType.E_WENJPLZT" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="busi_code" longname="业务关键字" type="KBaseType.U_PILJYZBS" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="busi_param_key" longname="业务参数名称" type="KBaseType.U_PILJYZBS" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="busi_param_val" longname="业务参数值" type="KBaseType.U_PILJYZBS" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="dcn_num" longname="DCN编号" type="KBaseType.U_PILJYZBS" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="first_submit_sign" longname="一次提交指示标志" type="KBaseEnumType.E_YESORNO" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="job_server_code" longname="作业服务器标识" type="KBaseType.U_LEIXIN100" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="control_code" longname="批量控制标识" type="KBaseType.U_PLKZHIBZ" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="control_value" longname="批量控制值1-允许 0-不不允许" type="KBaseType.U_PLKZHZHI" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="service_code" longname="服务标识" type="KBaseType.U_FUWUBSHI" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="tran_type" longname="交易类型" type="KBaseEnumType.E_JIAOYILX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="is_skip" longname="能否跳过" type="KBaseEnumType.E_YESORNO" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="group_num" longname="分组号" type="KBaseType.U_LEIXIN20" required="false" default="''" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="start_line" longname="起始行号" type="KBaseType.U_TYSZLEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="end_line" longname="终止行号" type="KBaseType.U_TYSZLEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="total_lines" longname="总行号" type="KBaseType.U_TYSZLEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="is_batch_file" longname="是否文件批量" type="KBaseEnumType.E_YESORNO" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="target_batch_group" longname="目标批量交易组" type="KBaseType.U_PILJYZBS" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="is_ignore" longname="是否忽略" type="KBaseEnumType.E_YESORNO" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+    </complexType>
+    <complexType id="SoDict" longname="联机交易字典" dict="true" abstract="false" introduct="false">
+        <element id="is_runable_tran" longname="交易可运行标识" type="KBaseEnumType.E_YESORNO" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="register_mode" longname="登记报文流水标识 1-登记 0-不登记" type="KBaseEnumType.E_YESORNO" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="timeout" longname="超时时间 (单位:毫秒) 0-不控制" type="KBaseType.U_BZLONGLX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="log_level" longname="日志级别" type="KBaseType.U_TYSZLEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="table_name" longname="表名" type="KBaseType.U_BIAOMING" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="table_comment" longname="表中文名称" type="KBaseType.U_ZHONGWMC" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="cache_level" longname="缓存级别" type="KBaseEnumType.E_HUANCULX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="is_executed_preprocess" longname="执行前处理标志" type="KBaseEnumType.E_YESORNO" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="is_registered_changed_log" longname="登记变更日志标志" type="KBaseEnumType.E_YESORNO" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="is_check_param" longname="检查参数标志" type="KBaseEnumType.E_YESORNO" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="is_process_param" longname="处理参数标志" type="KBaseEnumType.E_YESORNO" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="process_result" longname="处理结果标志" type="KBaseEnumType.E_YESORNO" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="param_code" longname="参数代码" type="KBaseType.U_FUWUBSHI" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="response_msg" longname="返回信息" type="KBaseType.U_CANSHULB" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="param_version" longname="参数版本" type="KBaseType.U_TYSZLEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="timestamp" longname="时间戳" type="KBaseType.U_SHIJCHUO" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="main_version" longname="总版本" type="KBaseType.U_TYSZLEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="is_forced_refresh" longname="强制刷新" type="KBaseEnumType.E_YESORNO" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+    </complexType>
+    <complexType id="CpDict" longname="服务组件字典" dict="true" abstract="false" introduct="false">
+        <element id="abstract_component_schema" longname="抽象组件Schema路径ID" type="KBaseType.U_LEIXIN80" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="component_type" longname="组件类型" type="KBaseType.U_FUWULEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="component_impl_schema" longname="组件实现Schema路径ID" type="KBaseType.U_FUWUBSHI" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="is_singleton" longname="是否单例 0-非单例 1-单例" type="KBaseEnumType.E_YESORNO" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="is_sync_call" longname="是否同步调用 0-异步调用 1-同步调用 " type="KBaseEnumType.E_YESORNO" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="description" longname="描述信息" type="KBaseType.U_ZHMIAOSH" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="attribute" longname="属性名称" type="KBaseType.U_LEIXIN32" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="attribute_value" longname="属性值" type="KBaseType.U_LEIXIN100" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="chinese_name" longname="中文名称" type="KBaseType.U_ZHONGWMC" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="abstract_component_instance" longname="抽象组件实例" type="KBaseType.U_LEIXIN80" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+    </complexType>
+    <complexType id="BiDict" longname="业务交易通用字典" dict="true" abstract="false" introduct="false">
+        <element id="qudaohao" longname="渠道" type="KBaseEnumType.E_QDAOLEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="jiaoyirq" longname="交易日期" type="KBaseType.U_BZRIQILX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="xckjriqi" longname="下次会计日期" type="KBaseType.U_BZRIQILX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="xcjioyrq" longname="下次交易日期" type="KBaseType.U_BZRIQILX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="sckjriqi" longname="上次会计日期" type="KBaseType.U_BZRIQILX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="jiaoyijg" longname="交易机构" type="KBaseType.U_JIGOUHAO" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="jiaoyigy" longname="交易柜员" type="KBaseType.U_GUIYDAIH" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="jiaoyima" longname="交易码" type="KBaseType.U_JIAOYIMA" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="waibclma" longname="第三方交易码" type="KBaseType.U_JIAOYIMA" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="guiydaih" longname="柜员代号" type="KBaseType.U_GUIYDAIH" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="guiymima" longname="密码" type="KBaseType.U_MIMAMMMM" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="guiyxinm" longname="柜员姓名" type="KBaseType.U_ZHONGWMC" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="guiyshux" longname="柜员属性" type="KBaseEnumType.E_GUIYSHUX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <description><![CDATA[业务交易通用字典]]></description>
+    </complexType>
+    <complexType id="SqDict" longname="流水字典" dict="true" abstract="false" introduct="false">
+        <element id="serial_code" longname="流水编码" type="KBaseType.U_LIUSBM" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="serial_name" longname="流水名称" type="KBaseType.U_ZHONGWMC" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="cache_size" longname="缓存大小" type="KBaseType.U_TYSZLEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="step_value" longname="步长" type="KBaseType.U_TYSZLEIX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="max_serial_value" longname="流水最大值" type="KBaseType.U_BZLONGLX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="min_serial_value" longname="流水最小值" type="KBaseType.U_BZLONGLX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="current_serial_value" longname="流水当前值" type="KBaseType.U_BZLONGLX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="serial_register_status" longname="流水注册状态" type="KBaseEnumType.E_LIUSZCZT" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="serial_register_tablenum" longname="流水注册表序号" type="KBaseType.U_LEIXIN06" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="reset_mode" longname="流水复位类型" type="KBaseType.U_RESETMODE" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="update_time" longname="更新时间" type="KBaseType.U_SHIJCHUO" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="serial_type" longname="流水类型" type="KBaseType.U_LIUSBM" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="instance_code" longname="应用实例标识" type="KBaseType.U_FUWUBSHI" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+    </complexType>
+    <complexType id="DbDict" longname="Dao层字典" dict="true" abstract="false" introduct="false">
+        <element id="sql_timeout" longname="sql超时时间" type="KBaseType.U_BZLONGLX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="lock_wait_time" longname="锁等待时间" type="KBaseType.U_BZLONGLX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="sql_retry_freq" longname="sql重试次数" type="KBaseType.U_BZLONGLX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="sql_retry_interval" longname="sql重试间隔" type="KBaseType.U_BZLONGLX" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+        <element id="is_param_table" longname="是否参数表" type="KBaseEnumType.E_YESORNO" required="false" multi="false" range="false" array="false" final="false" override="false" allowSubType="true"/>
+    </complexType>
+</schema>

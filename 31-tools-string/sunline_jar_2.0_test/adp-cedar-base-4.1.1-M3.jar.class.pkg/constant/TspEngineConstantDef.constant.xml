@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<constantConf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="TspEngineConstantDef" longname="TspEngine常量定义" package="cn.sunline.adp.cedar.base.constant" xsi:noNamespaceSchemaLocation="ltts-model.xsd">
+    <constants id="TSPEngineConst" longname="TspEngine常量定义">
+        <description><![CDATA[TspEngine常量定义]]></description>
+        <constant id="C001" message="IDE调试模式直接回滚"/>
+        <constant id="C002" message="服务器调试式直接回滚"/>
+        <constant id="C003" message="提交主事务"/>
+        <constant id="C004" message="提交主事务失败：%s"/>
+        <constant id="C005" message="异步提交主事务"/>
+        <constant id="C006" message="提交主事务失败时，回滚事务或异步提交主事务：%s"/>
+        <constant id="C007" message="回滚主事务"/>
+        <constant id="C008" message="回滚主事务失败：%s"/>
+        <constant id="C009" message="异步处理全局事务回滚"/>
+        <constant id="C010" message="回滚失败时，回滚事务或异步处理失败：%s"/>
+        <constant id="C011" message="开启分支事务失败，不允许分支事务嵌套 !"/>
+        <constant id="C012" message="未知的事务模式[%s]"/>
+        <constant id="C013" message="输入要素[%s]不合法,要素[%s-%s]值[%s]小数位数与定义的最大位数[%s]不符"/>
+        <constant id="C014" message=".getListener().beginDataMappingProcess(第[ + i + ]条明细映射);\r\n"/>
+        <constant id="C015" message="类型%s未找到匹配的模型！"/>
+        <constant id="C016" message="字段名称转换失败，非预期的数据类型[%s], 预期的为map"/>
+        <constant id="C017" message="字段名称转换失败，非预期的数据类型[%s], 预期的为list"/>
+        <constant id="C018" message="类型不正确"/>
+    </constants>
+</constantConf>

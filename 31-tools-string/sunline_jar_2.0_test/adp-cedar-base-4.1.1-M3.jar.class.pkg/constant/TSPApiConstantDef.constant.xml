@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<constantConf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="TSPApiConstantDef" longname="TSPApi常量定义" package="cn.sunline.adp.cedar.base.constant" xsi:noNamespaceSchemaLocation="ltts-model.xsd">
+    <constants id="APIConst" longname="TSTApi常量定义">
+        <description><![CDATA[TSTApi常量定义]]></description>
+        <constant id="C001" message="值[%s]加密失败"/>
+        <constant id="C002" message="值[%s]解密失败"/>
+        <constant id="C003" message="参数错误,pageSize必须大于0, pageSize=%s"/>
+    </constants>
+</constantConf>

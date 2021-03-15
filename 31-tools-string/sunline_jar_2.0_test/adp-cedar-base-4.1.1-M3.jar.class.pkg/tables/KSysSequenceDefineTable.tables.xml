@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="KSysSequenceDefineTable" package="cn.sunline.adp.cedar.base.tables" longname="流水定义表" classgen="normal" xsi:noNamespaceSchemaLocation="ltts-model.xsd">
+    <table id="tsp_sequence_define" name="tsp_sequence_define" longname="流水定义表" tableType="ORDINARY" category="sys" virtual="false" changelog="false" abstract="false">
+        <fields>
+            <field id="serial_code" longname="流水编码" type="KBaseType.U_LIUSBM" ref="KsDict.SqDict.serial_code" primarykey="false" final="false" nullable="true" identity="false" allowSubType="true"/>
+            <field id="serial_name" longname="流水名称" type="KBaseType.U_ZHONGWMC" ref="KsDict.SqDict.serial_name" primarykey="false" final="false" nullable="true" identity="false" allowSubType="true"/>
+            <field id="cache_size" longname="缓存大小" type="KBaseType.U_TYSZLEIX" ref="KsDict.SqDict.cache_size" primarykey="false" final="false" default="0" nullable="true" identity="false" allowSubType="true"/>
+            <field id="step_value" longname="步长" type="KBaseType.U_TYSZLEIX" ref="KsDict.SqDict.step_value" primarykey="false" final="false" default="0" nullable="true" identity="false" allowSubType="true"/>
+            <field id="max_serial_value" longname="流水最大值" type="KBaseType.U_BZLONGLX" ref="KsDict.SqDict.max_serial_value" primarykey="false" final="false" default="0" nullable="true" identity="false" allowSubType="true"/>
+            <field id="min_serial_value" longname="流水最小值" type="KBaseType.U_BZLONGLX" ref="KsDict.SqDict.min_serial_value" primarykey="false" final="false" default="0" nullable="true" identity="false" allowSubType="true"/>
+            <field id="current_serial_value" longname="流水当前值" type="KBaseType.U_BZLONGLX" ref="KsDict.SqDict.current_serial_value" primarykey="false" final="false" default="0" nullable="false" identity="false" allowSubType="true"/>
+            <field id="system_code" longname="系统标识号" type="KBaseType.U_LEIXIN10" ref="KsDict.CommDict.system_code" primarykey="false" final="false" default="''" nullable="false" identity="false" allowSubType="true"/>
+            <field id="corporate_code" longname="法人代码" type="KBaseType.U_FARENDMA" ref="KsDict.CommDict.corporate_code" primarykey="false" final="false" default="''" nullable="false" desc="法人代码" identity="false" allowSubType="true"/>
+        </fields>
+        <ddls/>
+        <odbindexes>
+            <index id="id" type="unique" fields="serial_code system_code corporate_code" operate="selectOne updateOne selectOneWithLock" longname="odb索引" cache="global"/>
+        </odbindexes>
+        <indexes>
+            <index id="tsp_sequence_define_index" type="unique" fields="serial_code system_code corporate_code">
+                <ddls/>
+            </index>
+        </indexes>
+    </table>
+    <table id="tsp_sequence_register" name="tsp_sequence_register" longname="流水注册表" tableType="ORDINARY" virtual="false" abstract="false">
+        <fields>
+            <field id="serial_name" longname="流水名称" type="KBaseType.U_ZHONGWMC" ref="KsDict.SqDict.serial_name" primarykey="false" final="false" nullable="true" identity="false" allowSubType="true"/>
+            <field id="current_serial_value" longname="流水当前值" type="KBaseType.U_BZLONGLX" ref="KsDict.SqDict.current_serial_value" primarykey="false" final="false" nullable="true" identity="false" allowSubType="true"/>
+            <field id="max_serial_value" longname="流水最大值" type="KBaseType.U_BZLONGLX" ref="KsDict.SqDict.max_serial_value" primarykey="false" final="false" nullable="true" identity="false" allowSubType="true"/>
+            <field id="step_value" longname="步长" type="KBaseType.U_TYSZLEIX" ref="KsDict.SqDict.step_value" primarykey="false" final="false" nullable="true" identity="false" allowSubType="true"/>
+            <field id="service_code" longname="服务标识" type="KBaseType.U_FUWUBSHI" ref="KsDict.BtDict.service_code" primarykey="false" final="false" nullable="true" identity="false" allowSubType="true"/>
+            <field id="serial_register_status" longname="流水注册状态" type="KBaseEnumType.E_LIUSZCZT" ref="KsDict.SqDict.serial_register_status" primarykey="false" final="false" nullable="true" identity="false" allowSubType="true"/>
+            <field id="sub_system_code" longname="子系统编号" type="KBaseType.U_LEIXIN10" ref="KsDict.CommDict.sub_system_code" primarykey="false" final="false" nullable="true" identity="false" allowSubType="true"/>
+            <field id="system_code" longname="系统标识号" type="KBaseType.U_LEIXIN10" ref="KsDict.CommDict.system_code" primarykey="false" final="false" default="''" nullable="false" identity="false" allowSubType="true"/>
+            <field id="corporate_code" longname="法人代码" type="KBaseType.U_FARENDMA" ref="KsDict.CommDict.corporate_code" primarykey="false" final="false" default="''" nullable="false" desc="法人代码" identity="false" allowSubType="true"/>
+        </fields>
+        <ddls/>
+        <odbindexes>
+            <index id="odb1" type="unique" fields="serial_name service_code sub_system_code system_code corporate_code" operate="selectOne updateOne"/>
+            <index id="odb2" type="index" fields="service_code serial_register_status sub_system_code system_code corporate_code" operate="selectAll"/>
+        </odbindexes>
+        <indexes>
+            <index id="tsp_sequence_define_index1" type="unique" fields="serial_name service_code sub_system_code system_code corporate_code">
+                <ddls/>
+            </index>
+        </indexes>
+    </table>
+    <table id="tsp_sequence_generate_define" name="tsp_sequence_generate_define" longname="流水生成定义表" tableType="ORDINARY" virtual="false" abstract="false">
+        <fields>
+            <field id="system_code" longname="系统标识号" type="KBaseType.U_LEIXIN10" ref="KsDict.CommDict.system_code" primarykey="false" final="false" default="''" nullable="false" identity="false" allowSubType="true"/>
+            <field id="corporate_code" longname="法人代码" type="KBaseType.U_FARENDMA" ref="KsDict.CommDict.corporate_code" primarykey="false" final="false" default="''" nullable="false" desc="法人代码" identity="false" allowSubType="true"/>
+            <field id="serial_type" longname="流水类型" type="KBaseType.U_LIUSBM" ref="KsDict.SqDict.serial_type" primarykey="false" final="false" nullable="false" identity="false" allowSubType="true"/>
+            <field id="max_serial_value" longname="流水最大值" type="KBaseType.U_BZLONGLX" ref="KsDict.SqDict.max_serial_value" primarykey="false" final="false" default="0" nullable="true" identity="false" allowSubType="true"/>
+            <field id="min_serial_value" longname="流水最小值" type="KBaseType.U_BZLONGLX" ref="KsDict.SqDict.min_serial_value" primarykey="false" final="false" default="0" nullable="true" identity="false" allowSubType="true"/>
+            <field id="cache_size" longname="缓存大小" type="KBaseType.U_TYSZLEIX" ref="KsDict.SqDict.cache_size" primarykey="false" final="false" default="0" nullable="true" identity="false" allowSubType="true"/>
+            <field id="step_value" longname="步长" type="KBaseType.U_TYSZLEIX" ref="KsDict.SqDict.step_value" primarykey="false" final="false" default="0" nullable="true" identity="false" allowSubType="true"/>
+            <field id="reset_mode" longname="流水复位类型" type="KBaseType.U_RESETMODE" ref="KsDict.SqDict.reset_mode" primarykey="false" final="false" nullable="true" identity="false" allowSubType="true"/>
+        </fields>
+        <ddls/>
+        <odbindexes>
+            <index id="tsp_seq_generate_odb" type="unique" fields="system_code corporate_code serial_type" operate="selectOne updateOne selectOneWithLock"/>
+            <index id="tsp_seq_genrate_odb2" type="index" fields="system_code corporate_code" operate="selectAll"/>
+        </odbindexes>
+        <indexes>
+            <index id="tsp_seq_generate_define_idx" type="unique" fields="system_code corporate_code serial_type">
+                <ddls/>
+            </index>
+        </indexes>
+    </table>
+    <table id="tsp_sequence_detail" name="tsp_sequence_detail" longname="流水记录表" tableType="ORDINARY" virtual="false" abstract="false">
+        <fields>
+            <field id="system_code" longname="系统标识号" type="KBaseType.U_LEIXIN10" ref="KsDict.CommDict.system_code" primarykey="false" final="false" default="''" nullable="false" identity="false" allowSubType="true"/>
+            <field id="corporate_code" longname="法人代码" type="KBaseType.U_FARENDMA" ref="KsDict.CommDict.corporate_code" primarykey="false" final="false" default="''" nullable="false" desc="法人代码" identity="false" allowSubType="true"/>
+            <field id="serial_name" longname="流水名称" type="KBaseType.U_ZHONGWMC" ref="KsDict.SqDict.serial_name" primarykey="false" final="false" default="''" nullable="false" identity="false" allowSubType="true"/>
+            <field id="current_serial_value" longname="流水当前值" type="KBaseType.U_BZLONGLX" ref="KsDict.SqDict.current_serial_value" primarykey="false" final="false" nullable="true" identity="false" allowSubType="true"/>
+            <field id="update_time" longname="更新时间" type="KBaseType.U_SHIJCHUO" ref="KsDict.SqDict.update_time" primarykey="false" final="false" nullable="true" identity="false" allowSubType="true"/>
+        </fields>
+        <ddls/>
+        <odbindexes>
+            <index id="tsp_seq_detail_odb" type="unique" fields="system_code corporate_code serial_name" operate="selectOne updateOne selectOneWithLock"/>
+        </odbindexes>
+        <indexes>
+            <index id="tsp_seq_detail_idx" type="unique" fields="system_code corporate_code serial_name">
+                <ddls/>
+            </index>
+        </indexes>
+    </table>
+    <table id="tsp_sequence_recycle" name="tsp_sequence_recycle" longname="流水回收表" tableType="ORDINARY" virtual="false" abstract="false">
+        <fields>
+            <field id="system_code" longname="系统标识号" type="KBaseType.U_LEIXIN10" ref="KsDict.CommDict.system_code" primarykey="false" final="false" default="''" nullable="false" identity="false" allowSubType="true"/>
+            <field id="sub_system_code" longname="子系统编号" type="KBaseType.U_LEIXIN10" ref="KsDict.CommDict.sub_system_code" primarykey="false" final="false" nullable="true" identity="false" allowSubType="true"/>
+            <field id="corporate_code" longname="法人代码" type="KBaseType.U_FARENDMA" ref="KsDict.CommDict.corporate_code" primarykey="false" final="false" default="''" nullable="false" desc="法人代码" identity="false" allowSubType="true"/>
+            <field id="instance_code" longname="应用实例标识" type="KBaseType.U_FUWUBSHI" ref="KsDict.SqDict.instance_code" primarykey="false" final="false" nullable="true" identity="false" allowSubType="true"/>
+            <field id="serial_name" longname="流水名称" type="KBaseType.U_ZHONGWMC" ref="KsDict.SqDict.serial_name" primarykey="false" final="false" nullable="true" identity="false" allowSubType="true"/>
+            <field id="step_value" longname="步长" type="KBaseType.U_TYSZLEIX" ref="KsDict.SqDict.step_value" primarykey="false" final="false" nullable="true" identity="false" allowSubType="true"/>
+            <field id="current_serial_value" longname="流水当前值" type="KBaseType.U_BZLONGLX" ref="KsDict.SqDict.current_serial_value" primarykey="false" final="false" nullable="true" identity="false" allowSubType="true"/>
+            <field id="max_serial_value" longname="流水最大值" type="KBaseType.U_BZLONGLX" ref="KsDict.SqDict.max_serial_value" primarykey="false" final="false" nullable="true" identity="false" allowSubType="true"/>
+            <field id="serial_register_status" longname="流水注册状态" type="KBaseEnumType.E_LIUSZCZT" ref="KsDict.SqDict.serial_register_status" primarykey="false" final="false" nullable="true" identity="false" allowSubType="true"/>
+        </fields>
+        <ddls/>
+        <odbindexes>
+            <index id="tsp_seq_recycle_odb1" type="unique" fields="system_code sub_system_code corporate_code instance_code serial_name" operate="selectOne updateOne"/>
+            <index id="tsp_seq_recycle_odb2" type="index" fields="system_code sub_system_code corporate_code instance_code serial_register_status" operate="selectAll"/>
+        </odbindexes>
+        <indexes>
+            <index id="tsp_seq_recycle_idx1" type="unique" fields="system_code sub_system_code corporate_code instance_code serial_name">
+                <ddls/>
+            </index>
+        </indexes>
+    </table>
+</schema>

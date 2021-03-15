@@ -1,0 +1,9 @@
+cn.sunline.adp.boot.cedar.launch.IDERunner=\
+cn.sunline.adp.boot.cedar.launch.online.TxnExecutor,\
+cn.sunline.adp.boot.cedar.launch.batch.BatchExecutor
+
+cn.sunline.adp.boot.cedar.launch.IBatchIDERunner=\
+cn.sunline.adp.boot.cedar.launch.batch.BatchExecutorImpl
+
+cn.sunline.adp.boot.cedar.launch.IOnlineIDERunner=\
+cn.sunline.adp.boot.cedar.launch.online.TxnExecutorImpl

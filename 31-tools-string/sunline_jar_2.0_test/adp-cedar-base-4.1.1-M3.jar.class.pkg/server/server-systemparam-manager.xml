@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<!-- [Template id=SystemParamManager longname=系统参数 ] -->
+
+<!-- pm=true|pl=3|ct=false|cibp=true|upp=true|dps=20000|io=log,odb,ognl,bean,pack,enum,dataMapping,db| -->
+
+<systemParamManagerConfig systemCode="${systemCode|core}" subSystemId="${subSystemId|bat}" dcnNo="${dcnNo|A00}"
+            tenantId="${tenantId|9999}" distributedSystem="${distributedSystem|false}"  
+ 			options="${options|pm=false}" >
+	 
+</systemParamManagerConfig>
+<!-- [End] -->

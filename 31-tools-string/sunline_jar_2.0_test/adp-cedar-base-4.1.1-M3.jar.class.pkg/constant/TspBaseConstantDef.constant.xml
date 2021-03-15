@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<constantConf xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" id="TspBaseConstantDef" longname="TspBase常量定义" package="cn.sunline.adp.cedar.base.constant" xsi:noNamespaceSchemaLocation="ltts-model.xsd">
+    <constants id="TBConst" longname="TspBase常量定义">
+        <description><![CDATA[TspBase常量定义]]></description>
+        <constant id="C001" message="当前线程没有绑定配置参数，请先使用配置管理器的beginNewSession方法绑定,thread=%s"/>
+        <constant id="C002" message="注册新的在线配置更新器:type=%s"/>
+        <constant id="C003" message="当前内存中存在如下版本[%s]的配置,未找到指定总版本号[%s]对应的配置！"/>
+        <constant id="C004" message="不支持将已经生效的总版本号[%s]对应的参数删除"/>
+        <constant id="C005" message="该方法每次只能维护一条记录"/>
+        <constant id="C006" message="同名字段的multi必须一致：%s"/>
+        <constant id="C007" message="不支持的字典子集表达式：%s"/>
+        <constant id="C008" message="表达式配置出错, 语句前缀 '#%s'配置不正确"/>
+        <constant id="C009" message="表达式配置出错'#%s.%s'找不到对应的配置"/>
+        <constant id="C010" message="表达式配置出错'#%s.%s'找不到对应的字典配置"/>
+        <constant id="C011" message="日志级别[%s][%s]不合法!"/>
+        <constant id="C012" message="报文编码错误"/>
+        <constant id="C013" message="报文组包编码错误"/>
+        <constant id="C014" message="认证失败！"/>
+        <constant id="C015" message="报文解析失败，报文格式不正确。报文为[%s]"/>
+        <constant id="C016" message="不支持的数据类型"/>
+        <constant id="C017" message="序列化对象[%s]失败"/>
+        <constant id="C018" message="序列化数组对象[%s]失败"/>
+        <constant id="C019" message="序列化map[%s]失败"/>
+        <constant id="C020" message="反序列化对象[%s]失败"/>
+        <constant id="C021" message="反序列化数组对象[%s]失败"/>
+        <constant id="C022" message="外部访问标识[%s]不能为空!"/>
+        <constant id="C023" message="外部访问标识[%s]格式不正确!正确格式应为[serviceId:senarioID:version]"/>
+        <constant id="C024" message="无法加载扩展[%s]"/>
+    </constants>
+</constantConf>

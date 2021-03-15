@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<ltts shutdownport="9003" name="LTTS APP NAME">
+	<startup>
+		<!--
+		<service id="MainConfigService" class="cn.sunline.ltts.config.util.MainConfigService" enable="true" failOnInitError="true" displayName="加载系统配置的服务" />
+		-->
+		<!-- 2014.11.13 已支持独立的服务配置文件 server-log-manager.xml (ltts-config) -->
+		<service id="LogConfigManagerService" class="cn.sunline.ltts.config.util.LogConfigManagerService" enable="true" failOnInitError="true" displayName="日志配置管理器" />
+		
+		<!-- 2015-1-6 Metric服务 支持独立的服务配置文件 server-metrics.xml (ltts-metrics) -->
+		<service id="MetricService" class="cn.sunline.ltts.metrics.service.MetricService" enable="true" failOnInitError="true" displayName="指标服务" />
+		
+		<!-- 2014.11.13 已支持独立的服务配置文件 server-jmx.xml (ltts-metrics) -->
+		<service id="JmxServerService" class="cn.sunline.ltts.metrics.jmx.JmxServerService" enable="true" failOnInitError="true" displayName="JMX监控管理服务器" />
+		
+		<!-- 2014.11.13 已支持独立的服务配置文件 server-performance.xml (ltts-biz) -->
+		<service id="PerformanceService" class="cn.sunline.ltts.biz.util.PerformanceService" enable="true" failOnInitError="true" displayName="加载全局调优配置的服务" />
+		
+		<!-- 2014.11.13 已支持独立的服务配置文件 server-console.xml (ltts-srv-tcp) -->
+		<service id="ConsoleServerService" class="cn.sunline.ltts.srv.socket.console.ConsoleServerService" enable="true" failOnInitError="true" displayName="控制台管理服务" />
+		
+		<!-- bean工厂启动 (基于ltts.xml中的BeanService元素配置) -->
+		<service id="BeanFactoryService" class="cn.sunline.ltts.base.bean.BeanFactoryService" enable="true" failOnInitError="true" displayName="bean工厂服务" />
+		
+		<!-- 2104.11.14 已支持独立的服务配置文件 server-sequence-manager.xml (ltts-engine)-->
+		<service id="SequenceManagerService" class="cn.sunline.ltts.engine.sequence.SequenceManagerService" enable="true" failOnInitError="true" displayName="Sequence扩展机制" />
+		
+		<!-- 基于ltts.xml中的cachers配置 -->
+		<service id="Cache" class="cn.sunline.ltts.base.cache.CacheService" enable="true" failOnInitError="true" displayName="缓存服务" />
+		<service id="CfgReload" class="cn.sunline.ltts.base.cfg.ConfigReloadService" enable="false" failOnInitError="true" displayName="配置更新服务" />
+		
+		<!--
+			2014.11.13 已部分支持独立的服务配置文件 server-model-manager.xml (ltts-biz)
+			(1) 无法加载dbentityloader，参考测试案例ModelManagerServiceTest (目前解决办法是现注视此部分loader，暂不加载)
+		-->
+		<service id="ModelManagerService" class="cn.sunline.ltts.biz.util.ModelManagerService" enable="true" failOnInitError="true" displayName="模型管理器初始化服务" />
+		
+		<!-- 2014.11.13 已支持独立的服务配置文件 server-objects.xml (ltts-biz) 依赖ModelManagerService -->
+		<service id="ObjectsService" class="cn.sunline.ltts.biz.util.ObjectsService" enable="true" failOnInitError="true" displayName="加载对象工厂" />
+		
+		<!-- 2014.11.18 无配置文件 依赖：EngineExtensionService -->
+		<service id="BizServiceManagerService" class="cn.sunline.ltts.biz.util.BizServiceManagerService" enable="true" failOnInitError="true" displayName="服务管理器初始化服务" />
+		
+		<!--  2014.12.11 数据库用户密码安全组件 ltts-config server-dbpass-security.xml 需在DaoManagerService之前启用 -->
+		<service id="DBPassSecurityService" class="cn.sunline.ltts.config.dbpass.DBPassSecurityService" enable="true" failOnInitError="true" displayName="数据库用户密码安全组件" />
+		
+		<!-- 2014.11.13 已支持独立的服务配置文件 server-dao-manager.xml (ltts-biz) -->
+		<service id="DaoManagerService" class="cn.sunline.ltts.biz.util.DaoManagerService" enable="true" failOnInitError="true" displayName="Dao初始化服务" />
+		
+		<!-- 2014.11.15 已支持独立的服务配置文件 server-engine-extension.xml (ltts-biz) 依赖ModelManagerService,DaoManagerService -->
+		<service id="EngineExtensionService" class="cn.sunline.ltts.biz.util.EngineExtensionService" enable="true" failOnInitError="true" displayName="交易扩展点配置" />
+		<service id="NotifyService" class="cn.sunline.ltts.engine.notify.NotifyService" enable="true" failOnInitError="true" displayName="联机通知服务" />
+		
+		
+		<!-- 无配置文件 -->
+		<service id="ComponentConfigManager" class="cn.sunline.ltts.engine.component.ComponentConfigManager" enable="true" failOnInitError="true" displayName="组件配置加载服务" />
+		
+		<!-- TCP服务 -->
+		<service id="AdminSocketSrv" class="cn.sunline.ltts.srv.socket.admin.AdminService" enable="true" failOnInitError="true" displayName="LTTS管理服务" />
+		<service id="BizSocketSrv" class="cn.sunline.ltts.srv.socket.biz.BizSocketService" enable="true" failOnInitError="true" displayName="Socket联机服务" />
+		<service id="Console" class="" enable="false" failOnInitError="true" displayName="LTTS控制台服务" />
+		<service id="SocketBizMessageReceiver" class="" enable="false" failOnInitError="true" displayName="Socket通道业务消息接收器" />
+		<service id="SocketChannelMonitor" class="" enable="false" failOnInitError="true" displayName="Socket通道监控器" />
+		<service id="BizClientService" class="cn.sunline.ltts.srv.socket.client.BizClientService" enable="true" failOnInitError="true" displayName="应用服务器客户端服务" />
+				 
+		<!-- DMB服务 -->
+		<service id="DMBService" class="cn.sunline.ltts.srv.dmb.DMBService" enable="true" failOnInitError="true" displayName="分布式DMB服务注册" />
+		
+		<!--批量服务-->
+	 	<service id="LocalBatchServerManagerService" class="cn.sunline.ltts.batch.srv.LocalBatchServerManagerService" enable="true" failOnInitError="true" displayName="批量服务器管理器服务" />
+		
+		<!-- Web服务 -->
+		<service id="WebSetupService" class="cn.sunline.ltts.web.service.WebSetUpService" enable="true" failOnInitError="true" displayName="webSetup服务" />
+		
+		<!-- jetty容器启动服务 -->
+		<service id="JettyServerService" class="cn.sunline.ltts.web.service.JettyServerService" enable="true" failOnInitError="true" displayName="Jetty服务器容器启动服务" />
+		
+		<!-- LttsShellService服务 -->
+		<service id="LttsShellService" class="cn.sunline.ltts.shell.LttsShellService" enable="true" failOnInitError="true" displayName="lttsShell字符界面服务" />
+		
+		<!-- 参数刷新轮询线程服务 -->
+		<service id="PollThreadService" class="cn.sunline.ltts.biz.parmreload.PollThreadService" enable="false" failOnInitError="true" displayName="参数刷新轮询线程服务" />
+		
+		<!-- 2014-11-29 Discovery服务 已支持独立的服务配置文件 server-discovery.xml (ltts-metrics) -->
+		<!-- 依赖于前面启动的服务 -->
+		<service id="DiscoveryService" class="cn.sunline.ltts.metrics.service.DiscoveryService" enable="true" failOnInitError="true" displayName="Discovery服务" />
+		
+		<!-- 2015.1.6 健康检查服务 支持独立的配置文件 server-healthcheck.xml (ltts-metrics) -->
+		<service id="HealthCheckService" class="cn.sunline.ltts.metrics.service.HealthCheckService" enable="true" failOnInitError="true" displayName="健康检查服务" />
+		
+		<!-- 回收启动时打开的数据库连接 -->
+		<service id="DBConnectionReleaseService" class="cn.sunline.ltts.biz.util.DBConnectionReleaseService" enable="true" failOnInitError="true" displayName="释放初始化使用的数据库连接" />
+	</startup>
+	<!-- LTTS 消息服务 
+	workManager-使用哪一个线程池
+	threadCount-消息处理任务作业数目(异步处理线程数)
+	blockBufferSize-阻塞消息缓冲池大小(消息个数)
+	idleInSecond-轮询消息的间隔时间，太短的话会占用CPU资源
+	-->
+	<MessageService serviceid="Message" workManager="LTTSMessage" threadCount="5" blockBufferSize="100" idleInSecond="1">
+		<!-- LTTS 消息监听处理器 -->
+		<MessageListeners>
+			<!--  
+			<MessageListener class="cn.sunline.ltts.msg.listener.MessageLogger">
+				<init-param name="selector"><![CDATA[ MsgType in ('SystemStat',
+				'TransactionStat', 'SecurityTip') or Level in ('WARN', 'ERROR')]]></init-param>
+			</MessageListener>
+			<MessageListener class="cn.sunline.ltts.msg.listener.JMSPublisher">
+				<init-param name="selector"><![CDATA[ MsgType in ('SystemStat', 'TransactionStat', 'BatchStat',
+				'CustomerEvent', 'FinancilEvent', 'SecurityTip') and Level <> 'DEBUG' or Level in ('WARN', 'ERROR')]]></init-param>
+				<init-param name="topicName">LTTSTips</init-param>
+				<init-param name="topicFactory">jms/lttsTopicFactory</init-param>
+			</MessageListener>
+			-->
+		</MessageListeners>
+	</MessageService>
+	<CacheService serviceid="Cache">
+		<providers>
+		<!--  WAS分布式缓存
+			<provider id="was-sql" class="cn.sunline.ltts.was.cache.DistributedMapFactory">
+				<init-param name="jndiName">service/cache/sql</init-param>
+			</provider>
+			-->
+		<!-- WAS分布式缓存
+			<provider id="static" class="cn.sunline.ltts.was.cache.DistributedMapFactory">
+				<init-param name="jndiName">service/cache/static</init-param>
+			</provider>
+		-->
+			<provider id="LRU" class="cn.sunline.ltts.base.cache.LRUCacheFactory" /><!-- JVM全局有限最近最少使用缓存,线程安全  -->
+			<provider id="local" class="cn.sunline.ltts.base.cache.LocalCacheFactory" /><!-- JVM线程无限缓存  -->
+			<provider id="global" class="cn.sunline.ltts.base.cache.GlobalCacheFactory" /><!-- JVM全局无限缓存,线程安全(使用了HashTable) -->
+		</providers>
+		<cachers>
+			<cacher name="txnlocal" providerID="local"><!-- 交易缓存器  -->
+				<init-param name="clearEventNames">TxnProcFinished,ThreadWorkFinished,AfterOnlineBatchProcess</init-param><!-- 在发生TxnProcFinished"交易结束事件"时清除线程中的缓存 -->
+			</cacher>
+			<cacher name="localSql" providerID="local"><!-- DAO查询SQL缓存器  -->
+				<init-param name="clearEventNames">TxnProcFinished,ThreadWorkFinished,AfterOnlineBatchProcess</init-param>
+			</cacher>
+			<cacher name="dataMapping" providerID="local"><!-- 数据映射缓存器  -->
+				<init-param name="clearEventNames">TxnProcStart,TxnProcFinished,ThreadWorkFinished,AfterOnlineBatchProcess</init-param>
+			</cacher>
+			<cacher name="tmpTable" providerID="local"><!-- 临时表缓存器  -->
+				<init-param name="clearEventNames">TxnProcStart,TxnProcFinished,ThreadWorkFinished,AfterOnlineBatchProcess</init-param>
+			</cacher>
+			<cacher name="profileUtil" providerID="local"><!-- 性能监控缓存器  -->
+				<init-param name="clearEventNames">ThreadWorkFinished,AfterHTTPProcess,AfterOnlineBatchProcess</init-param>
+			</cacher>
+			<cacher name="cfgGlobal" providerID="global"><!-- 全局静态配置相关缓存器  -->
+				<init-param name="clearEventNames">cfgReloaded</init-param><!-- 在发生cfgReloaded"完成配置加载事件"时清除缓存 -->
+			</cacher>
+			<cacher name="sql" providerID="was-sql">
+				<init-param name="prefix">sql:</init-param>
+				<!-- 缓存时间：秒 -->
+				<init-param name="timeToLive">3600</init-param>
+				<!-- 未命中超时时间：秒 -->
+				<init-param name="inactivityTime">360</init-param>
+				<!-- 缓存策略
+					<init-param name="priority">1</init-param>
+					 -->
+				<!--
+					共享策略 <init-param name="sharingPolicy">1</init-param>
+				-->
+			</cacher>
+			<cacher name="seqid" providerID="static">
+				<init-param name="prefix">seqid:</init-param>
+				<!-- 缓存时间：秒 -->
+				<init-param name="timeToLive">3600</init-param>
+				<!-- 未命中超时时间：秒 -->
+				<init-param name="inactivityTime">360</init-param>
+				<!-- 缓存策略
+					<init-param name="priority">1</init-param>
+					 -->
+				<!--
+					共享策略 <init-param name="sharingPolicy">1</init-param>
+				-->
+			</cacher>
+			<cacher name="errmsg" providerID="static">
+				<init-param name="prefix">errmsg:</init-param>
+				<!-- 缓存时间：秒 -->
+				<init-param name="timeToLive">3600</init-param>
+				<!-- 未命中超时时间：秒 -->
+				<init-param name="inactivityTime">360</init-param>
+				<!-- 缓存策略
+					<init-param name="priority">1</init-param>
+					 -->
+				<!--
+					共享策略 <init-param name="sharingPolicy">1</init-param>
+				-->
+			</cacher>
+			<cacher name="simpleLRU" providerID="LRU" desc="简单的内存LRU缓存器">
+				<init-param name="maxCacheSize">1000</init-param>
+			</cacher>
+			<cacher name="exprGlobal" providerID="global"><!-- 全局MVEL/OGNL表达式编译缓存器  -->
+				<init-param name="clearEventNames">cfgReloaded</init-param><!-- 在发生cfgReloaded"完成配置加载事件"时清除缓存 -->
+			</cacher>
+		</cachers>
+	</CacheService>
+	<!-- <ConfigReloadService serviceid="CfgReload" timerManager="CfgReload" delaySecond="120" desc="在线reload配置的服务">
+		<versionChecker class="cn.sunline.ltts.biz.config.dbconfig.TxnCfgChecker" desc="检测交易配置数据库中的版本与内存版本是否一致">
+			配置源发生版本变更时要reload的配置类型列表如下：
+			<configType>bizcfg</configType>
+			<configType>logcfg</configType>
+		</versionChecker>
+	</ConfigReloadService> -->
+	
+	<WorkService>
+<!-- 		<providers>
+			<provider id="jndi" class="cn.sunline.ltts.work.impl.JNDIWorkManagerFactory" />
+			<provider id="jdk" class="cn.sunline.ltts.work.impl.JDKWorkManagerFactory" />
+		</providers>
+ -->		<workManagers>
+			<workManager name="LTTSMessage" provider="jdk" jndiName="java:comp/env/wm/LTTSMessage" corePoolSize="2" maximumPoolSize="20"
+				keepAliveTime="60000" desc="LTTS 异步消息服务线程池" />
+		</workManagers>
+		<timerManagers>
+			<timerManager name="CfgReload" provider="jdk" desc="LTTS 定时检测配置变更的线程" jndiName="java:comp/env/tm/LTTSTimers" corePoolSize="2"
+				maximumPoolSize="20" keepAliveTime="60000" />
+		</timerManagers>
+	</WorkService>
+	<EventService>
+		<namedEvent>
+			<listeners>
+				<listener id="NewSession" class="cn.sunline.ltts.base.cfg.ConfigReloaderFactory$NewSessionListener" desc="切换到最新配置版本" />
+				<listener id="CfgChecker" class="cn.sunline.ltts.base.cfg.ConfigurationManager$NamedEventChecker" desc="检测配置版本更新" />
+				<listener id="PrtPrfMsg" class="cn.sunline.ltts.base.util.ProfileUtil$PrintListener" desc="日志记录性能数据" />
+				<listener id="ClnPrf" class="cn.sunline.ltts.util.base.ProfileUtil$CleanupListener" desc="清除性能数据" />
+				<listener id="ClnTmpTable" class="cn.sunline.ltts.base.tmp.LocalTmpTableCaches$ClearTmpTableListener" desc="清除临时表缓存" />
+			</listeners>
+			<events>
+				<event name="cfgReloaded" desc="配置加载完毕" />
+				<event name="BeforeHTTPProcess" desc="接收HTTP交易处理前">
+					<listeners>NewSession CfgChecker</listeners>
+				</event>
+				<event name="AfterHTTPProcess" desc="接收HTTP交易处理后">
+					<listeners>PrtPrfMsg ClnPrf</listeners>
+				</event>
+				<event name="TxnProcStart" desc="交易开始处理,已启动事务" />
+				<event name="TxnProcComplete" desc="交易处理 完成,提交事务前" />
+				<event name="TxnProcFailed" desc="交易处理 失败,回滚事务后" />
+				<event name="TxnProcFinished" desc="交易处理 结束,已提交、回滚事务">
+					<listeners>ClnTmpTable</listeners>
+				</event>
+				<event name="BeforeOnlineBatchProcess" desc="联机批量处理前">
+					<listeners>NewSession CfgChecker</listeners>
+				</event>
+				<event name="AfterOnlineBatchProcess" desc="联机批量处理后">
+					<listeners>PrtPrfMsg ClnPrf</listeners>
+				</event>
+				<event name="BeforeDailyBatchProcess" desc="日终批量处理前">
+					<listeners>NewSession CfgChecker</listeners>
+				</event>
+				<event name="AfterDailyBatchProcess" desc="日终批量处理后">
+					<listeners>PrtPrfMsg ClnPrf</listeners>
+				</event>
+				<event name="ThreadWorkStart" desc="异步线程处理开始">
+					<listeners>NewSession</listeners>
+				</event>
+				<event name="ThreadWorkFinished" desc="异步线程处理结束">
+					<listeners>ClnTmpTable PrtPrfMsg ClnPrf</listeners>
+				</event>
+			</events>
+		</namedEvent>
+		<!-- <cfgReloadEvent>
+			<listeners>
+				<listener class="cn.sunline.ltts.dao.mapping.SqlConfigManager$DaoCfgReloadListener" desc="重新加载DAO配置" />
+				<listener class="cn.sunline.ltts.biz.TxnCfgManager$BizCfgListener" desc="重新加载交易配置" />
+				<listener class="cn.sunline.ltts.cfg.LttsCfgs$LTTSCfgsReloadListener" desc="重新加载LTTS配置" />
+			</listeners>
+		</cfgReloadEvent> -->
+	</EventService>
+	<properties>
+		<!-- 是否启用交易异步处理,如登记包流水，登记Profile日志等过程的异步处理 -->
+		<property name="ltts.EnableAsyncTxn">false</property>
+		<!-- 交易入口定义 -->
+		<property name="ltts.facade">cn.sunline.ltts.online.OnlineFacade</property>
+		<property name="ltts.biz.service.interceptor">cn.sunline.ltts.srv.rmb.model.CrossDCNTransInterceptor</property>
+		<!-- <property name="ltts.batch.facade">cn.sunline.ltts.txn.BatchFacade</property>
+		<property name="ltts.business.facade.ejb.JNDI.Name">ejb/LTTSTxnBean</property>		
+		 --><!--  JNDI
+		<property name="ltts.JNDI.INITIAL_CONTEXT_FACTORY">com.sun.jndi.ldap.LdapCtxFactory</property>
+		<property name="ltts.JNDI.INITIAL_CONTEXT_FACTORY">com.sun.jndi.fscontext.RefFSContextFactory</property>
+		<property name="ltts.JNDI.INITIAL_CONTEXT_FACTORY">com.ibm.ejs.ns.jndi.CNInitialContextFactory</property>
+		<property name="ltts.JNDI.INITIAL_CONTEXT_FACTORY">com.ibm.websphere.naming.WsnInitialContextFactory</property>
+		<property name="ltts.JNDI.INITIAL_CONTEXT_FACTORY">com.ibm.mq.jms.context.WMQInitialContextFactory</property>
+		<property name="ltts.JNDI.PROVIDER_URL">ldap://polaris/o=ibm,c=us</property>
+		<property name="ltts.JNDI.PROVIDER_URL">file:/C:/JNDI-Directory</property>
+		<property name="ltts.JNDI.PROVIDER_URL">iiop://localhost/</property>
+		<property name="ltts.JNDI.PROVIDER_URL">localhost:1414/SYSTEM.DEF.SVRCONN</property>
+		-->
+		<!-- 用户名 
+		<property name="ltts.JNDI.SECURITY_PRINCIPAL"></property>
+		-->
+		<!-- 密码
+		<property name="ltts.JNDI.SECURITY_CREDENTIALS"></property>
+		 -->
+		 
+		 <!-- 关键组件(余额、账单、指令、账户查询)的实现方式:java,proc -->
+		<property name="major.module.implType">java</property>
+		
+		<!-- LTTSServerletHandler参数 -->
+		<property name="pkg.parser">cn.sunline.ltts.base.pkg.JSONParser</property>
+		<property name="pkg.wrapper">cn.sunline.ltts.base.pkg.JSONWrapper</property>
+		<property name="parameter.data.name">data</property>
+		<property name="encoding">utf-8</property>
+		<property name="pkg.encoding">GB18030</property>
+		
+		<!-- DAO -->
+		<!--  dao namedsql default implType -->
+		<property name="dao.sql.implType">jdbc</property>
+		<!--  dao.executeSqlNewTransation useSingleConnection -->
+		<property name="dao.executeSqlNewTransation">false</property>
+		<!--  dao default cahcer see ltts.xml -->
+		<property name="dao.sql.cacher">sql</property>
+		<property name="dao.default.cacher">txnlocal</property>
+		<property name="dao.parameter.cacher">static</property>
+		<property name="dao.parameter2.cacher">static2</property>
+		<property name="dao.none.cacher">null</property>
+		<property name="dao.pmpkvl.cacher">static2</property>	
+		<property name="dao.pmlist.cacher">static2</property>				
+		<property name="dao.default.cacheEnabled">true</property>
+	</properties>
+	
+	<BeanService>
+		<beans>
+			<bean name="表控制器管理器" type="cn.sunline.ltts.base.dao.controller.EntityDaoProcessControllerManager">cn.sunline.ltts.biz.out.impl.dao.DBEntityDaoProcessControllerManager</bean>
+			<bean name="批量交易流程配置管理器" type="cn.sunline.ltts.batch.engine.flow.BatchTranFlowManager">cn.sunline.ltts.biz.out.impl.batch.DBBatchTranFlowManager</bean>
+			<bean name="批量交易配置中心" type="cn.sunline.ltts.batch.srv.BatchServerDataManager">cn.sunline.ltts.biz.out.impl.batch.DBBatchServerDataManager</bean>
+			<bean name="任务信息管理器" type="cn.sunline.ltts.batch.engine.BatchTaskInfoManager">cn.sunline.ltts.biz.out.impl.batch.DBBatchTaskInfoManager</bean>
+			<bean name="任务运行日志管理器" type="cn.sunline.ltts.batch.engine.BatchTaskLogManager">cn.sunline.ltts.biz.out.impl.batch.DBBatchTaskLogManager</bean>
+			<bean name="定时任务调度器信息管理器" type="cn.sunline.ltts.batch.schedule.ScheduleTaskInfoManager">cn.sunline.ltts.biz.out.impl.batch.DBScheduleTaskInfoManager</bean>
+			<bean name="定时任务调度器调度日志管理器" type="cn.sunline.ltts.batch.schedule.ScheduleTaskLogManager">cn.sunline.ltts.biz.out.impl.batch.scheduler.DBScheduleTaskLogManager</bean>
+			<bean name="任务运行控制器" type="cn.sunline.ltts.batch.engine.BatchTaskExecuteController">cn.sunline.ltts.biz.out.impl.batch.DbBatchTaskExecuteController</bean>
+			
+			<bean name="批量交易控制器" type="cn.sunline.ltts.batch.engine.controller.BatchController">cn.sunline.ltts.biz.out.impl.batch.DbBatchController</bean>
+			<bean name="组件实例控制器" type="cn.sunline.ltts.engine.component.ComponentInstanceController">cn.sunline.ltts.biz.out.impl.service.DbComponentInstanceController</bean>
+						
+			<bean name="Notify通知DAO操作" type="cn.sunline.ltts.engine.notify.NotifyDAO">cn.sunline.ltts.biz.out.notify.NotifyImpl</bean>
+			<bean name="任务队列访问互斥锁" type="cn.sunline.ltts.batch.mutex.TaskQueueDistributeMutex">cn.sunline.ltts.biz.out.impl.batch.DBTaskQueueDistributeMutex</bean>
+			<bean name="定时调度器Master选举" type="cn.sunline.ltts.batch.mutex.TaskSchedulerServerMasterElector">cn.sunline.ltts.biz.out.impl.batch.DBTaskSchedulerServerMasterElector</bean>
+			
+			<!-- 2015.1.19 增加定时任务控制器 -->
+			<bean name="定时任务控制器" type="cn.sunline.ltts.batch.schedule.TaskScheduleController">cn.sunline.ltts.biz.out.impl.batch.scheduler.DBTaskScheduleController</bean>
+		</beans>
+	</BeanService>
+</ltts>
